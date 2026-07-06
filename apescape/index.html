@@ -132,7 +132,26 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_8008DE90</span><span class="asz">24 B</span><span class="av miss">56% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>extern short D_800DF8D0[];
+    <div class="arow"><span class="mono aname">func_80029AF0</span><span class="asz">28 B</span><span class="av miss">41% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>unsigned int func_80029AF0(unsigned int x, unsigned int y) {
+    return ((y &amp; 0x7FF) &lt;&lt; 11) | (x &amp; 0x7FF) | 0xE5000000;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002D6B4</span><span class="asz">28 B</span><span class="av miss">6% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>void func_8002D6B4(unsigned char *a0) {
+    int tmp = *(int *)(a0 + 0x20);
+    a0[0x37] = 0x4D;
+    a0[0x36] = 6;
+    *(int *)(a0 + 0x2C) = tmp;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_800277F0</span><span class="asz">28 B</span><span class="av miss">53% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>extern int D_800B4D40;
+extern int D_800B4D44;
+extern int D_800B4D60;
+
+void func_800277F0(int a0, int a1, int a2)
+{
+    D_800B4D40 = a0;
+    D_800B4D44 = a1;
+    D_800B4D60 = a2;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8008DE90</span><span class="asz">24 B</span><span class="av miss">56% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>extern short D_800DF8D0[];
 
 void func_8008DE90(short a, short b)
 {
@@ -246,31 +265,6 @@ unsigned short func_8002E8B4(void) {
 int func_80029B8C(void)
 {
     return *D_800A8A28;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_800145D4</span><span class="asz">24 B</span><span class="av ok">matched</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>long func_800145D4(long input) {
-    long output;
-    __asm__ __volatile__(
-        &quot;mtc2 %1, $30\n&quot;
-        &quot;nop\n&quot;
-        &quot;nop\n&quot;
-        &quot;mfc2 %0, $31\n&quot;
-        : &quot;=r&quot;(output)
-        : &quot;r&quot;(input)
-    );
-    return output;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8005DE10</span><span class="asz">20 B</span><span class="av miss">53% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern short D_800B9880[2];
-
-void func_8005DE10(void)
-{
-    D_800B9880[1] = 0;
-    D_800B9880[0] = 0;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80071600</span><span class="asz">20 B</span><span class="av miss">56% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern int D_800BBD10;
-
-void func_80071600(void) {
-    D_800BBD10 = 0;
-    *((char *)&amp;D_800BBD10 + 0x149) = 0;
 }</pre></details></div>
   </div>
 
