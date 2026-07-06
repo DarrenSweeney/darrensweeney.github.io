@@ -132,7 +132,49 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_80029AF0</span><span class="asz">28 B</span><span class="av miss">41% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>unsigned int func_80029AF0(unsigned int x, unsigned int y) {
+    <div class="arow"><span class="mono aname">func_8002F600</span><span class="asz">28 B</span><span class="av miss">15% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern int D_800A9CD0;
+
+void func_8002F600(int arg0) {
+    /* BIOS call B(0Bh) = ChangeClearPAD; tail-jumps via $t2=0xB0 with $t1=0xB.
+       Trailing store to D_800A9CD0 is unreachable via the BIOS tail-jump but
+       is emitted as part of this stub in the original binary. */
+    __asm__ volatile (
+        &quot;.set push\n&quot;
+        &quot;.set noreorder\n&quot;
+        &quot;addiu $t2, $zero, 0xB0\n&quot;
+        &quot;jr    $t2\n&quot;
+        &quot; addiu $t1, $zero, 0xB\n&quot;
+        &quot;nop\n&quot;
+        &quot;lui   $at, %%hi(D_800A9CD0)\n&quot;
+        &quot;jr    $ra\n&quot;
+        &quot; sw   $a0, %%lo(D_800A9CD0)($at)\n&quot;
+        &quot;.set pop\n&quot;
+        ::: &quot;memory&quot;
+    );
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002F260</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>__attribute__((naked)) void func_8002F260(void) {
+    __asm__ volatile (
+        &quot;.set noreorder            \n&quot;
+        &quot;    addiu $t2, $zero, 0xB0\n&quot;
+        &quot;    jr    $t2             \n&quot;
+        &quot;    addiu $t1, $zero, 0xF \n&quot;
+        &quot;    nop                   \n&quot;
+        &quot;    addiu $t2, $zero, 0xB0\n&quot;
+        &quot;    jr    $t2             \n&quot;
+        &quot;    addiu $t1, $zero, 0x10\n&quot;
+    );
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80031694</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>#include &lt;libgte.h&gt;
+
+void func_80031694(CVECTOR *in, long ir0, CVECTOR *out)
+{
+    gte_ldrgb(in);
+    gte_ldir0(ir0);
+    gte_rtir();  /* nop delay */
+    gte_dpcs();
+    gte_strgb(out);
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80029AF0</span><span class="asz">28 B</span><span class="av miss">41% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>unsigned int func_80029AF0(unsigned int x, unsigned int y) {
     return ((y &amp; 0x7FF) &lt;&lt; 11) | (x &amp; 0x7FF) | 0xE5000000;
 }</pre></details></div>
 <div class="arow"><span class="mono aname">func_8002D6B4</span><span class="asz">28 B</span><span class="av miss">6% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>void func_8002D6B4(unsigned char *a0) {
@@ -247,25 +289,6 @@ void func_80046998(unsigned char a, unsigned char b, unsigned char c)
     D_800E6990[0x3B] = b;
     D_800E6990[0x3C] = c;
 }</pre></details></div>
-<div class="arow"><span class="mono aname">func_8002E8CC</span><span class="asz">24 B</span><span class="av miss">50% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern short *D_800A9C48;
-
-short func_8002E8CC(short arg0) {
-    short *p = D_800A9C48;
-    short old = *p;
-    *p = arg0;
-    return old;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8002E8B4</span><span class="asz">24 B</span><span class="av miss">12% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern unsigned short *D_800A9C48;
-
-unsigned short func_8002E8B4(void) {
-    return *D_800A9C48;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80029B8C</span><span class="asz">24 B</span><span class="av miss">12% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern int *D_800A8A28;
-
-int func_80029B8C(void)
-{
-    return *D_800A8A28;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -291,7 +314,7 @@ int func_80029B8C(void)
   </p>
 
   <footer>
-    Generated 2026-07-06 23:28 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-06 23:29 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
