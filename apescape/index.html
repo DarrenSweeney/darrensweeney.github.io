@@ -132,7 +132,26 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_800145D4</span><span class="asz">24 B</span><span class="av ok">matched</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>long func_800145D4(long input) {
+    <div class="arow"><span class="mono aname">func_8002E8CC</span><span class="asz">24 B</span><span class="av miss">50% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern short *D_800A9C48;
+
+short func_8002E8CC(short arg0) {
+    short *p = D_800A9C48;
+    short old = *p;
+    *p = arg0;
+    return old;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002E8B4</span><span class="asz">24 B</span><span class="av miss">12% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern unsigned short *D_800A9C48;
+
+unsigned short func_8002E8B4(void) {
+    return *D_800A9C48;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80029B8C</span><span class="asz">24 B</span><span class="av miss">12% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern int *D_800A8A28;
+
+int func_80029B8C(void)
+{
+    return *D_800A8A28;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_800145D4</span><span class="asz">24 B</span><span class="av ok">matched</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>long func_800145D4(long input) {
     long output;
     __asm__ __volatile__(
         &quot;mtc2 %1, $30\n&quot;
