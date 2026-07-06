@@ -132,7 +132,31 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_80066F94</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>extern u32 D_800EC2A0[];
+    <div class="arow"><span class="mono aname">func_8007D590</span><span class="asz">28 B</span><span class="av miss">86% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>extern unsigned short D_800BF020;
+
+void func_8007D590(void)
+{
+    unsigned short v0 = D_800BF020;
+    (void)v0;
+    /* NOTE: only prologue provided (28 bytes); body/epilogue unknown */
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8008C4A0</span><span class="asz">28 B</span><span class="av miss">52% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>extern int D_800DF898[4];
+
+void func_8008C4A0(int arg0, int arg1)
+{
+    D_800DF898[0] = arg0;
+    D_800DF898[1] = arg1;
+    D_800DF898[2] = 0;
+    D_800DF898[3] = 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8008C0E0</span><span class="asz">28 B</span><span class="av miss">12% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>extern unsigned char D_800DF858[];
+
+void *func_8008C0E0(int a0)
+{
+    a0 = ((a0 + 3) &gt;&gt; 2) &lt;&lt; 2;
+    return (void *)(D_800DF858 - a0);
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80066F94</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>extern u32 D_800EC2A0[];
 
 void func_80066F94(void) {
     D_800EC2A0[0x38] |= 0x40;
@@ -275,21 +299,6 @@ void func_8007F890(void)
 void func_8006D004(void) {
     D_800BAE50[8] = 0;
     D_800BAE50[9] = 0x10;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_800657A8</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>s32 func_800657A8(void) {
-    return !(*(s16 *)0x1F800076 &lt; 0xB51);
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80066640</span><span class="asz">24 B</span><span class="av miss">62% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>extern short D_800F4E88;
-extern short D_800F52A4;
-
-void func_80066640(void) {
-    D_800F4E88 = 0x258;
-    D_800F52A4 = 0;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80065BB4</span><span class="asz">24 B</span><span class="av miss">16% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>extern short D_800F51E4;
-
-int func_80065BB4(void) {
-    return (D_800F51E4 ^ 1) == 0;
 }</pre></details></div>
   </div>
 
