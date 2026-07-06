@@ -3,14 +3,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ape Escape (PS1) Decompilation — Progress</title>
-<meta name="description" content="A matching decompilation of Ape Escape (PS1, PAL). Live progress by functions and bytes.">
+<meta name="description" content="A matching decompilation of Ape Escape (PS1, PAL). Live progress, rate, and whole-ROM verification.">
 <style>
   :root { color-scheme: dark light;
     --bg:#0d1117; --panel:#161b22; --border:#30363d; --fg:#e6edf3; --muted:#8b949e;
-    --accent:#58a6ff; --good:#2ea043; }
+    --accent:#58a6ff; --good:#2ea043; --bad:#f85149; --warn:#d29922; }
   @media (prefers-color-scheme: light) {
     :root { --bg:#f6f8fa; --panel:#fff; --border:#d0d7de; --fg:#1f2328; --muted:#636c76;
-      --accent:#0969da; --good:#1a7f37; }
+      --accent:#0969da; --good:#1a7f37; --bad:#cf222e; --warn:#9a6700; }
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg);
@@ -18,30 +18,51 @@
   .wrap { max-width:920px; margin:0 auto; padding:28px 20px 64px; }
   a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
   h1 { font-size:1.9rem; margin:.2em 0 .1em; letter-spacing:-.02em; }
-  .sub { color:var(--muted); margin:0 0 1.6em; }
+  h2 { font-size:1.05rem; margin:0 0 .7em; }
+  .sub { color:var(--muted); margin:0 0 1.4em; }
   .mono { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
-  .cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 22px; }
+  .cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 18px; }
   @media (max-width:560px) { .cards { grid-template-columns:1fr; } }
   .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:18px 20px; }
   .card .k { color:var(--muted); font-size:.85rem; text-transform:uppercase; letter-spacing:.05em; }
-  .card .v { font-size:2.4rem; font-weight:700; line-height:1.1; margin:.1em 0; }
+  .card .v { font-size:2.4rem; font-weight:700; line-height:1.1; margin:.1em 0; font-variant-numeric:tabular-nums; }
   .card .d { color:var(--muted); font-size:.9rem; }
   .bar { height:8px; background:var(--border); border-radius:5px; overflow:hidden; margin-top:10px; }
   .bar > i { display:block; height:100%; background:var(--good); border-radius:5px; }
-  .panel { background:var(--panel); border:1px solid var(--border); border-radius:12px;
-    padding:18px 20px; margin:0 0 18px; }
-  .panel h2 { font-size:1.05rem; margin:0 0 .7em; }
-  .badge { display:inline-block; background:var(--good); color:#fff; font-weight:600;
-    font-size:.78rem; padding:2px 10px; border-radius:999px; vertical-align:middle; }
-  table { width:100%; border-collapse:collapse; font-size:.94rem; }
-  td { padding:6px 0; border-bottom:1px solid var(--border); }
-  td:last-child { text-align:right; } tr:last-child td { border-bottom:0; }
+  .panel { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin:0 0 18px; }
+  table.facts { width:100%; border-collapse:collapse; font-size:.94rem; }
+  table.facts td { padding:6px 0; border-bottom:1px solid var(--border); }
+  table.facts td:last-child { text-align:right; } table.facts tr:last-child td { border-bottom:0; }
   .k2 { color:var(--muted); }
-  .map { display:flex; flex-wrap:wrap; gap:2px; margin:.6em 0; }
-  .map i { width:7px; height:7px; border-radius:1px; }
-  .legend { display:flex; flex-wrap:wrap; gap:14px; color:var(--muted); font-size:.85rem; margin-top:.4em; }
+  .badge { display:inline-block; background:var(--good); color:#fff; font-weight:600; font-size:.78rem;
+    padding:2px 10px; border-radius:999px; vertical-align:middle; }
+  .verify { display:flex; gap:14px; align-items:flex-start; border-radius:12px; padding:16px 18px; margin:0 0 18px;
+    border:1px solid var(--border); }
+  .verify.ok { background:color-mix(in srgb, var(--good) 12%, var(--panel)); border-color:var(--good); }
+  .verify.bad { background:color-mix(in srgb, var(--bad) 14%, var(--panel)); border-color:var(--bad); }
+  .verify .vicon { font-size:1.3rem; font-weight:800; line-height:1.4; width:26px; height:26px; border-radius:50%;
+    text-align:center; flex:0 0 auto; }
+  .verify.ok .vicon { background:var(--good); color:#fff; }
+  .verify.bad .vicon { background:var(--bad); color:#fff; }
+  .verify.neutral .vicon { background:var(--border); color:var(--fg); }
+  .vsub { color:var(--muted); font-size:.9rem; margin-top:3px; }
+  .chart { width:100%; height:auto; }
+  .chart .grid { stroke:var(--border); stroke-width:1; }
+  .chart .area { fill:#2ea043; opacity:.16; }
+  .chart .series { fill:none; stroke:#2ea043; stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round; }
+  .chart .dot { fill:#2ea043; stroke:var(--panel); stroke-width:2; }
+  .chart .ytick, .chart .xtick { fill:var(--muted); font-size:11px; }
+  .chart .ytick { text-anchor:end; } .chart .xtick { text-anchor:middle; }
+  .chart .axislabel { fill:var(--muted); font-size:11px; }
+  .legend { display:flex; flex-wrap:wrap; gap:14px 18px; color:var(--muted); font-size:.86rem; margin-top:.5em; }
   .lg i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:middle; }
   .lg b { color:var(--fg); font-variant-numeric:tabular-nums; }
+  .map { display:flex; flex-wrap:wrap; gap:2px; margin:.6em 0; }
+  .map i { width:7px; height:7px; border-radius:1px; }
+  details { margin-top:12px; } summary { cursor:pointer; color:var(--muted); font-size:.88rem; }
+  table.data { width:100%; border-collapse:collapse; font-size:.85rem; margin-top:10px; }
+  table.data th, table.data td { text-align:left; padding:4px 8px; border-bottom:1px solid var(--border); }
+  table.data td:not(:first-child) { text-align:right; font-variant-numeric:tabular-nums; }
   ol.ph { margin:0; padding-left:1.2em; } ol.ph li { margin:.3em 0; }
   ol.ph .done { color:var(--good); font-weight:600; }
   footer { color:var(--muted); font-size:.85rem; margin-top:26px; }
@@ -50,7 +71,9 @@
   <p style="margin:0"><a href="../">&larr; darrensweeney.net</a></p>
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
-     <b>byte-identical</b> to the disc. Live progress, updated automatically.</p>
+     <b>byte-identical</b> to the disc. Updated automatically after each run.</p>
+
+  <div class="verify ok"><span class="vicon">✓</span><div><b>Rebuild verified — byte-identical to the original disc.</b><div class="vsub">All 24 decompiled functions, recompiled and placed into the binary, reproduce the original SHA-1 <span class="mono">b15a1e38c653524b…</span>. Checked 2026-07-06 23:08 UTC.</div></div></div>
 
   <div class="cards">
     <div class="card">
@@ -68,16 +91,30 @@
   </div>
 
   <div class="panel">
-    <h2>Phase 1: toolchain identification <span class="badge">SOLVED</span></h2>
-    <p style="margin:.2em 0 1em; color:var(--muted)">The make-or-break step — pinning the exact
-      original compiler so a byte-match is even possible. Done, verified on a real function.</p>
-    <table>
+    <h2>Progress over time</h2>
+    <svg viewBox="0 0 880 280" class="chart" role="img"
+      aria-label="Functions matched over time">
+      <line x1="52" y1="240.0" x2="862" y2="240.0" class="grid"/><text x="44" y="244.0" class="ytick">0</text><line x1="52" y1="128.0" x2="862" y2="128.0" class="grid"/><text x="44" y="132.0" class="ytick">14</text><line x1="52" y1="16.0" x2="862" y2="16.0" class="grid"/><text x="44" y="20.0" class="ytick">28</text>
+      <path d="M 52.0,240.0 L 52.0,240.0 L 314.6,216.0 L 612.4,168.0 L 649.2,144.0 L 862.0,48.0 L 862.0,240.0 Z" class="area"/>
+      <polyline points="52.0,240.0 314.6,216.0 612.4,168.0 649.2,144.0 862.0,48.0" class="series"/>
+      <circle cx="52.0" cy="240.0" r="4.5" class="dot"><title>2026-07-06 22:31 UTC: 0 functions (0 bytes)</title></circle><circle cx="314.6" cy="216.0" r="4.5" class="dot"><title>2026-07-06 22:39 UTC: 3 functions (48 bytes)</title></circle><circle cx="612.4" cy="168.0" r="4.5" class="dot"><title>2026-07-06 22:48 UTC: 9 functions (96 bytes)</title></circle><circle cx="649.2" cy="144.0" r="4.5" class="dot"><title>2026-07-06 22:49 UTC: 12 functions (120 bytes)</title></circle><circle cx="862.0" cy="48.0" r="4.5" class="dot"><title>2026-07-06 22:55 UTC: 24 functions (216 bytes)</title></circle><text x="52.0" y="258.0" class="xtick">Jul 06 22:31</text><text x="314.6" y="258.0" class="xtick">Jul 06 22:39</text><text x="649.2" y="258.0" class="xtick">Jul 06 22:49</text><text x="862.0" y="258.0" class="xtick">Jul 06 22:55</text>
+      <text x="52" y="276" class="axislabel">date (UTC) — y-axis: functions matched (of 1,914)</text>
+    </svg>
+    <div class="legend" style="margin-top:10px"><span class="lg"><b>+24</b> in last 24h</span><span class="lg"><b>~1449</b> / day so far</span><span class="lg"><b>1,890</b> functions remaining</span></div>
+    <details><summary>data table</summary>
+      <table class="data"><tr><th>date (UTC)</th><th>functions</th><th>bytes</th></tr><tr><td>2026-07-06 22:31</td><td>0</td><td>0</td></tr><tr><td>2026-07-06 22:39</td><td>3</td><td>48</td></tr><tr><td>2026-07-06 22:48</td><td>9</td><td>96</td></tr><tr><td>2026-07-06 22:49</td><td>12</td><td>120</td></tr><tr><td>2026-07-06 22:55</td><td>24</td><td>216</td></tr></table>
+    </details>
+  </div>
+
+  <div class="panel">
+    <h2>Toolchain <span class="badge">phase 1 solved</span></h2>
+    <table class="facts">
       <tr><td class="k2">Compiler</td><td class="mono">PSY-Q GCC 2.7.2</td></tr>
       <tr><td class="k2">Flags</td><td class="mono">-O2 -G8</td></tr>
       <tr><td class="k2">Region / serial</td><td class="mono">PAL · SCES-01564</td></tr>
-      <tr><td class="k2">Executable SHA-1</td><td class="mono" style="font-size:.8rem">b15a1e38c653524b800b9fb80b4ab17e26a06986</td></tr>
+      <tr><td class="k2">Executable SHA-1</td><td class="mono" style="font-size:.78rem">b15a1e38c653524b800b9fb80b4ab17e26a06986</td></tr>
       <tr><td class="k2">Functions in binary</td><td class="mono">1,914</td></tr>
-      <tr><td class="k2">First byte-identical match</td><td class="mono">func_80014140 ✓</td></tr>
+      <tr><td class="k2">Functions decompiled from C</td><td class="mono">24</td></tr>
     </table>
   </div>
 
@@ -99,11 +136,12 @@
 
   <p style="color:var(--muted); font-size:.88rem">
     <b>*</b> Function% climbs fast (small leaf functions match first); byte% is the honest number —
-    most bytes live in a few large functions. Both are shown on purpose.
+    most bytes live in a few large functions. Both shown on purpose. The rate above is early and
+    optimistic: the easy leaf functions match faster than the large, logic-dense ones still ahead.
   </p>
 
   <footer>
-    Generated 2026-07-06 22:55 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-06 23:11 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
