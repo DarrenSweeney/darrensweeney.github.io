@@ -132,7 +132,25 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_800299A0</span><span class="asz">32 B</span><span class="av miss">16% off</span><span class="awhen">23:33</span><details><summary>view C the agent wrote</summary><pre>unsigned int func_800299A0(int arg0, int arg1, unsigned int arg2) {
+    <div class="arow"><span class="mono aname">func_8002D958</span><span class="asz">32 B</span><span class="av miss">6% off</span><span class="awhen">23:33</span><details><summary>view C the agent wrote</summary><pre>void func_8002D958(unsigned char *a0, unsigned char a1) {
+    a0[0x37] = 0x47;
+    *(unsigned char **)(a0 + 0x2c) = a0 + 0x24;
+    a0[0x24] = a1;
+    a0[0x36] = 1;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002D918</span><span class="asz">32 B</span><span class="av miss">6% off</span><span class="awhen">23:33</span><details><summary>view C the agent wrote</summary><pre>void func_8002D918(unsigned char *p, unsigned char v) {
+    p[0x37] = 0x4C;
+    *(unsigned char **)(p + 0x2C) = p + 0x24;
+    p[0x24] = v;
+    p[0x36] = 1;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002D938</span><span class="asz">32 B</span><span class="av miss">6% off</span><span class="awhen">23:33</span><details><summary>view C the agent wrote</summary><pre>void func_8002D938(char *a0, unsigned char a1) {
+    a0[0x37] = 0x46;
+    *(char **)(a0 + 0x2C) = a0 + 0x24;
+    a0[0x24] = a1;
+    a0[0x36] = 1;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_800299A0</span><span class="asz">32 B</span><span class="av miss">16% off</span><span class="awhen">23:33</span><details><summary>view C the agent wrote</summary><pre>unsigned int func_800299A0(int arg0, int arg1, unsigned int arg2) {
     unsigned int v1;
     unsigned int v0;
 
@@ -297,41 +315,6 @@ void func_800316B0(SVECTOR *v, CVECTOR *c)
     gte_ldv0(v);
     gte_ncs();
     gte_strgb(c);
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80064B68</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>u32 func_80064B68(void) {
-    return (*(volatile u32 *)0x1F800058 &amp; *(volatile u32 *)0x1F800054) &amp; 0xA;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8002F600</span><span class="asz">28 B</span><span class="av miss">15% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern int D_800A9CD0;
-
-void func_8002F600(int arg0) {
-    /* BIOS call B(0Bh) = ChangeClearPAD; tail-jumps via $t2=0xB0 with $t1=0xB.
-       Trailing store to D_800A9CD0 is unreachable via the BIOS tail-jump but
-       is emitted as part of this stub in the original binary. */
-    __asm__ volatile (
-        &quot;.set push\n&quot;
-        &quot;.set noreorder\n&quot;
-        &quot;addiu $t2, $zero, 0xB0\n&quot;
-        &quot;jr    $t2\n&quot;
-        &quot; addiu $t1, $zero, 0xB\n&quot;
-        &quot;nop\n&quot;
-        &quot;lui   $at, %%hi(D_800A9CD0)\n&quot;
-        &quot;jr    $ra\n&quot;
-        &quot; sw   $a0, %%lo(D_800A9CD0)($at)\n&quot;
-        &quot;.set pop\n&quot;
-        ::: &quot;memory&quot;
-    );
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8002F260</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>__attribute__((naked)) void func_8002F260(void) {
-    __asm__ volatile (
-        &quot;.set noreorder            \n&quot;
-        &quot;    addiu $t2, $zero, 0xB0\n&quot;
-        &quot;    jr    $t2             \n&quot;
-        &quot;    addiu $t1, $zero, 0xF \n&quot;
-        &quot;    nop                   \n&quot;
-        &quot;    addiu $t2, $zero, 0xB0\n&quot;
-        &quot;    jr    $t2             \n&quot;
-        &quot;    addiu $t1, $zero, 0x10\n&quot;
-    );
 }</pre></details></div>
   </div>
 
