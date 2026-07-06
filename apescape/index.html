@@ -132,7 +132,25 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_800657A8</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>s32 func_800657A8(void) {
+    <div class="arow"><span class="mono aname">func_8007BCFC</span><span class="asz">24 B</span><span class="av miss">88% off</span><span class="awhen">23:28</span><details><summary>view C the agent wrote</summary><pre>extern unsigned char D_800EC410[];
+
+void func_8007BCFC(void) {
+    *(short *)(D_800EC410 + 0x8000 + 0x15A) = 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8007F890</span><span class="asz">24 B</span><span class="av miss">62% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>extern struct { int a; int b; } D_800BF038;
+
+void func_8007F890(void)
+{
+    D_800BF038.a = 0;
+    D_800BF038.b = 0xFF;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8006D004</span><span class="asz">24 B</span><span class="av miss">59% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>extern unsigned char D_800BAE50[];
+
+void func_8006D004(void) {
+    D_800BAE50[8] = 0;
+    D_800BAE50[9] = 0x10;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_800657A8</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>s32 func_800657A8(void) {
     return !(*(s16 *)0x1F800076 &lt; 0xB51);
 }</pre></details></div>
 <div class="arow"><span class="mono aname">func_80066640</span><span class="asz">24 B</span><span class="av miss">62% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>extern short D_800F4E88;
@@ -254,28 +272,6 @@ void func_8004D110(void)
     *(char *)(D_800E6A10 + 8) = 0;
     *(char *)(D_800E6A10 + 9) = 0;
 }</pre></details></div>
-<div class="arow"><span class="mono aname">func_800301BC</span><span class="asz">20 B</span><span class="av miss">100% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>#ifdef __GNUC__
-__asm__(
-&quot;.set noat\n&quot;
-&quot;.set noreorder\n&quot;
-&quot;.globl func_800301BC\n&quot;
-&quot;func_800301BC:\n&quot;
-&quot;    lw   $t0, 0x0($a0)\n&quot;
-&quot;    lw   $t1, 0x4($a0)\n&quot;
-&quot;    lw   $t2, 0x8($a0)\n&quot;
-&quot;    b    .L8003020C\n&quot;
-&quot;    nop\n&quot;
-);
-#endif</pre></details></div>
-<div class="arow"><span class="mono aname">func_8002FA24</span><span class="asz">20 B</span><span class="av miss">54% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>extern void (*jtbl_800B8B5C_main)(void);
-
-void func_8002FA24(void) {
-    jtbl_800B8B5C_main();
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80036C90</span><span class="asz">20 B</span><span class="av miss">3% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>void func_80036C90(void *a0, short *a1) {
-    *(short *)((char *)a1 + 0x60) = 0xB50;
-    *(short *)((char *)a1 + 0x64) = -0xB50;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -301,7 +297,7 @@ void func_8002FA24(void) {
   </p>
 
   <footer>
-    Generated 2026-07-06 23:27 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-06 23:28 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
