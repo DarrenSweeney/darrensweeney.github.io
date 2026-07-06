@@ -132,7 +132,24 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_8002F600</span><span class="asz">28 B</span><span class="av miss">15% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern int D_800A9CD0;
+    <div class="arow"><span class="mono aname">func_8005E00C</span><span class="asz">28 B</span><span class="av miss">68% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern int D_800EC410[];
+
+int func_8005E00C(void)
+{
+    return D_800EC410[0x2041];
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_800316B0</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>#include &lt;libgte.h&gt;
+
+void func_800316B0(SVECTOR *v, CVECTOR *c)
+{
+    gte_ldv0(v);
+    gte_ncs();
+    gte_strgb(c);
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80064B68</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>u32 func_80064B68(void) {
+    return (*(volatile u32 *)0x1F800058 &amp; *(volatile u32 *)0x1F800054) &amp; 0xA;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002F600</span><span class="asz">28 B</span><span class="av miss">15% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern int D_800A9CD0;
 
 void func_8002F600(int arg0) {
     /* BIOS call B(0Bh) = ChangeClearPAD; tail-jumps via $t2=0xB0 with $t1=0xB.
@@ -264,30 +281,6 @@ int func_80065BB4(void) {
 }</pre></details></div>
 <div class="arow"><span class="mono aname">func_80052660</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>s32 func_80052660(u8 *arg0) {
     return ((*(u32 *)(arg0 + 0x50) &gt;&gt; 28) ^ 0xB) &lt; 1;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8002FAF0</span><span class="asz">24 B</span><span class="av ok">matched</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>void SetGeomOffset(long ofx, long ofy) {
-    __asm__ volatile(
-        &quot;ctc2 %0, $24\n\t&quot;
-        &quot;ctc2 %1, $25\n\t&quot;
-        : : &quot;r&quot;(ofx &lt;&lt; 16), &quot;r&quot;(ofy &lt;&lt; 16)
-    );
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8002F210</span><span class="asz">24 B</span><span class="av miss">31% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>void func_8002F210(void)
-{
-    __asm__ volatile (
-        &quot;.set noreorder\n&quot;
-        &quot;addiu $t2, $zero, 0xB0\n&quot;
-        &quot;jr    $t2\n&quot;
-        &quot; addiu $t1, $zero, 0x5B\n&quot;
-    );
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80046998</span><span class="asz">24 B</span><span class="av miss">56% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>extern unsigned char D_800E6990[];
-
-void func_80046998(unsigned char a, unsigned char b, unsigned char c)
-{
-    D_800E6990[0x3A] = a;
-    D_800E6990[0x3B] = b;
-    D_800E6990[0x3C] = c;
 }</pre></details></div>
   </div>
 
