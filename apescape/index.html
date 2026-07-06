@@ -132,7 +132,35 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_8002D958</span><span class="asz">32 B</span><span class="av miss">6% off</span><span class="awhen">23:33</span><details><summary>view C the agent wrote</summary><pre>void func_8002D958(unsigned char *a0, unsigned char a1) {
+    <div class="arow"><span class="mono aname">func_8002FB50</span><span class="asz">32 B</span><span class="av miss">100% off</span><span class="awhen">23:34</span><details><summary>view C the agent wrote</summary><pre>#include &quot;common.h&quot;
+
+void func_8002FB50(MATRIX *m) {
+    __asm__ volatile (
+        &quot;lw   $t0, 0x14(%0)\n&quot;
+        &quot;lw   $t1, 0x18(%0)\n&quot;
+        &quot;lw   $t2, 0x1C(%0)\n&quot;
+        &quot;ctc2 $t0, $5\n&quot;
+        &quot;ctc2 $t1, $6\n&quot;
+        &quot;ctc2 $t2, $7\n&quot;
+        :
+        : &quot;r&quot;(m)
+        : &quot;$t0&quot;, &quot;$t1&quot;, &quot;$t2&quot;
+    );
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002DE50</span><span class="asz">32 B</span><span class="av miss">27% off</span><span class="awhen">23:34</span><details><summary>view C the agent wrote</summary><pre>extern unsigned short D_800B4DA0;
+extern int D_800B4DA4;
+
+void func_8002DE50(int arg0) {
+    unsigned short v = *(volatile unsigned short *)0x1F801120;
+    D_800B4DA4 = arg0;
+    D_800B4DA0 = v;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80031600</span><span class="asz">32 B</span><span class="av miss">31% off</span><span class="awhen">23:34</span><details><summary>view C the agent wrote</summary><pre>void func_80031600(int a0, int a1, int a2) {
+    __asm__ volatile(&quot;ctc2 %0, $13&quot; :: &quot;r&quot;(a0 &lt;&lt; 4));
+    __asm__ volatile(&quot;ctc2 %0, $14&quot; :: &quot;r&quot;(a1 &lt;&lt; 4));
+    __asm__ volatile(&quot;ctc2 %0, $15&quot; :: &quot;r&quot;(a2 &lt;&lt; 4));
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8002D958</span><span class="asz">32 B</span><span class="av miss">6% off</span><span class="awhen">23:33</span><details><summary>view C the agent wrote</summary><pre>void func_8002D958(unsigned char *a0, unsigned char a1) {
     a0[0x37] = 0x47;
     *(unsigned char **)(a0 + 0x2c) = a0 + 0x24;
     a0[0x24] = a1;
@@ -299,23 +327,6 @@ int func_8006549C(void)
 s32 func_800654B8(void) {
     return (D_800EC2F3 &amp; 0xF) != 0x8;
 }</pre></details></div>
-<div class="arow"><span class="mono aname">func_80065948</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>s32 func_80065948(void) {
-    return ((D_800EC3D8 &gt;&gt; 12) ^ 1) == 0;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8005E00C</span><span class="asz">28 B</span><span class="av miss">68% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern int D_800EC410[];
-
-int func_8005E00C(void)
-{
-    return D_800EC410[0x2041];
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_800316B0</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>#include &lt;libgte.h&gt;
-
-void func_800316B0(SVECTOR *v, CVECTOR *c)
-{
-    gte_ldv0(v);
-    gte_ncs();
-    gte_strgb(c);
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -341,7 +352,7 @@ void func_800316B0(SVECTOR *v, CVECTOR *c)
   </p>
 
   <footer>
-    Generated 2026-07-06 23:33 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-06 23:34 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
