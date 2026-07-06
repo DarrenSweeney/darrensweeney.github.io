@@ -132,7 +132,26 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_800301BC</span><span class="asz">20 B</span><span class="av miss">100% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>#ifdef __GNUC__
+    <div class="arow"><span class="mono aname">func_80048768</span><span class="asz">20 B</span><span class="av miss">50% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>extern int D_800B4E04;
+extern char D_800E69C8;
+
+void func_80048768(void)
+{
+    D_800B4E04 = 0;
+    D_800E69C8 = 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8004D110</span><span class="asz">20 B</span><span class="av miss">50% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>extern char D_800B8D80[];
+
+void func_8004D110(void)
+{
+    *(short *)(D_800B8D80 + 0x20) = 0;
+    *(char *)(D_800B8D80 + 0x24) = 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80048A0C</span><span class="asz">20 B</span><span class="av miss">100% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>void func_80048A0C(void) {
+    *(char *)(D_800E6A10 + 8) = 0;
+    *(char *)(D_800E6A10 + 9) = 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_800301BC</span><span class="asz">20 B</span><span class="av miss">100% off</span><span class="awhen">23:25</span><details><summary>view C the agent wrote</summary><pre>#ifdef __GNUC__
 __asm__(
 &quot;.set noat\n&quot;
 &quot;.set noreorder\n&quot;
