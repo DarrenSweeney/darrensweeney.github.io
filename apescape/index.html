@@ -132,7 +132,22 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_8006549C</span><span class="asz">28 B</span><span class="av miss">12% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern unsigned char D_800EC2F3;
+    <div class="arow"><span class="mono aname">func_80066F94</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>extern u32 D_800EC2A0[];
+
+void func_80066F94(void) {
+    D_800EC2A0[0x38] |= 0x40;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80071D80</span><span class="asz">28 B</span><span class="av miss">59% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>extern int D_800B2210;
+
+int func_80071D80(void)
+{
+    D_800B2210 += 1;
+    return 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8007B3B8</span><span class="asz">28 B</span><span class="av miss">100% off</span><span class="awhen">23:30</span><details><summary>view C the agent wrote</summary><pre>void func_8007B3B8(int arg0) {
+    D_800F51E0.unk_A4 |= arg0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_8006549C</span><span class="asz">28 B</span><span class="av miss">12% off</span><span class="awhen">23:29</span><details><summary>view C the agent wrote</summary><pre>extern unsigned char D_800EC2F3;
 
 int func_8006549C(void)
 {
@@ -276,15 +291,6 @@ void func_80066640(void) {
 int func_80065BB4(void) {
     return (D_800F51E4 ^ 1) == 0;
 }</pre></details></div>
-<div class="arow"><span class="mono aname">func_800652FC</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>s32 func_800652FC(void) {
-    return (*(u16 *)0x1F800066) &gt;= 0x7D;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_8006532C</span><span class="asz">24 B</span><span class="av ok">matched</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>int func_8006532C(void) {
-    return ((unsigned int)(*(unsigned short *)0x1F800066 - 1)) &lt; 0x7B;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80065314</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>u32 func_80065314(void) {
-    return (u32)((u16)(*(vu16 *)0x1F800064 - 1) &lt; 0x7B);
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -310,7 +316,7 @@ int func_80065BB4(void) {
   </p>
 
   <footer>
-    Generated 2026-07-06 23:29 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-06 23:30 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
