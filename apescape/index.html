@@ -132,7 +132,22 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       What each AI agent produced, newest first. Expand to see the C it wrote (our source —
       the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_800652FC</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>s32 func_800652FC(void) {
+    <div class="arow"><span class="mono aname">func_800657A8</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>s32 func_800657A8(void) {
+    return !(*(s16 *)0x1F800076 &lt; 0xB51);
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80066640</span><span class="asz">24 B</span><span class="av miss">62% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>extern short D_800F4E88;
+extern short D_800F52A4;
+
+void func_80066640(void) {
+    D_800F4E88 = 0x258;
+    D_800F52A4 = 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80065BB4</span><span class="asz">24 B</span><span class="av miss">16% off</span><span class="awhen">23:27</span><details><summary>view C the agent wrote</summary><pre>extern short D_800F51E4;
+
+int func_80065BB4(void) {
+    return (D_800F51E4 ^ 1) == 0;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_800652FC</span><span class="asz">24 B</span><span class="av miss">100% off</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>s32 func_800652FC(void) {
     return (*(u16 *)0x1F800066) &gt;= 0x7D;
 }</pre></details></div>
 <div class="arow"><span class="mono aname">func_8006532C</span><span class="asz">24 B</span><span class="av ok">matched</span><span class="awhen">23:26</span><details><summary>view C the agent wrote</summary><pre>int func_8006532C(void) {
@@ -286,7 +301,7 @@ void func_8002FA24(void) {
   </p>
 
   <footer>
-    Generated 2026-07-06 23:26 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-06 23:27 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
