@@ -94,10 +94,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-07 22:10 UTC</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-07 22:45 UTC</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783462243*1000;
+    (function(){ var gen=1783464334*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -164,7 +164,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>2,929</b> agent attempts</span>
+      <span class="lg"><b>2,930</b> agent attempts</span>
       <span class="lg"><b>1.6%</b> match rate</span>
       <span class="lg"><b>72 B</b> largest function matched</span>
       <span class="lg"><b>22 B</b> avg matched size</span>
@@ -180,7 +180,85 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/51kRA" target="_blank" rel="noopener">func_8005E4D8</a><span class="asz">332 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">22:10</span><details><summary>view C the agent wrote</summary><pre>extern s16 D_800EC388;
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/sfZZz" target="_blank" rel="noopener">func_8002FF70</a><span class="asz">352 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">22:11</span><details><summary>view C the agent wrote</summary><pre>void* func_8002FF70(void* arg0, void* arg1, void* arg2) {
+    s32 temp_t0;
+    s32 temp_t1;
+    s32 temp_t2;
+    s32 temp_t3;
+    s32 temp_t4;
+    s32 temp_t5;
+    s32 temp_t6;
+    s32 temp_t7;
+    s32 temp_t8;
+
+    temp_t0 = *(s32*)arg0;
+    temp_t1 = *((s32*)arg0 + 1);
+    temp_t2 = *((s32*)arg0 + 2);
+    temp_t3 = *((s32*)arg0 + 3);
+    temp_t4 = *((s32*)arg0 + 4);
+
+    *(s32*)arg2 = temp_t0;
+    *((s32*)arg2 + 1) = temp_t1;
+    *((s32*)arg2 + 2) = temp_t2;
+    *((s32*)arg2 + 3) = temp_t3;
+    *((s32*)arg2 + 4) = temp_t4;
+
+    temp_t0 = *(u16*)((char*)arg1);
+    temp_t1 = *(s32*)((char*)arg1 + 4);
+    temp_t2 = *(s32*)((char*)arg1 + 0xC);
+
+    temp_t1 &amp;= 0xFFFF0000;
+    temp_t0 |= temp_t1;
+
+    *((s32*)arg2 + 5) = temp_t0;
+    *((s32*)arg2 + 6) = temp_t2;
+
+    temp_t0 = *(u16*)((char*)arg1 + 2);
+    temp_t1 = *(s32*)((char*)arg1 + 8);
+    temp_t2 = *(s16*)((char*)arg1 + 0xE);
+
+    temp_t1 &lt;&lt;= 16;
+    temp_t0 |= temp_t1;
+
+    *((s32*)arg2 + 7) = temp_t0;
+    *((s32*)arg2 + 8) = temp_t2;
+
+    temp_t0 = *(u16*)((char*)arg1 + 4);
+    temp_t1 = *(s32*)((char*)arg1 + 8);
+    temp_t2 = *(s32*)((char*)arg1 + 0x10);
+
+    temp_t1 &amp;= 0xFFFF0000;
+    temp_t0 |= temp_t1;
+
+    *((s32*)arg2 + 9) = temp_t0;
+    *((s32*)arg2 + 10) = temp_t2;
+
+    temp_t3 = *(s32*)((char*)arg2 + 4);
+    temp_t6 = *(s32*)((char*)arg2 + 8);
+    temp_t5 = *(s32*)((char*)arg2 + 0xC);
+
+    temp_t3 &amp;= 0xFFFF;
+    temp_t6 &lt;&lt;= 16;
+    temp_t6 |= temp_t3;
+
+    *(s32*)arg2 = temp_t6;
+
+    temp_t5 &amp;= 0xFFFF;
+    temp_t8 &lt;&lt;= 16;
+    temp_t8 |= temp_t5;
+
+    *((s32*)arg2 + 3) = temp_t8;
+
+    temp_t0 = *(s32*)((char*)arg2 + 0x10);
+    temp_t1 = *(s32*)((char*)arg2 + 0x14);
+    temp_t2 = *(s32*)((char*)arg2 + 0x18);
+
+    temp_t4 = *((s32*)arg0 + 5);
+    temp_t7 = *((s32*)arg0 + 6);
+    temp_t8 = *((s32*)arg0 + 7);
+
+</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/51kRA" target="_blank" rel="noopener">func_8005E4D8</a><span class="asz">332 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">22:10</span><details><summary>view C the agent wrote</summary><pre>extern s16 D_800EC388;
 extern s32 D_800EC410;
 extern void *D_800EC414;
 extern u8 D_800B02C0[];
@@ -1300,50 +1378,6 @@ void func_80060354(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
                     var_t1 += 0x10;
                 } while (var_t0 &lt; arg2);
       </pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/CtSu7" target="_blank" rel="noopener">func_80060244</a><span class="asz">272 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">21:52</span><details><summary>view C the agent wrote</summary><pre>void func_80060244(s32 arg0, s32 arg1) {
-    s32 var_a2;
-    s32 var_a3;
-    s16 var_t0;
-    s16 var_t1;
-    void *var_a0;
-    void *temp_t2;
-
-    var_t0 = 0x128;
-    var_a3 = *(s32 *)0x800EC410;
-    temp_t2 = (void *)(((s32 *)0x800EC410)[2] * 0x4078 + 0x800EC410 + 0x4080);
-    var_t1 = 0x796B;
-    if (arg0 != 0) {
-        var_t1 = 0x79AB;
-        if (arg0 == 1) {
-            var_t1 = 0x792B;
-        }
-    }
-    var_a2 = 0;
-    var_a0 = (void *)(var_a3 + 2);
-    do {
-        if (var_a2 &lt; arg1) {
-            *(s32 *)((char *)var_a0 + 2) = 0x808080;
-        } else {
-            *(s32 *)((char *)var_a0 + 2) = 0x101010;
-        }
-        *(s8 *)((char *)var_a0 + 1) = 4;
-        *(s8 *)((char *)var_a0 + 5) = 0x64;
-        *(s16 *)((char *)var_a0 + 6) = var_t0;
-        *(s16 *)((char *)var_a0 + 8) = (arg0 * 0x10) + 0x20;
-        *(s16 *)((char *)var_a0 + 0xE) = 8;
-        *(s16 *)((char *)var_a0 + 0x10) = 0x10;
-        *(s16 *)((char *)var_a0 + 0xC) = var_t1;
-        *(s8 *)((char *)var_a0 + 0xA) = 0x98;
-        *(s8 *)((char *)var_a0 + 0xB) = 0xA0;
-        *(s32 *)((char *)temp_t2 - 1) = (var_a3 &lt;&lt; 8);
-        *(s32 *)((char *)var_a0 - 3) = *(s32 *)((char *)temp_t2 + 2);
-        var_a0 = (char *)var_a0 + 0x14;
-        var_a3 += 0x14;
-        var_a2 += 1;
-        var_t0 += 8;
-    } while (var_a2 &lt; 5);
-    *(s32 *)0x800EC414 = var_a3;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -1359,7 +1393,7 @@ void func_80060354(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
   </p>
 
   <footer>
-    Generated 2026-07-07 22:10 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-07 22:45 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
