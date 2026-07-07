@@ -97,7 +97,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-07 20:01 UTC</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783454479*1000;
+    (function(){ var gen=1783454492*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -105,7 +105,7 @@
     })();
   </script>
 
-  <div class="verify ok"><span class="vicon">✓</span><div><b>Rebuild verified — byte-identical to the original PAL disc.</b><div class="vsub">The whole executable is reassembled from <b>66</b> function(s) compiled from our C + the remaining <b>1848</b> kept as the original assembly. Together the full 610,236-byte program hashes to <span class="mono">SHA-1 b15a1e38c653524b800b…</span>, matching the original disc exactly. Re-checked 2026-07-07 20:00 UTC — after <b>every batch</b> that merges a match, and the run halts on any drift. A playable disc image is rebuilt from this and boots in an emulator.</div></div></div>
+  <div class="verify ok"><span class="vicon">✓</span><div><b>Rebuild verified — byte-identical to the original PAL disc.</b><div class="vsub">The whole executable is reassembled from <b>66</b> function(s) compiled from our C + the remaining <b>1848</b> kept as the original assembly. Together the full 610,236-byte program hashes to <span class="mono">SHA-1 b15a1e38c653524b800b…</span>, matching the original disc exactly. Re-checked 2026-07-07 20:01 UTC — after <b>every batch</b> that merges a match, and the run halts on any drift. A playable disc image is rebuilt from this and boots in an emulator.</div></div></div>
 
   <div class="cards">
     <div class="card">
@@ -164,7 +164,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>1,944</b> agent attempts</span>
+      <span class="lg"><b>1,946</b> agent attempts</span>
       <span class="lg"><b>2.3%</b> match rate</span>
       <span class="lg"><b>72 B</b> largest function matched</span>
       <span class="lg"><b>22 B</b> avg matched size</span>
@@ -180,7 +180,39 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/q4hqw" target="_blank" rel="noopener">func_8009E570</a><span class="asz">72 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">20:01</span><details><summary>view C the agent wrote</summary><pre>extern u16 D_800F7680;
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/aa5Wy" target="_blank" rel="noopener">func_80052CC0</a><span class="asz">76 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">20:01</span><details><summary>view C the agent wrote</summary><pre>extern s8 D_800E7870[];
+extern s8 D_800E6A20[];
+
+void func_80052CC0(s16 arg0, s8 arg1) {
+    s8 temp_a0;
+
+    temp_a0 = D_800E7870[arg0];
+    if (temp_a0 != -1) {
+        D_800E6A20[(temp_a0 * 7) * 4 + 0xCF] = arg1;
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Ul9P0" target="_blank" rel="noopener">func_80033C54</a><span class="asz">76 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">20:01</span><details><summary>view C the agent wrote</summary><pre>extern void *D_800B4DC8;
+
+s32 func_80033C54(void) {
+    u8 temp_v1;
+    s32 var_a0;
+
+    temp_v1 = *(u8 *)((char *)D_800B4DC8 + 0x78);
+    var_a0 = 0;
+    if (temp_v1 == 4) {
+        var_a0 = 1;
+    } else if (temp_v1 == 0x2C) {
+        var_a0 = 1;
+    } else if (temp_v1 == 0x2D) {
+        var_a0 = 1;
+    } else if (temp_v1 == 0x2E) {
+        var_a0 = 1;
+    } else if (temp_v1 == 0x31) {
+        var_a0 = 1;
+    }
+    return var_a0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/q4hqw" target="_blank" rel="noopener">func_8009E570</a><span class="asz">72 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">20:01</span><details><summary>view C the agent wrote</summary><pre>extern u16 D_800F7680;
 
 void func_8009E570(s32 arg1) {
     u32 temp_a1;
@@ -522,24 +554,6 @@ int func_80097758(void) {
         return 0;
     }
     return 1;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/9SjeY" target="_blank" rel="noopener">func_80031794</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">19:59</span><details><summary>view C the agent wrote</summary><pre>// NOT_DECOMPILABLE: uses COP2 instructions (lwc2, swc2, ncct) which are PlayStation 1 GTE operations</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/3dFxa" target="_blank" rel="noopener">func_8005DDD0</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">19:59</span><details><summary>view C the agent wrote</summary><pre>extern s16 D_800B02A0;
-extern s16 D_800B02A2;
-
-s16 func_8005DDD0(void) {
-    s16 temp_v0;
-    u16 temp_v1;
-
-    temp_v0 = D_800B02A0;
-    if (temp_v0 != 0) {
-        temp_v1 = D_800B02A2;
-        if (temp_v1 != 0) {
-            D_800B02A2 = temp_v1 - 1;
-            return 0;
-        }
-    }
-    return temp_v0;
 }</pre></details></div>
   </div>
 
