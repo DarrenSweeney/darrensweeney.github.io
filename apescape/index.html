@@ -76,6 +76,7 @@
   .awhen { color:var(--muted); font-size:.82rem; margin-left:auto; }
   .av { font-size:.72rem; font-weight:600; padding:1px 8px; border-radius:999px; color:#fff; }
   .av.ok { background:var(--good); } .av.miss { background:var(--warn); } .av.work { background:var(--accent); }
+  a.aname { color:var(--accent); } a.dm { font-size:.82rem; white-space:nowrap; }
   .arow details { flex-basis:100%; margin:4px 0 0; }
   .arow pre { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:10px 12px;
     overflow-x:auto; font-size:.8rem; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
@@ -86,10 +87,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-07 08:27 UTC</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-07 08:32 UTC</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783412827*1000;
+    (function(){ var gen=1783413125*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -143,25 +144,41 @@
   </div>
 
   <div class="panel">
-    <h2>Decomp detail</h2>
-    <div class="legend">
-      <span class="lg"><b>394</b> agent attempts</span>
-      <span class="lg"><b>7.1%</b> match rate</span>
-      <span class="lg"><b>48 B</b> largest function matched</span>
-      <span class="lg"><b>15 B</b> avg matched size</span>
-      <span class="lg"><b>9</b> in review (agents stuck)</span>
-    </div>
-    <p style='color:var(--muted);font-size:.86rem;margin:.8em 0 0'>Working now: <span class='mono'>func_80031960, func_8009B880, func_800A1254</span></p>
+    <h2>In progress right now</h2>
+    <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
+      Functions being decompiled by agents this instant. Each links to its decomp.me scratch —
+      the target assembly + the pinned compiler, with a live diff you can try in the browser.</p>
+    <div class="arow"><span class="mono aname">func_80031960</span><span class="asz">40 B</span><span class="av work">decompiling…</span><a class="dm" href="https://decomp.me/scratch/ScN2j" target="_blank" rel="noopener">open in decomp.me →</a><span class="awhen">now</span></div>
+<div class="arow"><span class="mono aname">func_8009B880</span><span class="asz">40 B</span><span class="av work">decompiling…</span><a class="dm" href="https://decomp.me/scratch/Plr63" target="_blank" rel="noopener">open in decomp.me →</a><span class="awhen">now</span></div>
+<div class="arow"><span class="mono aname">func_800A1254</span><span class="asz">40 B</span><span class="av work">decompiling…</span><a class="dm" href="https://decomp.me/scratch/O2NVM" target="_blank" rel="noopener">open in decomp.me →</a><span class="awhen">now</span></div>
   </div>
 
   <div class="panel">
-    <h2>Recent agent activity</h2>
+    <h2>Decomp detail</h2>
+    <div class="legend">
+      <span class="lg"><b>396</b> agent attempts</span>
+      <span class="lg"><b>7.3%</b> match rate</span>
+      <span class="lg"><b>48 B</b> largest function matched</span>
+      <span class="lg"><b>15 B</b> avg matched size</span>
+      <span class="lg"><b>9</b> in review (needs a human)</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Recent results</h2>
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
-      What each AI agent produced, newest first. Expand to see the C it wrote (our source —
-      the original game asm is never published here). Misses are requeued; only byte-exact matches count.</p>
-    <div class="arow"><span class="mono aname">func_80031960</span><span class="asz"></span><span class="av work">working…</span><span class="awhen">now</span></div>
-<div class="arow"><span class="mono aname">func_8009B880</span><span class="asz"></span><span class="av work">working…</span><span class="awhen">now</span></div>
-<div class="arow"><span class="mono aname">func_800A1254</span><span class="asz"></span><span class="av work">working…</span><span class="awhen">now</span></div>
+      Finished attempts, newest first. Function names link to their decomp.me scratch. Expand to
+      see the C the agent wrote (our source — the original game asm is never published here).
+      Misses are requeued; only byte-exact matches count.</p>
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/O2NVM" target="_blank" rel="noopener">func_800A1254</a><span class="asz">40 B</span><span class="av ok">matched</span><span class="awhen">08:27</span><details><summary>view C the agent wrote</summary><pre>typedef short s16;
+
+s16 func_800A1254(s16 arg0, s16 arg1) {
+    if (arg1 &lt; arg0) {
+        return arg0;
+    }
+    return arg1;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/ScN2j" target="_blank" rel="noopener">func_80031960</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="awhen">08:27</span><details><summary>view C the agent wrote</summary><pre>// NOT_DECOMPILABLE: pure GTE/COP2 routine (lwc2/mvmva/swc2/cfc2) â€” Sony libgte ApplyMatrix-style primitive with no C equivalent</pre></details></div>
 <div class="arow"><span class="mono aname">func_80023F00</span><span class="asz">16 B</span><span class="av miss">25% off</span><span class="awhen">08:27</span><details><summary>view C the agent wrote</summary><pre>extern unsigned char D_800A6DA4;
 
 unsigned char func_80023F00(void) {
@@ -247,16 +264,6 @@ void func_8005DD58(void) {
 <div class="arow"><span class="mono aname">func_80039304</span><span class="asz">12 B</span><span class="av miss">100% off</span><span class="awhen">08:25</span><details><summary>view C the agent wrote</summary><pre>u32 func_80039304(u8 *arg0) {
     return *(u32 *)(arg0 + 0x50) &gt;&gt; 28;
 }</pre></details></div>
-<div class="arow"><span class="mono aname">func_8004CEC8</span><span class="asz">12 B</span><span class="av miss">100% off</span><span class="awhen">08:25</span><details><summary>view C the agent wrote</summary><pre>extern u8 D_800AF210;
-
-void func_8004CEC8(u8 arg0) {
-    D_800AF210 = arg0;
-}</pre></details></div>
-<div class="arow"><span class="mono aname">func_80052D0C</span><span class="asz">12 B</span><span class="av miss">100% off</span><span class="awhen">08:25</span><details><summary>view C the agent wrote</summary><pre>extern u8 D_800E78A2;
-
-void func_80052D0C(u8 arg0) {
-    D_800E78A2 = arg0;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -272,7 +279,7 @@ void func_80052D0C(u8 arg0) {
   </p>
 
   <footer>
-    Generated 2026-07-07 08:27 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-07 08:32 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
