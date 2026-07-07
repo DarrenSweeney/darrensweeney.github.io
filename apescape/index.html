@@ -97,7 +97,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-07 16:45 UTC</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783442718*1000;
+    (function(){ var gen=1783442732*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -164,7 +164,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>1,282</b> agent attempts</span>
+      <span class="lg"><b>1,284</b> agent attempts</span>
       <span class="lg"><b>3.2%</b> match rate</span>
       <span class="lg"><b>72 B</b> largest function matched</span>
       <span class="lg"><b>22 B</b> avg matched size</span>
@@ -180,7 +180,68 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/pGUgX" target="_blank" rel="noopener">func_80052D24</a><span class="asz">104 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">16:45</span><details><summary>view C the agent wrote</summary><pre>extern s16 D_800E6A20[];
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/d78aG" target="_blank" rel="noopener">func_80065624</a><span class="asz">104 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">16:45</span><details><summary>view C the agent wrote</summary><pre>s32 func_80065624(void) {
+    u16 *ptr;
+    u32 addr;
+    u16 temp_v0;
+    u16 temp_v1;
+    s32 var_v0;
+
+    ptr = (u16 *)0x800EC2A0;
+    temp_v0 = ptr[0x2F]; // 0x5E($v1) -&gt; offset 0x2F (0x5E/2)
+    addr = *(u32 *)0x1F800048;
+    temp_v0 = (temp_v0 &amp; 0x7F) &lt;&lt; 3;
+    temp_v0 += addr;
+    temp_v0 = *(u16 *)temp_v0;
+    temp_v1 = ptr[0x2E]; // 0x5C($v1) -&gt; offset 0x2E (0x5C/2)
+    temp_v0++;
+    if (temp_v0 != temp_v1) {
+        var_v0 = 0;
+    } else {
+        u16 *ptr2;
+        ptr2 = (u16 *)0x800E53E0;
+        temp_v1 = ptr2[0x170]; // 0x170($a0)
+        var_v0 = 1;
+        temp_v1 &lt;&lt;= var_v0;
+        temp_v1 += (u32)ptr2;
+        temp_v1 = *(u16 *)(temp_v1 + 0xA4);
+        if (temp_v1 != 0x10) {
+            var_v0 = 0;
+        }
+    }
+    return var_v0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/HDQBN" target="_blank" rel="noopener">func_800723E0</a><span class="asz">104 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">16:45</span><details><summary>view C the agent wrote</summary><pre>extern s16 D_800BEF60[];
+
+s32 func_800723E0(s16 arg0, s32 arg1) {
+    s32 var_v1;
+    s16 *var_a2;
+
+    var_v1 = 0;
+    var_a2 = &amp;D_800BEF60[0];
+loop_1:
+    if (var_a2[0] &lt; 0) {
+        goto block_6;
+    }
+    if (arg0 != var_a2[0]) {
+        goto block_6;
+    }
+    var_v1 += 1;
+    if (arg1 != var_a2[1]) {
+        var_v1 += 1;
+        goto loop_1;
+    }
+    var_a2[4] = (u16)(var_a2[4] + 1);
+    return 0;
+block_6:
+    var_v1 += 1;
+    var_a2 += 6;
+    if (var_v1 &gt;= 0x10) {
+        return 1;
+    }
+    goto loop_1;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/pGUgX" target="_blank" rel="noopener">func_80052D24</a><span class="asz">104 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">16:45</span><details><summary>view C the agent wrote</summary><pre>extern s16 D_800E6A20[];
 extern s8 D_800E7870[];
 
 s32 func_80052D24(s32 arg0, void *arg1) {
@@ -645,47 +706,6 @@ void func_800A2B50(s32 arg0, s32 arg1) {
     }
     *(s16 *)((char *)D_800E1934 + 0x1B4) = var_a2;
     *(s16 *)((char *)D_800E1934 + 0x1B6) = var_v1;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Zm1ro" target="_blank" rel="noopener">func_800285F4</a><span class="asz">96 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">16:43</span><details><summary>view C the agent wrote</summary><pre>extern s32 D_800A43EC;
-extern s32 (*D_800A891C)(s32 *, s32);
-extern u8 D_800A8922;
-
-s32 func_800285F4(s32 arg0) {
-    s32 temp_a1;
-    s32 temp_v0;
-    
-    if ((u8)D_800A8922 &gt;= 2U) {
-        temp_a1 = arg0;
-        temp_v0 = D_800A891C(&amp;D_800A43EC, arg0);
-        arg0 = temp_a1;
-    }
-    temp_v0 = D_800A8922;
-    D_800A8922 = arg0;
-    return temp_v0;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/I2chY" target="_blank" rel="noopener">func_8002B3A0</a><span class="asz">96 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">16:43</span><details><summary>view C the agent wrote</summary><pre>void func_8002B3A0(void *arg0, void *arg1, s32 arg2, s32 arg3) {
-    s32 temp_v0;
-    s32 temp_a0;
-    s32 temp_v1;
-
-    temp_a0 = 5;
-    temp_v0 = *(s16 *)((char *)arg1 + 4);
-    if (temp_v0 == 0) {
-        goto LAB_8002B3C4;
-    }
-    temp_v1 = *(s16 *)((char *)arg1 + 6);
-    if (temp_v1 != 0) {
-        goto LAB_8002B3CC;
-    }
-LAB_8002B3C4:
-    temp_a0 = 0;
-LAB_8002B3CC:
-    *(s32 *)((char *)arg0 + 4) = 0x1000000;
-    *(s32 *)((char *)arg0 + 8) = 0x80000000;
-    *(s8 *)((char *)arg0 + 3) = (s8)temp_a0;
-    *(s32 *)((char *)arg0 + 0xC) = *(s32 *)((char *)arg1 + 0);
-    *(s32 *)((char *)arg0 + 0x10) = (arg3 &lt;&lt; 0x10) | (arg2 &amp; 0xFFFF);
-    *(s32 *)((char *)arg0 + 0x14) = *(s32 *)((char *)arg1 + 4);
 }</pre></details></div>
   </div>
 
