@@ -94,10 +94,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-08 01:00 UTC</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-08 01:01 UTC</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783472421*1000;
+    (function(){ var gen=1783472464*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -162,7 +162,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>3,582</b> agent attempts</span>
+      <span class="lg"><b>3,583</b> agent attempts</span>
       <span class="lg"><b>1.4%</b> match rate</span>
       <span class="lg"><b>72 B</b> largest function matched</span>
       <span class="lg"><b>22 B</b> avg matched size</span>
@@ -178,7 +178,40 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/g5lWZ" target="_blank" rel="noopener">func_8004E35C</a><span class="asz">264 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">01:00</span><details><summary>view C the agent wrote</summary><pre>s32 func_8004E35C(s16 arg0, void *arg1, void *arg2, s32 *arg3) {
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Vij9h" target="_blank" rel="noopener">func_800584E8</a><span class="asz">264 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">01:00</span><details><summary>view C the agent wrote</summary><pre>void func_800584E8(void *arg0, s32 arg1) {
+    u32 temp_v1;
+    u8 temp_v0;
+    u16 temp_v0_2;
+
+    if ((arg1 &lt;&lt; 24) != 0) {
+        temp_v1 = *(u32 *)((char *)arg0 + 0xE0);
+        if ((temp_v1 &gt;&gt; 6) &amp; 1) {
+            temp_v0 = *(u8 *)((char *)arg0 + 0x8E);
+            if (temp_v0 != 0) {
+                *(u8 *)((char *)arg0 + 0x8E) = temp_v0 - 1;
+                return;
+            }
+            *(u32 *)((char *)arg0 + 0xE0) = temp_v1 &amp; ~0x40;
+            *(u8 *)((char *)arg0 + 0x8E) = 1;
+            return;
+        }
+        temp_v0 = *(u8 *)((char *)arg0 + 0x8E) + 1;
+        *(u8 *)((char *)arg0 + 0x8E) = temp_v0;
+        if (temp_v0 == *(u16 *)((char *)arg0 + 0x8C)) {
+            *(u32 *)((char *)arg0 + 0xE0) = temp_v1 | 0x40;
+            *(u8 *)((char *)arg0 + 0x8E) = *(u16 *)((char *)arg0 + 0x8C) - 2;
+        }
+        return;
+    }
+    if ((*(u32 *)((char *)arg0 + 0xE0) &gt;&gt; 6) &amp; 1) {
+        temp_v0_2 = *(u16 *)((char *)arg0 + 0x8C);
+        temp_v0 = *(u8 *)((char *)arg0 + 0x8E) + temp_v0_2 - 1;
+        *(u8 *)((char *)arg0 + 0x8E) = temp_v0 % temp_v0_2;
+        return;
+    }
+    *(u8 *)((char *)arg0 + 0x8E) = *(u8 *)((char *)arg0 + 0x8E) + 1;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/g5lWZ" target="_blank" rel="noopener">func_8004E35C</a><span class="asz">264 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">01:00</span><details><summary>view C the agent wrote</summary><pre>s32 func_8004E35C(s16 arg0, void *arg1, void *arg2, s32 *arg3) {
     u16 var_v1;
     s16 var_a0;
     s16 temp_t1;
@@ -1261,47 +1294,6 @@ void func_8005F6BC(s32 arg0, s32 arg1, u32 arg2, void *arg3) {
         *(s32 *)((char *)temp_t0 + 4) = temp_t0;
     }
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/k8jzT" target="_blank" rel="noopener">func_8009FB08</a><span class="asz">224 B</span><span class="av miss">100% off</span><span class="eng">local</span><span class="awhen">00:55</span><details><summary>view C the agent wrote</summary><pre>extern s32 D_800E1914;
-extern u8 D_800F5B80[];
-
-void func_8009FB08(s32 arg0) {
-    u8 *temp_a1;
-    u8 *temp_v1;
-    s32 temp_v0;
-    s32 temp_a2;
-    u8 temp_a0;
-    u8 temp_v0_2;
-
-    temp_a1 = &amp;D_800F5B80[(arg0 &amp; 0xFF) * 0x120];
-    temp_a1[0x33] = 1;
-    temp_a1[0xE2] = 1;
-    temp_v1 = &amp;temp_a1[0xC];
-    temp_a2 = *(s32*)temp_v1 + D_800E1914;
-    temp_a0 = *(u8*)(temp_a2 + 4);
-    if (temp_a0 == 0) {
-        temp_v0 = *(u8*)(temp_a2 + 3) &lt;&lt; 8;
-        temp_a1[0x28] = temp_v0;
-        temp_v0_2 = *(u8*)(temp_a2 + 2);
-        temp_v0 |= temp_v0_2;
-        temp_a1[0x28] = temp_v0;
-        temp_v0 = D_800E1914 + temp_v0;
-        temp_a1[0x35] = *(u8*)temp_v0;
-    } else {
-        if (temp_a1[0x31] == temp_a0) {
-            temp_a1[0x33] = 0;
-            temp_a1[0x31] = 0;
-            temp_a1[0xE2] = 0;
-        } else {
-            temp_v0 = *(u8*)(temp_a2 + 3) &lt;&lt; 8;
-            temp_v0 += *(u8*)(temp_a2 + 2);
-            temp_a1[0x28] = temp_v0;
-            temp_v0 = D_800E1914 + temp_v0;
-            temp_a1[0x31] = temp_a1[0x31] + 1;
-            temp_a1[0x35] = *(u8*)temp_v0;
-        }
-    }
-    *(s32*)temp_v1 = *(s32*)temp_v1 + 5;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -1317,7 +1309,7 @@ void func_8009FB08(s32 arg0) {
   </p>
 
   <footer>
-    Generated 2026-07-08 01:00 UTC · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-08 01:01 UTC · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
