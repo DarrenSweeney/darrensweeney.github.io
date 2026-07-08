@@ -104,7 +104,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 01:01 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783551660*1000;
+    (function(){ var gen=1783551694*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -115,7 +115,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 43: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 7s ago</div><div class="arow"><span class="mono aname">func_8002EF04</span><span class="av work">mizuchi says match — verifying…</span><span class="awhen"> — <a href="https://decomp.me/scratch/2VvYE" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 44: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 6s ago</div><div class="arow"><span class="mono aname">func_8002EF04</span><span class="av work">mizuchi says match — verifying…</span><span class="awhen"> — <a href="https://decomp.me/scratch/2VvYE" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -203,8 +203,8 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>3,981</b> agent attempts</span>
-      <span class="lg"><b>1.8%</b> match rate</span>
+      <span class="lg"><b>3,982</b> agent attempts</span>
+      <span class="lg"><b>1.9%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
       <span class="lg"><b>151</b> in review (needs a human)</span>
@@ -242,7 +242,14 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/2VvYE" target="_blank" rel="noopener">func_8002EF04</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">01:00</span><details><summary>view C the agent wrote</summary><pre>extern s32 D_800A9C70[];
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/2VvYE" target="_blank" rel="noopener">func_8002EF04</a><span class="asz">44 B</span><span class="av ok">matched</span><span class="eng">mizuchi</span><span class="awhen">01:01</span><details><summary>view C the agent wrote</summary><pre>extern int D_800A9C70[];
+
+void func_8002EF04(int arg0, int arg1) {
+    if (arg1 != D_800A9C70[arg0]) {
+        D_800A9C70[arg0] = arg1;
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/2VvYE" target="_blank" rel="noopener">func_8002EF04</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">01:00</span><details><summary>view C the agent wrote</summary><pre>extern s32 D_800A9C70[];
 
 void func_8002EF04(s32 arg0, s32 arg1) {
     if (arg1 != D_800A9C70[arg0]) {
@@ -459,15 +466,6 @@ u32 func_80029448(void) {
     u32 (**pp)(void) = (u32 (**)(void))D_800A8918;
     u32 (*fn)(void) = pp[0x38 / 4];
     return fn() &gt;&gt; 31;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/1SAB2" target="_blank" rel="noopener">func_80031708</a><span class="asz">36 B</span><span class="av ok">matched</span><span class="eng">mizuchi</span><span class="awhen">00:18</span><details><summary>view C the agent wrote</summary><pre>void func_80031708(void *a0, void *a1, int a2, void *a3) {
-    asm volatile (&quot;lwc2 $0, 0(%0)&quot; : : &quot;r&quot;(a0));
-    asm volatile (&quot;lwc2 $1, 4(%0)&quot; : : &quot;r&quot;(a0));
-    asm volatile (&quot;lwc2 $6, 0(%0)&quot; : : &quot;r&quot;(a1));
-    asm volatile (&quot;mtc2 %0,$8&quot; : : &quot;r&quot;(a2));
-    asm volatile (&quot;nop&quot;);
-    asm volatile (&quot;cop2 0x0e80413&quot;);
-    asm volatile (&quot;swc2 $22, 0(%0)&quot; : : &quot;r&quot;(a3));
 }</pre></details></div>
   </div>
 
