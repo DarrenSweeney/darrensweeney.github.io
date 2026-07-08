@@ -101,10 +101,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-08 16:05 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-08 16:10 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783519515*1000;
+    (function(){ var gen=1783519818*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -113,10 +113,10 @@
   </script>
 
   <div class="panel">
-    <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 8: running mizuchi</div><div class="livesub">3/3 functions this batch</div><div class="livesub" style="opacity:.7">last signal 55s ago</div><div class="arow"><span class="mono aname">func_8002B400</span><span class="av ok">matched</span><span class="awhen"> — <a href="https://decomp.me/scratch/QRdSw" target="_blank" rel="noopener">decomp.me</a></span></div>
+    <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 8: bridging + verifying</div><div class="livesub">4/4 functions this batch</div><div class="livesub" style="opacity:.7">last signal 5s ago</div><div class="arow"><span class="mono aname">func_8002B400</span><span class="av ok">matched</span><span class="awhen"> — <a href="https://decomp.me/scratch/QRdSw" target="_blank" rel="noopener">decomp.me</a></span></div>
 <div class="arow"><span class="mono aname">func_8002CD5C</span><span class="av miss">rejected</span><span class="awhen"> — <a href="https://decomp.me/scratch/pPJit" target="_blank" rel="noopener">decomp.me</a></span></div>
 <div class="arow"><span class="mono aname">func_800317D8</span><span class="av ok">matched</span><span class="awhen"> — <a href="https://decomp.me/scratch/bTKKs" target="_blank" rel="noopener">decomp.me</a></span></div>
-<div class="arow"><span class="mono aname">func_80084B30</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/wQI4B" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+<div class="arow"><span class="mono aname">func_80084B30</span><span class="av miss">rejected</span><span class="awhen"> — <a href="https://decomp.me/scratch/wQI4B" target="_blank" rel="noopener">decomp.me</a></span></div></div>
   </div>
 
   <div class="verify ok"><span class="vicon">✓</span><div><b>Rebuild verified — byte-identical to the original PAL disc.</b><div class="vsub">The whole executable is reassembled from <b>98</b> function(s) compiled from our C + the remaining <b>1816</b> kept as the original assembly. Together the full 610,236-byte program hashes to <span class="mono">SHA-1 b15a1e38c653524b800b…</span>, matching the original disc exactly. Re-checked 2026-07-08 15:56 CEST — after <b>every batch</b> that merges a match, and the run halts on any drift. A playable disc image is rebuilt from this and boots in an emulator.</div></div></div>
@@ -201,7 +201,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>3,868</b> agent attempts</span>
+      <span class="lg"><b>3,869</b> agent attempts</span>
       <span class="lg"><b>1.7%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -217,7 +217,16 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/voiFQ" target="_blank" rel="noopener">func_8002A734</a><span class="asz">608 B</span><span class="av miss">76% off</span><span class="eng">mizuchi</span><span class="awhen">15:56</span><details><summary>view C the agent wrote</summary><pre>extern int *D_800A8A34;
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/QRdSw" target="_blank" rel="noopener">func_8002B400</a><span class="asz">40 B</span><span class="av ok">matched</span><span class="eng">mizuchi</span><span class="awhen">16:10</span><details><summary>view C the agent wrote</summary><pre>void func_8002B400(void *arg0, int arg1) {
+    *(char *)((char *)arg0 + 3) = 2;
+    if (arg1 != 0) {
+        *(int *)((char *)arg0 + 4) = 0xE6000001;
+    } else {
+        *(int *)((char *)arg0 + 4) = 0xE6000000;
+    }
+    *(int *)((char *)arg0 + 8) = 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/voiFQ" target="_blank" rel="noopener">func_8002A734</a><span class="asz">608 B</span><span class="av miss">76% off</span><span class="eng">mizuchi</span><span class="awhen">15:56</span><details><summary>view C the agent wrote</summary><pre>extern int *D_800A8A34;
 extern int D_800A8A48;
 extern int D_800A8A4C;
 extern int D_800A8A54;
@@ -718,17 +727,6 @@ label_DAC4:
         } while (count != -1);
     }
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/jgege" target="_blank" rel="noopener">func_8002EF30</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">13:58</span><details><summary>view C the agent wrote</summary><pre>void func_8002EF30(s32 *arg0, s32 arg1) {
-    s32 i;
-    i = arg1 - 1;
-    if (arg1 != 0) {
-        do {
-            *arg0 = 0;
-            arg0++;
-            i--;
-        } while (i != -1);
-    }
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -744,7 +742,7 @@ label_DAC4:
   </p>
 
   <footer>
-    Generated 2026-07-08 16:05 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-08 16:10 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
