@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 16:28 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783607326*1000;
+    (function(){ var gen=1783607338*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 57: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 1s ago</div><div class="arow"><span class="mono aname">func_80035F74</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/HAQBu" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 58: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 1s ago</div><div class="arow"><span class="mono aname">func_800119F4</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/CANeg" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -145,6 +145,7 @@
 <div class="arow"><span class="awhen">2026-07-09 16:28</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:28</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:28</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
+<div class="arow"><span class="awhen">2026-07-09 16:28</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:27</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:27</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:27</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
@@ -159,7 +160,6 @@
 <div class="arow"><span class="awhen">2026-07-09 16:25</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:25</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:25</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
-<div class="arow"><span class="awhen">2026-07-09 16:24</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:24</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
   </div>
 
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>4,695</b> agent attempts</span>
+      <span class="lg"><b>4,696</b> agent attempts</span>
       <span class="lg"><b>3.2%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -481,7 +481,8 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/HAQBu" target="_blank" rel="noopener">func_80035F74</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:28</span></div>
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/CANeg" target="_blank" rel="noopener">func_800119F4</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:28</span></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/HAQBu" target="_blank" rel="noopener">func_80035F74</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:28</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/oN5Vu" target="_blank" rel="noopener">func_80027810</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:28</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/SfkQK" target="_blank" rel="noopener">func_80064F58</a><span class="asz">48 B</span><span class="av miss">50% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:28</span><details><summary>view C the agent wrote</summary><pre>int func_80064F58(void)
 {
@@ -604,7 +605,6 @@
     return var_v0;
 }</pre></details></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/OCoug" target="_blank" rel="noopener">func_800849D4</a><span class="asz">96 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:25</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/i1ymf" target="_blank" rel="noopener">func_80035F3C</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:25</span></div>
   </div>
 
   <div class="panel">
