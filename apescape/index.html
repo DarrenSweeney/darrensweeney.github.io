@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 19:39 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 19:40 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783618772*1000;
+    (function(){ var gen=1783618803*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 6: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 7s ago</div><div class="arow"><span class="mono aname">func_8001F3C0</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/Hq4dV" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 7: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 27s ago</div><div class="arow"><span class="mono aname">func_8002FB50</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/09X6g" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>5,376</b> agent attempts</span>
+      <span class="lg"><b>5,377</b> agent attempts</span>
       <span class="lg"><b>2.8%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -481,7 +481,15 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Hq4dV" target="_blank" rel="noopener">func_8001F3C0</a><span class="asz">148 B</span><span class="av miss">100% off</span><span class="eng">mizuchi</span><span class="awhen">19:39</span><details><summary>view C the agent wrote</summary><pre>void func_8001F3C0(u32 arg0) {
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GMw77" target="_blank" rel="noopener">func_80028EE8</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">19:39</span><details><summary>view C the agent wrote</summary><pre>int func_80028EE8(int arg0)
+{
+    int var_s0;
+    
+    var_s0 = arg0;
+    func_800A3840(arg0, D_800A8930, 0x5C);
+    return var_s0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Hq4dV" target="_blank" rel="noopener">func_8001F3C0</a><span class="asz">148 B</span><span class="av miss">100% off</span><span class="eng">mizuchi</span><span class="awhen">19:39</span><details><summary>view C the agent wrote</summary><pre>void func_8001F3C0(u32 arg0) {
     u32 a0;
     u32 a1;
     u32 a2;
@@ -849,17 +857,6 @@ short* func_80088620(short* param_1, short* param_2, short* param_3) {
     }
     return param_1;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/vLT3j" target="_blank" rel="noopener">func_800412A0</a><span class="asz">48 B</span><span class="av miss">70% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">19:24</span><details><summary>view C the agent wrote</summary><pre>int func_800412A0(void)
-{
-    int var_10;
-    int var_14;
-    int var_18;
-
-    var_10 = *(int *)0x800B4DC8;
-    var_14 = *(int *)(var_10 + 0x50);
-    var_18 = func_800721D0(var_14 &amp; 0xFFF);
-    return (*(unsigned short *)(var_10 + 0x24) &amp; 0xF0) != 0;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -875,7 +872,7 @@ short* func_80088620(short* param_1, short* param_2, short* param_3) {
   </p>
 
   <footer>
-    Generated 2026-07-09 19:39 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-09 19:40 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
