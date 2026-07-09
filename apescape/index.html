@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 12:45 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 12:46 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783593933*1000;
+    (function(){ var gen=1783593975*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 14: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 357s ago</div><div class="arow"><span class="mono aname">func_8007165C</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/Hb80P" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 14: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 398s ago</div><div class="arow"><span class="mono aname">func_8007165C</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/Hb80P" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>4,110</b> agent attempts</span>
+      <span class="lg"><b>4,117</b> agent attempts</span>
       <span class="lg"><b>2.8%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,35 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/vQzKJ" target="_blank" rel="noopener">func_80039304</a><span class="asz">12 B</span><span class="av ok">matched</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:45</span><details><summary>view C the agent wrote</summary><pre>int func_80039304(void *arg0)
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/RJ9YO" target="_blank" rel="noopener">func_8007F5C0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:46</span><details><summary>view C the agent wrote</summary><pre>void func_8007F5C0(unsigned char param)
+{
+    *(unsigned char *)(&amp;D_800BF034) = param;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/HMAFM" target="_blank" rel="noopener">func_8007F460</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:46</span><details><summary>view C the agent wrote</summary><pre>void func_8007F460(void)
+{
+    *(int*)D_800BF030 = 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/AyOIU" target="_blank" rel="noopener">func_8007B018</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:45</span><details><summary>view C the agent wrote</summary><pre>void func_8007B018(void)
+{
+    *(volatile int *)D_800F51E0 = 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Ey6rL" target="_blank" rel="noopener">func_8005DD58</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:45</span><details><summary>view C the agent wrote</summary><pre>void func_8005DD58(void)
+{
+    *(short *)D_800B02A0 = 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/rSIwh" target="_blank" rel="noopener">func_80052D18</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:45</span><details><summary>view C the agent wrote</summary><pre>void func_80052D18(void)
+{
+    *(char *)(&amp;D_800E78A3) = (char)a0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/82aZi" target="_blank" rel="noopener">func_80052D0C</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:45</span><details><summary>view C the agent wrote</summary><pre>void func_80052D0C(void)
+{
+    *(char *)(&amp;D_800E78A2) = (char)a0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/5hFGV" target="_blank" rel="noopener">func_8004CEC8</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:45</span><details><summary>view C the agent wrote</summary><pre>void func_8004CEC8(unsigned char param)
+{
+    *(volatile unsigned char *)D_800AF210 = param;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/vQzKJ" target="_blank" rel="noopener">func_80039304</a><span class="asz">12 B</span><span class="av ok">matched</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:45</span><details><summary>view C the agent wrote</summary><pre>int func_80039304(void *arg0)
 {
     int temp = *(int *)((char *)arg0 + 0x50);
     return (temp &gt;&gt; 28) &amp; 0xF;
@@ -587,40 +615,6 @@
        bogus or invalid address, and should not be called directly. */
     return;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/umJpv" target="_blank" rel="noopener">func_8002F5C0</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:43</span><details><summary>view C the agent wrote</summary><pre>int func_8002F5C0(void)
-{
-    return 0x45;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/5TrbS" target="_blank" rel="noopener">func_8002F5B0</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:43</span><details><summary>view C the agent wrote</summary><pre>void func_8002F5B0(void)
-{
-    return;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/JgmG2" target="_blank" rel="noopener">func_8002F300</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:43</span><details><summary>view C the agent wrote</summary><pre>void func_8002F300(void)
-{
-    /* This function does nothing and simply returns. */
-    return;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/T8pxJ" target="_blank" rel="noopener">func_8002F2F0</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:43</span><details><summary>view C the agent wrote</summary><pre>void func_8002F2F0(void)
-{
-    return;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/bIU9J" target="_blank" rel="noopener">func_8002F2E0</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:43</span><details><summary>view C the agent wrote</summary><pre>void func_8002F2E0(void)
-{
-    return;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/UBh6E" target="_blank" rel="noopener">func_8002F2D0</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:43</span><details><summary>view C the agent wrote</summary><pre>void func_8002F2D0(void)
-{
-    return;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/yPg3R" target="_blank" rel="noopener">func_8002F2C0</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-60-byte sweep)</span><span class="awhen">12:43</span><details><summary>view C the agent wrote</summary><pre>void func_8002F2C0(void)
-{
-    /* This function appears to be a stub or placeholder.
-     * The jr $t2 instruction jumps to address 0xB0, which is likely invalid.
-     * The delay slot sets $t1 = 0x32 but this value is never used.
-     * No actual functionality is present.
-     */
-    return;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -636,7 +630,7 @@
   </p>
 
   <footer>
-    Generated 2026-07-09 12:45 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-09 12:46 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
