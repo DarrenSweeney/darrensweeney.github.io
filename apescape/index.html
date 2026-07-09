@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 16:31 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783607465*1000;
+    (function(){ var gen=1783607477*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 68: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 1s ago</div><div class="arow"><span class="mono aname">func_8002B360</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/9kZZB" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 69: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 1s ago</div><div class="arow"><span class="mono aname">func_8007CE24</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/27Gl4" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -142,6 +142,7 @@
       Every rebuild check, most recent first.</p>
     <p style="margin:0 0 .8em"><b>Last known-good build:</b> 2026-07-09 16:31 CEST — <span class="mono" style="font-size:.82rem">b15a1e38c653524b800b…</span> (184 functions from C)</p>
 <div class="arow"><span class="awhen">2026-07-09 16:31</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
+<div class="arow"><span class="awhen">2026-07-09 16:31</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:30</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:30</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:30</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
@@ -156,7 +157,6 @@
 <div class="arow"><span class="awhen">2026-07-09 16:28</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:28</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:28</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
-<div class="arow"><span class="awhen">2026-07-09 16:27</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:27</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:27</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:27</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>4,710</b> agent attempts</span>
+      <span class="lg"><b>4,712</b> agent attempts</span>
       <span class="lg"><b>3.2%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -481,7 +481,27 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/9kZZB" target="_blank" rel="noopener">func_8002B360</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:31</span></div>
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/27Gl4" target="_blank" rel="noopener">func_8007CE24</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:31</span></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/SAiXT" target="_blank" rel="noopener">func_800833CC</a><span class="asz">48 B</span><span class="av miss">64% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:31</span><details><summary>view C the agent wrote</summary><pre>int func_800833CC(unsigned char *param_1, int param_2)
+{
+    unsigned char *puVar1;
+    int iVar2;
+
+    if (param_2 &lt;= 0) {
+        return (int)param_1;
+    }
+    iVar2 = 0;
+    do {
+        puVar1 = param_1 + 1;
+        if (*param_1 == 0) {
+            break;
+        }
+        param_1 = puVar1;
+        iVar2 = iVar2 + 1;
+    } while (iVar2 &lt; param_2);
+    return (int)puVar1;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/9kZZB" target="_blank" rel="noopener">func_8002B360</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:31</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/27Gl4" target="_blank" rel="noopener">func_8007CE24</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:30</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/8RfgV" target="_blank" rel="noopener">func_8006DB28</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:30</span><details><summary>view C the agent wrote</summary><pre>int func_8006DB28(void)
 {
@@ -585,25 +605,6 @@
     return (int)(0xDDB0000 &lt; var_8);
 }</pre></details></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/HAQBu" target="_blank" rel="noopener">func_80035F74</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:27</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/M3iqU" target="_blank" rel="noopener">func_8001078C</a><span class="asz">256 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:27</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/ALJrr" target="_blank" rel="noopener">func_80064DAC</a><span class="asz">48 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:27</span><details><summary>view C the agent wrote</summary><pre>int func_80064DAC(void)
-{
-    unsigned short var_0;
-    unsigned short var_4;
-    unsigned int var_8;
-
-    var_0 = *(unsigned short *)0x1F800066;
-    if (var_0 == 0)
-    {
-        return 0;
-    }
-    else
-    {
-        var_4 = *(unsigned short *)0x1F800072;
-        var_8 = var_4 &lt;&lt; 16;
-        return (0xDDB0000 &lt; var_8);
-    }
-}</pre></details></div>
   </div>
 
   <div class="panel">
