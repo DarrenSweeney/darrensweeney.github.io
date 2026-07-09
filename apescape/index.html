@@ -65,6 +65,7 @@
   .chart .ytick { text-anchor:end; } .chart .xtick { text-anchor:middle; }
   .chart .axislabel { fill:var(--muted); font-size:11px; }
   .chart .crosshair { stroke:var(--muted); stroke-width:1; stroke-dasharray:3,3; pointer-events:none; }
+  .chart .selrect { fill:var(--accent); opacity:.15; pointer-events:none; }
   .chartctl { display:flex; gap:8px; margin-bottom:8px; }
   .chartbtn { font:inherit; font-size:.82rem; padding:4px 12px; border-radius:999px; cursor:pointer;
     background:var(--bg); color:var(--muted); border:1px solid var(--border); }
@@ -111,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 02:17 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 02:26 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783556278*1000;
+    (function(){ var gen=1783556780*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -125,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 56: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 456s ago</div><div class="arow"><span class="mono aname">func_80066F94</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/11MMa" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led stall"></span><b>Possibly stuck</b><div class="livesub">iteration 56: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 957s ago</div><div class="arow"><span class="mono aname">func_80066F94</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/11MMa" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -181,71 +182,187 @@
     <h2>Progress over time</h2>
     
     <div class="chartctl">
-      <button type="button" class="chartbtn active" data-series="funcs"
-        onclick="window.__rateChartSeries && window.__rateChartSeries('ratechart','funcs')">Functions %</button>
-      <button type="button" class="chartbtn" data-series="bytes"
-        onclick="window.__rateChartSeries && window.__rateChartSeries('ratechart','bytes')">Bytes %</button>
+      <button type="button" class="chartbtn active" data-series="funcs">Functions %</button>
+      <button type="button" class="chartbtn" data-series="bytes">Bytes %</button>
+      <button type="button" class="chartbtn" id="ratechart-reset" style="margin-left:auto">Reset zoom</button>
     </div>
     <div style="position:relative">
       <svg viewBox="0 0 880 300" class="chart" id="ratechart" role="img"
-        aria-label="Progress over time — functions and bytes matched percentage">
-        <line x1="46" y1="260.0" x2="862" y2="260.0" class="grid"/><text x="38" y="264.0" class="ytick">0%</text><line x1="46" y1="199.0" x2="862" y2="199.0" class="grid"/><text x="38" y="203.0" class="ytick">25%</text><line x1="46" y1="138.0" x2="862" y2="138.0" class="grid"/><text x="38" y="142.0" class="ytick">50%</text><line x1="46" y1="77.0" x2="862" y2="77.0" class="grid"/><text x="38" y="81.0" class="ytick">75%</text><line x1="46" y1="16.0" x2="862" y2="16.0" class="grid"/><text x="38" y="20.0" class="ytick">100%</text>
-        <path d="M 46.0,260.0 L 46.0,260.0 L 48.1,259.6 L 50.5,258.9 L 50.8,258.5 L 52.6,256.9 L 58.1,256.8 L 58.5,256.7 L 58.6,256.6 L 59.0,256.4 L 59.0,256.3 L 59.1,256.2 L 59.5,256.0 L 59.6,255.8 L 59.6,255.5 L 61.0,255.4 L 61.1,255.3 L 61.2,255.2 L 61.2,255.0 L 62.8,254.9 L 63.4,254.8 L 63.5,254.6 L 65.0,254.5 L 65.1,254.4 L 66.3,254.1 L 67.2,254.0 L 68.5,255.7 L 71.3,255.5 L 73.1,255.4 L 74.3,255.3 L 111.8,255.2 L 111.9,255.0 L 112.5,254.8 L 112.5,254.6 L 208.3,254.5 L 208.4,254.1 L 208.4,253.9 L 212.6,253.8 L 298.3,253.6 L 310.0,253.5 L 310.6,253.4 L 311.0,253.2 L 340.6,253.0 L 342.3,252.6 L 342.4,252.5 L 342.5,252.2 L 392.9,252.1 L 396.7,251.8 L 396.9,251.7 L 397.2,251.6 L 416.4,251.5 L 416.6,251.3 L 416.7,251.2 L 467.0,251.1 L 477.6,250.9 L 477.7,251.1 L 479.2,250.9 L 479.3,251.1 L 515.0,250.4 L 519.6,250.3 L 555.8,249.8 L 622.8,249.4 L 622.8,249.3 L 624.9,249.0 L 634.3,248.5 L 639.8,248.1 L 647.3,247.9 L 649.7,247.8 L 672.8,247.6 L 686.9,247.5 L 700.5,247.4 L 705.3,247.3 L 755.4,247.1 L 814.2,247.0 L 819.0,246.9 L 826.7,246.7 L 830.5,246.6 L 834.9,246.5 L 846.6,246.4 L 855.9,246.2 L 861.3,245.8 L 861.6,244.3 L 862.0,243.3 L 862.0,260.0 Z" class="area series-f"/>
-        <polyline points="46.0,260.0 48.1,259.6 50.5,258.9 50.8,258.5 52.6,256.9 58.1,256.8 58.5,256.7 58.6,256.6 59.0,256.4 59.0,256.3 59.1,256.2 59.5,256.0 59.6,255.8 59.6,255.5 61.0,255.4 61.1,255.3 61.2,255.2 61.2,255.0 62.8,254.9 63.4,254.8 63.5,254.6 65.0,254.5 65.1,254.4 66.3,254.1 67.2,254.0 68.5,255.7 71.3,255.5 73.1,255.4 74.3,255.3 111.8,255.2 111.9,255.0 112.5,254.8 112.5,254.6 208.3,254.5 208.4,254.1 208.4,253.9 212.6,253.8 298.3,253.6 310.0,253.5 310.6,253.4 311.0,253.2 340.6,253.0 342.3,252.6 342.4,252.5 342.5,252.2 392.9,252.1 396.7,251.8 396.9,251.7 397.2,251.6 416.4,251.5 416.6,251.3 416.7,251.2 467.0,251.1 477.6,250.9 477.7,251.1 479.2,250.9 479.3,251.1 515.0,250.4 519.6,250.3 555.8,249.8 622.8,249.4 622.8,249.3 624.9,249.0 634.3,248.5 639.8,248.1 647.3,247.9 649.7,247.8 672.8,247.6 686.9,247.5 700.5,247.4 705.3,247.3 755.4,247.1 814.2,247.0 819.0,246.9 826.7,246.7 830.5,246.6 834.9,246.5 846.6,246.4 855.9,246.2 861.3,245.8 861.6,244.3 862.0,243.3" class="series series-f"/>
-        <polyline points="46.0,260.0 48.1,260.0 50.5,260.0 50.8,260.0 52.6,259.9 58.1,259.9 58.5,259.9 58.6,259.9 59.0,259.9 59.0,259.9 59.1,259.9 59.5,259.9 59.6,259.9 59.6,259.9 61.0,259.8 61.1,259.8 61.2,259.8 61.2,259.8 62.8,259.8 63.4,259.8 63.5,259.8 65.0,259.8 65.1,259.7 66.3,259.7 67.2,259.7 68.5,259.8 71.3,259.8 73.1,259.8 74.3,259.8 111.8,259.8 111.9,259.8 112.5,259.7 112.5,259.7 208.3,259.7 208.4,259.7 208.4,259.7 212.6,259.7 298.3,259.7 310.0,259.7 310.6,259.6 311.0,259.6 340.6,259.6 342.3,259.5 342.4,259.5 342.5,259.5 392.9,259.5 396.7,259.4 396.9,259.4 397.2,259.4 416.4,259.4 416.6,259.4 416.7,259.4 467.0,259.4 477.6,259.4 477.7,259.4 479.2,259.4 479.3,259.4 515.0,259.3 519.6,259.3 555.8,259.3 622.8,259.3 622.8,259.2 624.9,259.2 634.3,259.2 639.8,259.1 647.3,259.0 649.7,259.0 672.8,259.0 686.9,259.0 700.5,258.9 705.3,258.9 755.4,258.9 814.2,258.9 819.0,258.9 826.7,258.8 830.5,258.8 834.9,258.8 846.6,258.8 855.9,258.8 861.3,258.7 861.6,258.6 862.0,258.6" class="series series-b" style="display:none"/>
-        <circle cx="46.0" cy="260.0" r="3.5" class="dot dot-f"/><circle cx="48.1" cy="259.6" r="3.5" class="dot dot-f"/><circle cx="50.5" cy="258.9" r="3.5" class="dot dot-f"/><circle cx="50.8" cy="258.5" r="3.5" class="dot dot-f"/><circle cx="52.6" cy="256.9" r="3.5" class="dot dot-f"/><circle cx="58.1" cy="256.8" r="3.5" class="dot dot-f"/><circle cx="58.5" cy="256.7" r="3.5" class="dot dot-f"/><circle cx="58.6" cy="256.6" r="3.5" class="dot dot-f"/><circle cx="59.0" cy="256.4" r="3.5" class="dot dot-f"/><circle cx="59.0" cy="256.3" r="3.5" class="dot dot-f"/><circle cx="59.1" cy="256.2" r="3.5" class="dot dot-f"/><circle cx="59.5" cy="256.0" r="3.5" class="dot dot-f"/><circle cx="59.6" cy="255.8" r="3.5" class="dot dot-f"/><circle cx="59.6" cy="255.5" r="3.5" class="dot dot-f"/><circle cx="61.0" cy="255.4" r="3.5" class="dot dot-f"/><circle cx="61.1" cy="255.3" r="3.5" class="dot dot-f"/><circle cx="61.2" cy="255.2" r="3.5" class="dot dot-f"/><circle cx="61.2" cy="255.0" r="3.5" class="dot dot-f"/><circle cx="62.8" cy="254.9" r="3.5" class="dot dot-f"/><circle cx="63.4" cy="254.8" r="3.5" class="dot dot-f"/><circle cx="63.5" cy="254.6" r="3.5" class="dot dot-f"/><circle cx="65.0" cy="254.5" r="3.5" class="dot dot-f"/><circle cx="65.1" cy="254.4" r="3.5" class="dot dot-f"/><circle cx="66.3" cy="254.1" r="3.5" class="dot dot-f"/><circle cx="67.2" cy="254.0" r="3.5" class="dot dot-f"/><circle cx="68.5" cy="255.7" r="3.5" class="dot dot-f"/><circle cx="71.3" cy="255.5" r="3.5" class="dot dot-f"/><circle cx="73.1" cy="255.4" r="3.5" class="dot dot-f"/><circle cx="74.3" cy="255.3" r="3.5" class="dot dot-f"/><circle cx="111.8" cy="255.2" r="3.5" class="dot dot-f"/><circle cx="111.9" cy="255.0" r="3.5" class="dot dot-f"/><circle cx="112.5" cy="254.8" r="3.5" class="dot dot-f"/><circle cx="112.5" cy="254.6" r="3.5" class="dot dot-f"/><circle cx="208.3" cy="254.5" r="3.5" class="dot dot-f"/><circle cx="208.4" cy="254.1" r="3.5" class="dot dot-f"/><circle cx="208.4" cy="253.9" r="3.5" class="dot dot-f"/><circle cx="212.6" cy="253.8" r="3.5" class="dot dot-f"/><circle cx="298.3" cy="253.6" r="3.5" class="dot dot-f"/><circle cx="310.0" cy="253.5" r="3.5" class="dot dot-f"/><circle cx="310.6" cy="253.4" r="3.5" class="dot dot-f"/><circle cx="311.0" cy="253.2" r="3.5" class="dot dot-f"/><circle cx="340.6" cy="253.0" r="3.5" class="dot dot-f"/><circle cx="342.3" cy="252.6" r="3.5" class="dot dot-f"/><circle cx="342.4" cy="252.5" r="3.5" class="dot dot-f"/><circle cx="342.5" cy="252.2" r="3.5" class="dot dot-f"/><circle cx="392.9" cy="252.1" r="3.5" class="dot dot-f"/><circle cx="396.7" cy="251.8" r="3.5" class="dot dot-f"/><circle cx="396.9" cy="251.7" r="3.5" class="dot dot-f"/><circle cx="397.2" cy="251.6" r="3.5" class="dot dot-f"/><circle cx="416.4" cy="251.5" r="3.5" class="dot dot-f"/><circle cx="416.6" cy="251.3" r="3.5" class="dot dot-f"/><circle cx="416.7" cy="251.2" r="3.5" class="dot dot-f"/><circle cx="467.0" cy="251.1" r="3.5" class="dot dot-f"/><circle cx="477.6" cy="250.9" r="3.5" class="dot dot-f"/><circle cx="477.7" cy="251.1" r="3.5" class="dot dot-f"/><circle cx="479.2" cy="250.9" r="3.5" class="dot dot-f"/><circle cx="479.3" cy="251.1" r="3.5" class="dot dot-f"/><circle cx="515.0" cy="250.4" r="3.5" class="dot dot-f"/><circle cx="519.6" cy="250.3" r="3.5" class="dot dot-f"/><circle cx="555.8" cy="249.8" r="3.5" class="dot dot-f"/><circle cx="622.8" cy="249.4" r="3.5" class="dot dot-f"/><circle cx="622.8" cy="249.3" r="3.5" class="dot dot-f"/><circle cx="624.9" cy="249.0" r="3.5" class="dot dot-f"/><circle cx="634.3" cy="248.5" r="3.5" class="dot dot-f"/><circle cx="639.8" cy="248.1" r="3.5" class="dot dot-f"/><circle cx="647.3" cy="247.9" r="3.5" class="dot dot-f"/><circle cx="649.7" cy="247.8" r="3.5" class="dot dot-f"/><circle cx="672.8" cy="247.6" r="3.5" class="dot dot-f"/><circle cx="686.9" cy="247.5" r="3.5" class="dot dot-f"/><circle cx="700.5" cy="247.4" r="3.5" class="dot dot-f"/><circle cx="705.3" cy="247.3" r="3.5" class="dot dot-f"/><circle cx="755.4" cy="247.1" r="3.5" class="dot dot-f"/><circle cx="814.2" cy="247.0" r="3.5" class="dot dot-f"/><circle cx="819.0" cy="246.9" r="3.5" class="dot dot-f"/><circle cx="826.7" cy="246.7" r="3.5" class="dot dot-f"/><circle cx="830.5" cy="246.6" r="3.5" class="dot dot-f"/><circle cx="834.9" cy="246.5" r="3.5" class="dot dot-f"/><circle cx="846.6" cy="246.4" r="3.5" class="dot dot-f"/><circle cx="855.9" cy="246.2" r="3.5" class="dot dot-f"/><circle cx="861.3" cy="245.8" r="3.5" class="dot dot-f"/><circle cx="861.6" cy="244.3" r="3.5" class="dot dot-f"/><circle cx="862.0" cy="243.3" r="3.5" class="dot dot-f"/><circle cx="46.0" cy="260.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="48.1" cy="260.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="50.5" cy="260.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="50.8" cy="260.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="52.6" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="58.1" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="58.5" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="58.6" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="59.0" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="59.0" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="59.1" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="59.5" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="59.6" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="59.6" cy="259.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="61.0" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="61.1" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="61.2" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="61.2" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="62.8" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="63.4" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="63.5" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="65.0" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="65.1" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="66.3" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="67.2" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="68.5" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="71.3" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="73.1" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="74.3" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="111.8" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="111.9" cy="259.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="112.5" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="112.5" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="208.3" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="208.4" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="208.4" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="212.6" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="298.3" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="310.0" cy="259.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="310.6" cy="259.6" r="3.5" class="dot dot-b" style="display:none"/><circle cx="311.0" cy="259.6" r="3.5" class="dot dot-b" style="display:none"/><circle cx="340.6" cy="259.6" r="3.5" class="dot dot-b" style="display:none"/><circle cx="342.3" cy="259.5" r="3.5" class="dot dot-b" style="display:none"/><circle cx="342.4" cy="259.5" r="3.5" class="dot dot-b" style="display:none"/><circle cx="342.5" cy="259.5" r="3.5" class="dot dot-b" style="display:none"/><circle cx="392.9" cy="259.5" r="3.5" class="dot dot-b" style="display:none"/><circle cx="396.7" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="396.9" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="397.2" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="416.4" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="416.6" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="416.7" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="467.0" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="477.6" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="477.7" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="479.2" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="479.3" cy="259.4" r="3.5" class="dot dot-b" style="display:none"/><circle cx="515.0" cy="259.3" r="3.5" class="dot dot-b" style="display:none"/><circle cx="519.6" cy="259.3" r="3.5" class="dot dot-b" style="display:none"/><circle cx="555.8" cy="259.3" r="3.5" class="dot dot-b" style="display:none"/><circle cx="622.8" cy="259.3" r="3.5" class="dot dot-b" style="display:none"/><circle cx="622.8" cy="259.2" r="3.5" class="dot dot-b" style="display:none"/><circle cx="624.9" cy="259.2" r="3.5" class="dot dot-b" style="display:none"/><circle cx="634.3" cy="259.2" r="3.5" class="dot dot-b" style="display:none"/><circle cx="639.8" cy="259.1" r="3.5" class="dot dot-b" style="display:none"/><circle cx="647.3" cy="259.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="649.7" cy="259.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="672.8" cy="259.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="686.9" cy="259.0" r="3.5" class="dot dot-b" style="display:none"/><circle cx="700.5" cy="258.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="705.3" cy="258.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="755.4" cy="258.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="814.2" cy="258.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="819.0" cy="258.9" r="3.5" class="dot dot-b" style="display:none"/><circle cx="826.7" cy="258.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="830.5" cy="258.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="834.9" cy="258.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="846.6" cy="258.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="855.9" cy="258.8" r="3.5" class="dot dot-b" style="display:none"/><circle cx="861.3" cy="258.7" r="3.5" class="dot dot-b" style="display:none"/><circle cx="861.6" cy="258.6" r="3.5" class="dot dot-b" style="display:none"/><circle cx="862.0" cy="258.6" r="3.5" class="dot dot-b" style="display:none"/>
-        <text x="46.0" y="278.0" class="xtick">Jul 07 00:31</text><text x="73.1" y="278.0" class="xtick">Jul 07 02:10</text><text x="477.7" y="278.0" class="xtick">Jul 08 02:40</text><text x="862.0" y="278.0" class="xtick">Jul 09 01:57</text>
-        <line x1="0" y1="16" x2="0" y2="260" class="crosshair" id="ratechart-cross" style="display:none"/>
-        <rect x="46" y="16" width="816" height="244" fill="transparent"
-          id="ratechart-hitbox" style="cursor:crosshair"/>
+        aria-label="Progress over time — functions and bytes matched percentage, draggable to zoom">
+        <g id="ratechart-grid"></g>
+        <path id="ratechart-area" class="area"></path>
+        <polyline id="ratechart-line" class="series"></polyline>
+        <g id="ratechart-dots"></g>
+        <g id="ratechart-xticks"></g>
+        <rect id="ratechart-selrect" class="selrect" style="display:none"/>
+        <line id="ratechart-cross" class="crosshair" style="display:none"/>
+        <rect id="ratechart-hitbox" x="46" y="16" width="816" height="244" fill="transparent" style="cursor:crosshair"/>
       </svg>
       <div class="charttip" id="ratechart-tip" style="display:none"></div>
     </div>
     <p class="axislabel" style="color:var(--muted);font-size:11px;margin:6px 0 0">
-      date (Stockholm time) — hover or tap the chart for exact values; toggle Functions/Bytes above</p>
+      date (Stockholm time) — drag to zoom, double-click or Reset zoom to see everything again</p>
     <script>
     (function(){
-      var data = [{"x": 46.0, "yf": 260.0, "yb": 260.0, "fp": 0.0, "bp": 0.0, "when": "2026-07-07 00:31 CEST", "funcs": 0, "bytes": 0}, {"x": 48.1, "yf": 259.6, "yb": 260.0, "fp": 0.16, "bp": 0.01, "when": "2026-07-07 00:39 CEST", "funcs": 3, "bytes": 48}, {"x": 50.5, "yf": 258.9, "yb": 260.0, "fp": 0.47, "bp": 0.02, "when": "2026-07-07 00:48 CEST", "funcs": 9, "bytes": 96}, {"x": 50.8, "yf": 258.5, "yb": 260.0, "fp": 0.63, "bp": 0.02, "when": "2026-07-07 00:49 CEST", "funcs": 12, "bytes": 120}, {"x": 52.6, "yf": 256.9, "yb": 259.9, "fp": 1.25, "bp": 0.04, "when": "2026-07-07 00:55 CEST", "funcs": 24, "bytes": 216}, {"x": 58.1, "yf": 256.8, "yb": 259.9, "fp": 1.31, "bp": 0.04, "when": "2026-07-07 01:15 CEST", "funcs": 25, "bytes": 228}, {"x": 58.5, "yf": 256.7, "yb": 259.9, "fp": 1.36, "bp": 0.04, "when": "2026-07-07 01:16 CEST", "funcs": 26, "bytes": 240}, {"x": 58.6, "yf": 256.6, "yb": 259.9, "fp": 1.41, "bp": 0.04, "when": "2026-07-07 01:17 CEST", "funcs": 27, "bytes": 252}, {"x": 59.0, "yf": 256.4, "yb": 259.9, "fp": 1.46, "bp": 0.04, "when": "2026-07-07 01:18 CEST", "funcs": 28, "bytes": 264}, {"x": 59.0, "yf": 256.3, "yb": 259.9, "fp": 1.52, "bp": 0.05, "when": "2026-07-07 01:19 CEST", "funcs": 29, "bytes": 276}, {"x": 59.1, "yf": 256.2, "yb": 259.9, "fp": 1.57, "bp": 0.05, "when": "2026-07-07 01:19 CEST", "funcs": 30, "bytes": 288}, {"x": 59.5, "yf": 256.0, "yb": 259.9, "fp": 1.62, "bp": 0.05, "when": "2026-07-07 01:20 CEST", "funcs": 31, "bytes": 300}, {"x": 59.6, "yf": 255.8, "yb": 259.9, "fp": 1.72, "bp": 0.05, "when": "2026-07-07 01:21 CEST", "funcs": 33, "bytes": 332}, {"x": 59.6, "yf": 255.5, "yb": 259.9, "fp": 1.83, "bp": 0.06, "when": "2026-07-07 01:21 CEST", "funcs": 35, "bytes": 364}, {"x": 61.0, "yf": 255.4, "yb": 259.8, "fp": 1.88, "bp": 0.06, "when": "2026-07-07 01:26 CEST", "funcs": 36, "bytes": 388}, {"x": 61.1, "yf": 255.3, "yb": 259.8, "fp": 1.93, "bp": 0.07, "when": "2026-07-07 01:26 CEST", "funcs": 37, "bytes": 412}, {"x": 61.2, "yf": 255.2, "yb": 259.8, "fp": 1.99, "bp": 0.07, "when": "2026-07-07 01:26 CEST", "funcs": 38, "bytes": 436}, {"x": 61.2, "yf": 255.0, "yb": 259.8, "fp": 2.04, "bp": 0.08, "when": "2026-07-07 01:26 CEST", "funcs": 39, "bytes": 460}, {"x": 62.8, "yf": 254.9, "yb": 259.8, "fp": 2.09, "bp": 0.08, "when": "2026-07-07 01:32 CEST", "funcs": 40, "bytes": 492}, {"x": 63.4, "yf": 254.8, "yb": 259.8, "fp": 2.14, "bp": 0.09, "when": "2026-07-07 01:34 CEST", "funcs": 41, "bytes": 524}, {"x": 63.5, "yf": 254.6, "yb": 259.8, "fp": 2.19, "bp": 0.09, "when": "2026-07-07 01:35 CEST", "funcs": 42, "bytes": 556}, {"x": 65.0, "yf": 254.5, "yb": 259.8, "fp": 2.25, "bp": 0.1, "when": "2026-07-07 01:40 CEST", "funcs": 43, "bytes": 592}, {"x": 65.1, "yf": 254.4, "yb": 259.7, "fp": 2.3, "bp": 0.1, "when": "2026-07-07 01:41 CEST", "funcs": 44, "bytes": 628}, {"x": 66.3, "yf": 254.1, "yb": 259.7, "fp": 2.4, "bp": 0.12, "when": "2026-07-07 01:45 CEST", "funcs": 46, "bytes": 708}, {"x": 67.2, "yf": 254.0, "yb": 259.7, "fp": 2.46, "bp": 0.12, "when": "2026-07-07 01:48 CEST", "funcs": 47, "bytes": 748}, {"x": 68.5, "yf": 255.7, "yb": 259.8, "fp": 1.78, "bp": 0.07, "when": "2026-07-07 01:53 CEST", "funcs": 34, "bytes": 432}, {"x": 71.3, "yf": 255.5, "yb": 259.8, "fp": 1.83, "bp": 0.08, "when": "2026-07-07 02:03 CEST", "funcs": 35, "bytes": 476}, {"x": 73.1, "yf": 255.4, "yb": 259.8, "fp": 1.88, "bp": 0.09, "when": "2026-07-07 02:10 CEST", "funcs": 36, "bytes": 520}, {"x": 74.3, "yf": 255.3, "yb": 259.8, "fp": 1.93, "bp": 0.09, "when": "2026-07-07 02:14 CEST", "funcs": 37, "bytes": 568}, {"x": 111.8, "yf": 255.2, "yb": 259.8, "fp": 1.99, "bp": 0.1, "when": "2026-07-07 04:30 CEST", "funcs": 38, "bytes": 584}, {"x": 111.9, "yf": 255.0, "yb": 259.8, "fp": 2.04, "bp": 0.1, "when": "2026-07-07 04:31 CEST", "funcs": 39, "bytes": 600}, {"x": 112.5, "yf": 254.8, "yb": 259.7, "fp": 2.14, "bp": 0.11, "when": "2026-07-07 04:33 CEST", "funcs": 41, "bytes": 648}, {"x": 112.5, "yf": 254.6, "yb": 259.7, "fp": 2.19, "bp": 0.11, "when": "2026-07-07 04:33 CEST", "funcs": 42, "bytes": 672}, {"x": 208.3, "yf": 254.5, "yb": 259.7, "fp": 2.25, "bp": 0.11, "when": "2026-07-07 10:21 CEST", "funcs": 43, "bytes": 680}, {"x": 208.4, "yf": 254.1, "yb": 259.7, "fp": 2.4, "bp": 0.12, "when": "2026-07-07 10:21 CEST", "funcs": 46, "bytes": 704}, {"x": 208.4, "yf": 253.9, "yb": 259.7, "fp": 2.51, "bp": 0.12, "when": "2026-07-07 10:22 CEST", "funcs": 48, "bytes": 720}, {"x": 212.6, "yf": 253.8, "yb": 259.7, "fp": 2.56, "bp": 0.12, "when": "2026-07-07 10:37 CEST", "funcs": 49, "bytes": 760}, {"x": 298.3, "yf": 253.6, "yb": 259.7, "fp": 2.61, "bp": 0.13, "when": "2026-07-07 15:48 CEST", "funcs": 50, "bytes": 812}, {"x": 310.0, "yf": 253.5, "yb": 259.7, "fp": 2.66, "bp": 0.14, "when": "2026-07-07 16:31 CEST", "funcs": 51, "bytes": 872}, {"x": 310.6, "yf": 253.4, "yb": 259.6, "fp": 2.72, "bp": 0.15, "when": "2026-07-07 16:33 CEST", "funcs": 52, "bytes": 940}, {"x": 311.0, "yf": 253.2, "yb": 259.6, "fp": 2.77, "bp": 0.17, "when": "2026-07-07 16:34 CEST", "funcs": 53, "bytes": 1012}, {"x": 340.6, "yf": 253.0, "yb": 259.6, "fp": 2.87, "bp": 0.17, "when": "2026-07-07 18:22 CEST", "funcs": 55, "bytes": 1044}, {"x": 342.3, "yf": 252.6, "yb": 259.5, "fp": 3.03, "bp": 0.19, "when": "2026-07-07 18:28 CEST", "funcs": 58, "bytes": 1188}, {"x": 342.4, "yf": 252.5, "yb": 259.5, "fp": 3.08, "bp": 0.2, "when": "2026-07-07 18:29 CEST", "funcs": 59, "bytes": 1236}, {"x": 342.5, "yf": 252.2, "yb": 259.5, "fp": 3.19, "bp": 0.22, "when": "2026-07-07 18:29 CEST", "funcs": 61, "bytes": 1332}, {"x": 392.9, "yf": 252.1, "yb": 259.5, "fp": 3.24, "bp": 0.22, "when": "2026-07-07 21:32 CEST", "funcs": 62, "bytes": 1348}, {"x": 396.7, "yf": 251.8, "yb": 259.4, "fp": 3.34, "bp": 0.23, "when": "2026-07-07 21:46 CEST", "funcs": 64, "bytes": 1376}, {"x": 396.9, "yf": 251.7, "yb": 259.4, "fp": 3.4, "bp": 0.23, "when": "2026-07-07 21:47 CEST", "funcs": 65, "bytes": 1400}, {"x": 397.2, "yf": 251.6, "yb": 259.4, "fp": 3.45, "bp": 0.23, "when": "2026-07-07 21:48 CEST", "funcs": 66, "bytes": 1428}, {"x": 416.4, "yf": 251.5, "yb": 259.4, "fp": 3.5, "bp": 0.24, "when": "2026-07-07 22:57 CEST", "funcs": 67, "bytes": 1444}, {"x": 416.6, "yf": 251.3, "yb": 259.4, "fp": 3.55, "bp": 0.24, "when": "2026-07-07 22:58 CEST", "funcs": 68, "bytes": 1464}, {"x": 416.7, "yf": 251.2, "yb": 259.4, "fp": 3.61, "bp": 0.24, "when": "2026-07-07 22:58 CEST", "funcs": 69, "bytes": 1484}, {"x": 467.0, "yf": 251.1, "yb": 259.4, "fp": 3.66, "bp": 0.25, "when": "2026-07-08 02:01 CEST", "funcs": 70, "bytes": 1512}, {"x": 477.6, "yf": 250.9, "yb": 259.4, "fp": 3.71, "bp": 0.26, "when": "2026-07-08 02:40 CEST", "funcs": 71, "bytes": 1564}, {"x": 477.7, "yf": 251.1, "yb": 259.4, "fp": 3.66, "bp": 0.25, "when": "2026-07-08 02:40 CEST", "funcs": 70, "bytes": 1512}, {"x": 479.2, "yf": 250.9, "yb": 259.4, "fp": 3.71, "bp": 0.25, "when": "2026-07-08 02:46 CEST", "funcs": 71, "bytes": 1540}, {"x": 479.3, "yf": 251.1, "yb": 259.4, "fp": 3.66, "bp": 0.25, "when": "2026-07-08 02:46 CEST", "funcs": 70, "bytes": 1512}, {"x": 515.0, "yf": 250.4, "yb": 259.3, "fp": 3.92, "bp": 0.27, "when": "2026-07-08 04:56 CEST", "funcs": 75, "bytes": 1628}, {"x": 519.6, "yf": 250.3, "yb": 259.3, "fp": 3.97, "bp": 0.27, "when": "2026-07-08 05:12 CEST", "funcs": 76, "bytes": 1652}, {"x": 555.8, "yf": 249.8, "yb": 259.3, "fp": 4.18, "bp": 0.29, "when": "2026-07-08 07:24 CEST", "funcs": 80, "bytes": 1764}, {"x": 622.8, "yf": 249.4, "yb": 259.3, "fp": 4.34, "bp": 0.3, "when": "2026-07-08 11:28 CEST", "funcs": 83, "bytes": 1856}, {"x": 622.8, "yf": 249.3, "yb": 259.2, "fp": 4.39, "bp": 0.31, "when": "2026-07-08 11:28 CEST", "funcs": 84, "bytes": 1888}, {"x": 624.9, "yf": 249.0, "yb": 259.2, "fp": 4.49, "bp": 0.32, "when": "2026-07-08 11:35 CEST", "funcs": 86, "bytes": 1968}, {"x": 634.3, "yf": 248.5, "yb": 259.2, "fp": 4.7, "bp": 0.34, "when": "2026-07-08 12:09 CEST", "funcs": 90, "bytes": 2096}, {"x": 639.8, "yf": 248.1, "yb": 259.1, "fp": 4.86, "bp": 0.38, "when": "2026-07-08 12:29 CEST", "funcs": 93, "bytes": 2292}, {"x": 647.3, "yf": 247.9, "yb": 259.0, "fp": 4.96, "bp": 0.41, "when": "2026-07-08 12:57 CEST", "funcs": 95, "bytes": 2492}, {"x": 649.7, "yf": 247.8, "yb": 259.0, "fp": 5.02, "bp": 0.41, "when": "2026-07-08 13:05 CEST", "funcs": 96, "bytes": 2528}, {"x": 672.8, "yf": 247.6, "yb": 259.0, "fp": 5.07, "bp": 0.42, "when": "2026-07-08 14:29 CEST", "funcs": 97, "bytes": 2564}, {"x": 686.9, "yf": 247.5, "yb": 259.0, "fp": 5.12, "bp": 0.43, "when": "2026-07-08 15:21 CEST", "funcs": 98, "bytes": 2600}, {"x": 700.5, "yf": 247.4, "yb": 258.9, "fp": 5.17, "bp": 0.43, "when": "2026-07-08 16:10 CEST", "funcs": 99, "bytes": 2640}, {"x": 705.3, "yf": 247.3, "yb": 258.9, "fp": 5.22, "bp": 0.44, "when": "2026-07-08 16:27 CEST", "funcs": 100, "bytes": 2680}, {"x": 755.4, "yf": 247.1, "yb": 258.9, "fp": 5.28, "bp": 0.45, "when": "2026-07-08 19:29 CEST", "funcs": 101, "bytes": 2720}, {"x": 814.2, "yf": 247.0, "yb": 258.9, "fp": 5.33, "bp": 0.45, "when": "2026-07-08 23:03 CEST", "funcs": 102, "bytes": 2764}, {"x": 819.0, "yf": 246.9, "yb": 258.9, "fp": 5.38, "bp": 0.47, "when": "2026-07-08 23:21 CEST", "funcs": 103, "bytes": 2868}, {"x": 826.7, "yf": 246.7, "yb": 258.8, "fp": 5.43, "bp": 0.48, "when": "2026-07-08 23:49 CEST", "funcs": 104, "bytes": 2920}, {"x": 830.5, "yf": 246.6, "yb": 258.8, "fp": 5.49, "bp": 0.48, "when": "2026-07-09 00:03 CEST", "funcs": 105, "bytes": 2956}, {"x": 834.9, "yf": 246.5, "yb": 258.8, "fp": 5.54, "bp": 0.49, "when": "2026-07-09 00:18 CEST", "funcs": 106, "bytes": 2992}, {"x": 846.6, "yf": 246.4, "yb": 258.8, "fp": 5.59, "bp": 0.5, "when": "2026-07-09 01:01 CEST", "funcs": 107, "bytes": 3036}, {"x": 855.9, "yf": 246.2, "yb": 258.8, "fp": 5.64, "bp": 0.51, "when": "2026-07-09 01:35 CEST", "funcs": 108, "bytes": 3084}, {"x": 861.3, "yf": 245.8, "yb": 258.7, "fp": 5.8, "bp": 0.52, "when": "2026-07-09 01:54 CEST", "funcs": 111, "bytes": 3192}, {"x": 861.6, "yf": 244.3, "yb": 258.6, "fp": 6.43, "bp": 0.56, "when": "2026-07-09 01:56 CEST", "funcs": 123, "bytes": 3444}, {"x": 862.0, "yf": 243.3, "yb": 258.6, "fp": 6.84, "bp": 0.59, "when": "2026-07-09 01:57 CEST", "funcs": 131, "bytes": 3572}];
+      var raw = [{"t": 1783377100, "funcs": 0, "bytes": 0, "fp": 0.0, "bp": 0.0, "when": "2026-07-07 00:31 CEST"}, {"t": 1783377564, "funcs": 3, "bytes": 48, "fp": 0.157, "bp": 0.008, "when": "2026-07-07 00:39 CEST"}, {"t": 1783378090, "funcs": 9, "bytes": 96, "fp": 0.47, "bp": 0.016, "when": "2026-07-07 00:48 CEST"}, {"t": 1783378155, "funcs": 12, "bytes": 120, "fp": 0.627, "bp": 0.02, "when": "2026-07-07 00:49 CEST"}, {"t": 1783378531, "funcs": 24, "bytes": 216, "fp": 1.254, "bp": 0.035, "when": "2026-07-07 00:55 CEST"}, {"t": 1783379730, "funcs": 25, "bytes": 228, "fp": 1.306, "bp": 0.037, "when": "2026-07-07 01:15 CEST"}, {"t": 1783379816, "funcs": 26, "bytes": 240, "fp": 1.358, "bp": 0.039, "when": "2026-07-07 01:16 CEST"}, {"t": 1783379841, "funcs": 27, "bytes": 252, "fp": 1.411, "bp": 0.041, "when": "2026-07-07 01:17 CEST"}, {"t": 1783379932, "funcs": 28, "bytes": 264, "fp": 1.463, "bp": 0.043, "when": "2026-07-07 01:18 CEST"}, {"t": 1783379943, "funcs": 29, "bytes": 276, "fp": 1.515, "bp": 0.045, "when": "2026-07-07 01:19 CEST"}, {"t": 1783379949, "funcs": 30, "bytes": 288, "fp": 1.567, "bp": 0.047, "when": "2026-07-07 01:19 CEST"}, {"t": 1783380047, "funcs": 31, "bytes": 300, "fp": 1.62, "bp": 0.049, "when": "2026-07-07 01:20 CEST"}, {"t": 1783380062, "funcs": 33, "bytes": 332, "fp": 1.724, "bp": 0.054, "when": "2026-07-07 01:21 CEST"}, {"t": 1783380068, "funcs": 35, "bytes": 364, "fp": 1.829, "bp": 0.06, "when": "2026-07-07 01:21 CEST"}, {"t": 1783380372, "funcs": 36, "bytes": 388, "fp": 1.881, "bp": 0.064, "when": "2026-07-07 01:26 CEST"}, {"t": 1783380403, "funcs": 37, "bytes": 412, "fp": 1.933, "bp": 0.068, "when": "2026-07-07 01:26 CEST"}, {"t": 1783380410, "funcs": 38, "bytes": 436, "fp": 1.985, "bp": 0.071, "when": "2026-07-07 01:26 CEST"}, {"t": 1783380416, "funcs": 39, "bytes": 460, "fp": 2.038, "bp": 0.075, "when": "2026-07-07 01:26 CEST"}, {"t": 1783380773, "funcs": 40, "bytes": 492, "fp": 2.09, "bp": 0.081, "when": "2026-07-07 01:32 CEST"}, {"t": 1783380893, "funcs": 41, "bytes": 524, "fp": 2.142, "bp": 0.086, "when": "2026-07-07 01:34 CEST"}, {"t": 1783380909, "funcs": 42, "bytes": 556, "fp": 2.194, "bp": 0.091, "when": "2026-07-07 01:35 CEST"}, {"t": 1783381253, "funcs": 43, "bytes": 592, "fp": 2.247, "bp": 0.097, "when": "2026-07-07 01:40 CEST"}, {"t": 1783381262, "funcs": 44, "bytes": 628, "fp": 2.299, "bp": 0.103, "when": "2026-07-07 01:41 CEST"}, {"t": 1783381520, "funcs": 46, "bytes": 708, "fp": 2.403, "bp": 0.116, "when": "2026-07-07 01:45 CEST"}, {"t": 1783381717, "funcs": 47, "bytes": 748, "fp": 2.456, "bp": 0.123, "when": "2026-07-07 01:48 CEST"}, {"t": 1783382008, "funcs": 34, "bytes": 432, "fp": 1.776, "bp": 0.071, "when": "2026-07-07 01:53 CEST"}, {"t": 1783382618, "funcs": 35, "bytes": 476, "fp": 1.829, "bp": 0.078, "when": "2026-07-07 02:03 CEST"}, {"t": 1783383002, "funcs": 36, "bytes": 520, "fp": 1.881, "bp": 0.085, "when": "2026-07-07 02:10 CEST"}, {"t": 1783383275, "funcs": 37, "bytes": 568, "fp": 1.933, "bp": 0.093, "when": "2026-07-07 02:14 CEST"}, {"t": 1783391456, "funcs": 38, "bytes": 584, "fp": 1.985, "bp": 0.096, "when": "2026-07-07 04:30 CEST"}, {"t": 1783391462, "funcs": 39, "bytes": 600, "fp": 2.038, "bp": 0.098, "when": "2026-07-07 04:31 CEST"}, {"t": 1783391603, "funcs": 41, "bytes": 648, "fp": 2.142, "bp": 0.106, "when": "2026-07-07 04:33 CEST"}, {"t": 1783391611, "funcs": 42, "bytes": 672, "fp": 2.194, "bp": 0.11, "when": "2026-07-07 04:33 CEST"}, {"t": 1783412500, "funcs": 43, "bytes": 680, "fp": 2.247, "bp": 0.111, "when": "2026-07-07 10:21 CEST"}, {"t": 1783412512, "funcs": 46, "bytes": 704, "fp": 2.403, "bp": 0.115, "when": "2026-07-07 10:21 CEST"}, {"t": 1783412524, "funcs": 48, "bytes": 720, "fp": 2.508, "bp": 0.118, "when": "2026-07-07 10:22 CEST"}, {"t": 1783413425, "funcs": 49, "bytes": 760, "fp": 2.56, "bp": 0.125, "when": "2026-07-07 10:37 CEST"}, {"t": 1783432115, "funcs": 50, "bytes": 812, "fp": 2.612, "bp": 0.133, "when": "2026-07-07 15:48 CEST"}, {"t": 1783434665, "funcs": 51, "bytes": 872, "fp": 2.665, "bp": 0.143, "when": "2026-07-07 16:31 CEST"}, {"t": 1783434806, "funcs": 52, "bytes": 940, "fp": 2.717, "bp": 0.154, "when": "2026-07-07 16:33 CEST"}, {"t": 1783434885, "funcs": 53, "bytes": 1012, "fp": 2.769, "bp": 0.166, "when": "2026-07-07 16:34 CEST"}, {"t": 1783441350, "funcs": 55, "bytes": 1044, "fp": 2.874, "bp": 0.171, "when": "2026-07-07 18:22 CEST"}, {"t": 1783441724, "funcs": 58, "bytes": 1188, "fp": 3.03, "bp": 0.195, "when": "2026-07-07 18:28 CEST"}, {"t": 1783441743, "funcs": 59, "bytes": 1236, "fp": 3.083, "bp": 0.203, "when": "2026-07-07 18:29 CEST"}, {"t": 1783441752, "funcs": 61, "bytes": 1332, "fp": 3.187, "bp": 0.218, "when": "2026-07-07 18:29 CEST"}, {"t": 1783452753, "funcs": 62, "bytes": 1348, "fp": 3.239, "bp": 0.221, "when": "2026-07-07 21:32 CEST"}, {"t": 1783453583, "funcs": 64, "bytes": 1376, "fp": 3.344, "bp": 0.225, "when": "2026-07-07 21:46 CEST"}, {"t": 1783453624, "funcs": 65, "bytes": 1400, "fp": 3.396, "bp": 0.229, "when": "2026-07-07 21:47 CEST"}, {"t": 1783453694, "funcs": 66, "bytes": 1428, "fp": 3.448, "bp": 0.234, "when": "2026-07-07 21:48 CEST"}, {"t": 1783457872, "funcs": 67, "bytes": 1444, "fp": 3.501, "bp": 0.237, "when": "2026-07-07 22:57 CEST"}, {"t": 1783457907, "funcs": 68, "bytes": 1464, "fp": 3.553, "bp": 0.24, "when": "2026-07-07 22:58 CEST"}, {"t": 1783457929, "funcs": 69, "bytes": 1484, "fp": 3.605, "bp": 0.243, "when": "2026-07-07 22:58 CEST"}, {"t": 1783468906, "funcs": 70, "bytes": 1512, "fp": 3.657, "bp": 0.248, "when": "2026-07-08 02:01 CEST"}, {"t": 1783471227, "funcs": 71, "bytes": 1564, "fp": 3.71, "bp": 0.256, "when": "2026-07-08 02:40 CEST"}, {"t": 1783471247, "funcs": 70, "bytes": 1512, "fp": 3.657, "bp": 0.248, "when": "2026-07-08 02:40 CEST"}, {"t": 1783471573, "funcs": 71, "bytes": 1540, "fp": 3.71, "bp": 0.252, "when": "2026-07-08 02:46 CEST"}, {"t": 1783471590, "funcs": 70, "bytes": 1512, "fp": 3.657, "bp": 0.248, "when": "2026-07-08 02:46 CEST"}, {"t": 1783479384, "funcs": 75, "bytes": 1628, "fp": 3.918, "bp": 0.267, "when": "2026-07-08 04:56 CEST"}, {"t": 1783480378, "funcs": 76, "bytes": 1652, "fp": 3.971, "bp": 0.271, "when": "2026-07-08 05:12 CEST"}, {"t": 1783488279, "funcs": 80, "bytes": 1764, "fp": 4.18, "bp": 0.289, "when": "2026-07-08 07:24 CEST"}, {"t": 1783502881, "funcs": 83, "bytes": 1856, "fp": 4.336, "bp": 0.304, "when": "2026-07-08 11:28 CEST"}, {"t": 1783502883, "funcs": 84, "bytes": 1888, "fp": 4.389, "bp": 0.309, "when": "2026-07-08 11:28 CEST"}, {"t": 1783503346, "funcs": 86, "bytes": 1968, "fp": 4.493, "bp": 0.322, "when": "2026-07-08 11:35 CEST"}, {"t": 1783505382, "funcs": 90, "bytes": 2096, "fp": 4.702, "bp": 0.343, "when": "2026-07-08 12:09 CEST"}, {"t": 1783506585, "funcs": 93, "bytes": 2292, "fp": 4.859, "bp": 0.376, "when": "2026-07-08 12:29 CEST"}, {"t": 1783508231, "funcs": 95, "bytes": 2492, "fp": 4.963, "bp": 0.408, "when": "2026-07-08 12:57 CEST"}, {"t": 1783508745, "funcs": 96, "bytes": 2528, "fp": 5.016, "bp": 0.414, "when": "2026-07-08 13:05 CEST"}, {"t": 1783513788, "funcs": 97, "bytes": 2564, "fp": 5.068, "bp": 0.42, "when": "2026-07-08 14:29 CEST"}, {"t": 1783516868, "funcs": 98, "bytes": 2600, "fp": 5.12, "bp": 0.426, "when": "2026-07-08 15:21 CEST"}, {"t": 1783519834, "funcs": 99, "bytes": 2640, "fp": 5.172, "bp": 0.433, "when": "2026-07-08 16:10 CEST"}, {"t": 1783520862, "funcs": 100, "bytes": 2680, "fp": 5.225, "bp": 0.439, "when": "2026-07-08 16:27 CEST"}, {"t": 1783531797, "funcs": 101, "bytes": 2720, "fp": 5.277, "bp": 0.446, "when": "2026-07-08 19:29 CEST"}, {"t": 1783544614, "funcs": 102, "bytes": 2764, "fp": 5.329, "bp": 0.453, "when": "2026-07-08 23:03 CEST"}, {"t": 1783545669, "funcs": 103, "bytes": 2868, "fp": 5.381, "bp": 0.47, "when": "2026-07-08 23:21 CEST"}, {"t": 1783547355, "funcs": 104, "bytes": 2920, "fp": 5.434, "bp": 0.479, "when": "2026-07-08 23:49 CEST"}, {"t": 1783548183, "funcs": 105, "bytes": 2956, "fp": 5.486, "bp": 0.484, "when": "2026-07-09 00:03 CEST"}, {"t": 1783549132, "funcs": 106, "bytes": 2992, "fp": 5.538, "bp": 0.49, "when": "2026-07-09 00:18 CEST"}, {"t": 1783551694, "funcs": 107, "bytes": 3036, "fp": 5.59, "bp": 0.498, "when": "2026-07-09 01:01 CEST"}, {"t": 1783553717, "funcs": 108, "bytes": 3084, "fp": 5.643, "bp": 0.505, "when": "2026-07-09 01:35 CEST"}, {"t": 1783554888, "funcs": 111, "bytes": 3192, "fp": 5.799, "bp": 0.523, "when": "2026-07-09 01:54 CEST"}, {"t": 1783554966, "funcs": 123, "bytes": 3444, "fp": 6.426, "bp": 0.564, "when": "2026-07-09 01:56 CEST"}, {"t": 1783555044, "funcs": 131, "bytes": 3572, "fp": 6.844, "bp": 0.585, "when": "2026-07-09 01:57 CEST"}];
+      var W = 880, H = 300, padL = 46, padR = 18, padT = 16, padB = 40;
       var svg = document.getElementById("ratechart");
+      var gGrid = document.getElementById("ratechart-grid");
+      var elArea = document.getElementById("ratechart-area");
+      var elLine = document.getElementById("ratechart-line");
+      var gDots = document.getElementById("ratechart-dots");
+      var gXticks = document.getElementById("ratechart-xticks");
       var hitbox = document.getElementById("ratechart-hitbox");
       var cross = document.getElementById("ratechart-cross");
+      var selrect = document.getElementById("ratechart-selrect");
       var tip = document.getElementById("ratechart-tip");
-      window.__rateChartSeries = function(id, s){
-        if (id !== "ratechart") return;
-        svg.querySelectorAll(".series-f").forEach(function(el){ el.style.display = s === "funcs" ? "" : "none"; });
-        svg.querySelectorAll(".series-b").forEach(function(el){ el.style.display = s === "bytes" ? "" : "none"; });
-        svg.querySelectorAll(".dot-f").forEach(function(el){ el.style.display = s === "funcs" ? "" : "none"; });
-        svg.querySelectorAll(".dot-b").forEach(function(el){ el.style.display = s === "bytes" ? "" : "none"; });
-        svg.closest(".panel").querySelectorAll("[data-series]").forEach(function(b){
+      var resetBtn = document.getElementById("ratechart-reset");
+      var panel = svg.closest(".panel");
+
+      var series = "funcs";
+      var fullT0 = raw[0].t, fullT1 = raw[raw.length - 1].t;
+      var viewT0 = fullT0, viewT1 = fullT1;
+      var curPts = [];  // [xScreen, yScreen, point] for whatever's currently rendered
+
+      function seriesVal(p) { return series === "funcs" ? p.fp : p.bp; }
+
+      function niceStep(range) {
+        if (range <= 0) return 1;
+        var mag = Math.pow(10, Math.floor(Math.log10(range)));
+        var n = range / mag;
+        var step = n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10;
+        return step * mag;
+      }
+
+      function render() {
+        var vis = raw.filter(function(p) { return p.t >= viewT0 && p.t <= viewT1; });
+        if (vis.length < 2) vis = raw.slice(-2);
+        var vals = vis.map(seriesVal);
+        var vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
+        var pad = (vmax - vmin) * 0.15 || Math.max(vmax * 0.1, 0.5);
+        // Y-axis auto-fits to whatever's visible right now (initial load = full
+        // history, or the zoomed-in range) instead of a fixed 0-100% scale.
+        var y0 = Math.max(0, vmin - pad);
+        var y1 = Math.min(100, vmax + pad);
+        if (y1 <= y0) y1 = y0 + 1;
+
+        function X(t) { return padL + (t - viewT0) / Math.max(1, viewT1 - viewT0) * (W - padL - padR); }
+        function Y(v) { return H - padB - (v - y0) / (y1 - y0) * (H - padT - padB); }
+
+        curPts = vis.map(function(p) { return [X(p.t), Y(seriesVal(p)), p]; });
+        var lineStr = curPts.map(function(pt) { return pt[0].toFixed(1) + "," + pt[1].toFixed(1); }).join(" ");
+        elLine.setAttribute("points", lineStr);
+        elArea.setAttribute("d", "M " + curPts[0][0].toFixed(1) + "," + (H - padB).toFixed(1) +
+          " L " + lineStr.split(" ").join(" L ") +
+          " L " + curPts[curPts.length - 1][0].toFixed(1) + "," + (H - padB).toFixed(1) + " Z");
+        gDots.innerHTML = curPts.map(function(pt) {
+          return '<circle cx="' + pt[0].toFixed(1) + '" cy="' + pt[1].toFixed(1) + '" r="3.5" class="dot"></circle>';
+        }).join("");
+
+        var range = y1 - y0;
+        var step = niceStep(range / 4);
+        var decimals = range < 3 ? 2 : range < 20 ? 1 : 0;
+        var gridHtml = "";
+        for (var v = Math.ceil(y0 / step) * step; v <= y1 + 1e-9; v += step) {
+          var yy = Y(v);
+          gridHtml += '<line x1="' + padL + '" y1="' + yy.toFixed(1) + '" x2="' + (W - padR) + '" y2="' + yy.toFixed(1) + '" class="grid"></line>' +
+            '<text x="' + (padL - 8) + '" y="' + (yy + 4).toFixed(1) + '" class="ytick">' + v.toFixed(decimals) + '%</text>';
+        }
+        gGrid.innerHTML = gridHtml;
+
+        var n = vis.length;
+        var idxs = [0, Math.floor(n / 3), Math.floor(2 * n / 3), n - 1];
+        var seen = {}, xHtml = "";
+        idxs.forEach(function(i) {
+          if (seen[i]) return;
+          seen[i] = true;
+          var p = vis[i];
+          xHtml += '<text x="' + X(p.t).toFixed(1) + '" y="' + (H - padB + 18) + '" class="xtick">' + p.when.slice(0, 16) + '</text>';
+        });
+        gXticks.innerHTML = xHtml;
+      }
+
+      function setSeries(s) {
+        series = s;
+        panel.querySelectorAll("[data-series]").forEach(function(b) {
           b.classList.toggle("active", b.getAttribute("data-series") === s);
         });
-      };
-      function nearest(mx){
+        render();
+      }
+      panel.querySelectorAll("[data-series]").forEach(function(b) {
+        b.addEventListener("click", function() { setSeries(b.getAttribute("data-series")); });
+      });
+
+      function resetZoom() { viewT0 = fullT0; viewT1 = fullT1; render(); }
+      resetBtn.addEventListener("click", resetZoom);
+      svg.addEventListener("dblclick", resetZoom);
+
+      function nearestIdx(mx) {
         var best = 0, bestD = Infinity;
-        for (var i = 0; i < data.length; i++) {
-          var d = Math.abs(data[i].x - mx);
+        for (var i = 0; i < curPts.length; i++) {
+          var d = Math.abs(curPts[i][0] - mx);
           if (d < bestD) { bestD = d; best = i; }
         }
         return best;
       }
-      function showAt(clientX){
+      function toSvgX(clientX) {
         var rect = svg.getBoundingClientRect();
         var vb = svg.viewBox.baseVal;
-        var mx = (clientX - rect.left) / rect.width * vb.width;
-        var d = data[nearest(mx)];
-        cross.setAttribute("x1", d.x); cross.setAttribute("x2", d.x);
+        return (clientX - rect.left) / rect.width * vb.width;
+      }
+      function showTip(mx) {
+        var pt = curPts[nearestIdx(mx)];
+        var d = pt[2];
+        var rect = svg.getBoundingClientRect();
+        var vb = svg.viewBox.baseVal;
+        cross.setAttribute("x1", pt[0]); cross.setAttribute("x2", pt[0]);
+        cross.setAttribute("y1", padT); cross.setAttribute("y2", H - padB);
         cross.style.display = "";
         tip.style.display = "";
-        tip.style.left = Math.min(rect.width - 190, Math.max(0, (d.x / vb.width) * rect.width + 8)) + "px";
+        tip.style.left = Math.min(rect.width - 190, Math.max(0, (pt[0] / vb.width) * rect.width + 8)) + "px";
         tip.innerHTML = "<b>" + d.when + "</b><br>" +
           d.funcs.toLocaleString() + " functions (" + d.fp + "%)<br>" +
           d.bytes.toLocaleString() + " bytes (" + d.bp + "%)";
       }
-      hitbox.addEventListener("mousemove", function(e){ showAt(e.clientX); });
-      hitbox.addEventListener("mouseleave", function(){ cross.style.display = "none"; tip.style.display = "none"; });
-      hitbox.addEventListener("touchmove", function(e){
-        if (e.touches && e.touches[0]) showAt(e.touches[0].clientX);
-      }, {passive: true});
+
+      var dragging = false, dragStartX = 0;
+      hitbox.addEventListener("pointerdown", function(e) {
+        dragging = true; dragStartX = toSvgX(e.clientX);
+        selrect.setAttribute("x", dragStartX); selrect.setAttribute("y", padT);
+        selrect.setAttribute("width", 0); selrect.setAttribute("height", H - padT - padB);
+        selrect.style.display = "";
+        tip.style.display = "none"; cross.style.display = "none";
+        hitbox.setPointerCapture(e.pointerId);
+      });
+      hitbox.addEventListener("pointermove", function(e) {
+        var mx = toSvgX(e.clientX);
+        if (dragging) {
+          var x0 = Math.min(dragStartX, mx), x1 = Math.max(dragStartX, mx);
+          selrect.setAttribute("x", x0); selrect.setAttribute("width", Math.max(0, x1 - x0));
+        } else {
+          showTip(mx);
+        }
+      });
+      hitbox.addEventListener("pointerup", function(e) {
+        if (dragging) {
+          dragging = false;
+          selrect.style.display = "none";
+          var mx = toSvgX(e.clientX);
+          var x0 = Math.min(dragStartX, mx), x1 = Math.max(dragStartX, mx);
+          if (x1 - x0 > 6) {  // ignore accidental micro-drags (treat as a click)
+            var span = Math.max(1, viewT1 - viewT0);
+            var t0 = viewT0 + (x0 - padL) / (W - padL - padR) * span;
+            var t1 = viewT0 + (x1 - padL) / (W - padL - padR) * span;
+            viewT0 = Math.max(fullT0, t0); viewT1 = Math.min(fullT1, t1);
+            if (viewT1 - viewT0 > 60) render();
+          }
+        }
+      });
+      hitbox.addEventListener("pointerleave", function() {
+        if (!dragging) { cross.style.display = "none"; tip.style.display = "none"; }
+      });
+
+      render();
     })();
     </script>
     <div class="legend" style="margin-top:10px"><span class="lg"><b>+61</b> in last 24h</span><span class="lg"><b>~64</b> / day so far</span><span class="lg"><b>1,783</b> functions remaining</span></div>
@@ -552,7 +669,7 @@ int func_80014398(int arg) {
   </p>
 
   <footer>
-    Generated 2026-07-09 02:17 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-09 02:26 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
