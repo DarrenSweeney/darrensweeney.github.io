@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 16:23 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783607018*1000;
+    (function(){ var gen=1783607031*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 33: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 1s ago</div><div class="arow"><span class="mono aname">func_80084B70</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/1HwW7" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 34: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 1s ago</div><div class="arow"><span class="mono aname">func_800119F4</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/CANeg" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -141,6 +141,7 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       Every rebuild check, most recent first.</p>
     <p style="margin:0 0 .8em"><b>Last known-good build:</b> 2026-07-09 16:23 CEST — <span class="mono" style="font-size:.82rem">b15a1e38c653524b800b…</span> (184 functions from C)</p>
+<div class="arow"><span class="awhen">2026-07-09 16:23</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:23</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:23</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 16:23</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
@@ -160,7 +161,6 @@
 <div class="arow"><span class="awhen">2026-07-09 15:08</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">181 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 15:03</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">181 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 14:59</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">170 funcs</span></div>
-<div class="arow"><span class="awhen">2026-07-09 14:59</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">168 funcs</span></div>
   </div>
 
   <div class="cards">
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>4,660</b> agent attempts</span>
+      <span class="lg"><b>4,662</b> agent attempts</span>
       <span class="lg"><b>3.2%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -481,7 +481,38 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/1HwW7" target="_blank" rel="noopener">func_80084B70</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:23</span></div>
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Y0LUj" target="_blank" rel="noopener">func_80031620</a><span class="asz">48 B</span><span class="av miss">21% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:23</span><details><summary>view C the agent wrote</summary><pre>void func_80031620(void* arg) {
+    /* This function appears to be a wrapper for setting up hardware registers
+     * related to the PlayStation 1&#x27;s graphics system (likely a vector unit).
+     * It copies data from memory pointed to by $a0 into control registers.
+     * The actual register writes are done via handwritten instructions (ctc2),
+     * which are not standard MIPS instructions and likely correspond to
+     * specific hardware register accesses on the PSX&#x27;s graphics processor.
+     */
+    long* src = (long*)arg;
+    long v0 = src[0];
+    long v1 = src[1];
+    long v2 = src[2];
+    long v3 = src[3];
+    long v4 = src[4];
+
+    /* These are handwritten instructions that write to special control registers
+     * on the PSX&#x27;s graphics processor (likely VU0 or similar).
+     * They are not standard MIPS instructions and must be preserved exactly.
+     */
+    __asm__ volatile (
+        &quot;ctc2 %0, $16\n\t&quot;
+        &quot;ctc2 %1, $17\n\t&quot;
+        &quot;ctc2 %2, $18\n\t&quot;
+        &quot;ctc2 %3, $19\n\t&quot;
+        &quot;ctc2 %4, $20\n\t&quot;
+        :
+        : &quot;r&quot; (v0), &quot;r&quot; (v1), &quot;r&quot; (v2), &quot;r&quot; (v3), &quot;r&quot; (v4)
+        : &quot;memory&quot;
+    );
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/CANeg" target="_blank" rel="noopener">func_800119F4</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:23</span></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/1HwW7" target="_blank" rel="noopener">func_80084B70</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:23</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/oN5Vu" target="_blank" rel="noopener">func_80027810</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:23</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/1HwW7" target="_blank" rel="noopener">func_80084B70</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">16:23</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/riFl5" target="_blank" rel="noopener">func_80031320</a><span class="asz">48 B</span><span class="av miss">69% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:23</span><details><summary>view C the agent wrote</summary><pre>void func_80031320(short* param_1, short* param_2)
@@ -674,31 +705,6 @@
     ptr = (short *)D_800B38D0;
     var = ptr[arg0];
     return var;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/lY4hf" target="_blank" rel="noopener">func_80091DD8</a><span class="asz">44 B</span><span class="av miss">71% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:16</span><details><summary>view C the agent wrote</summary><pre>int func_80091DD8(void* param_1)
-{
-    short sVar1;
-    int iVar2;
-
-    sVar1 = *(short*)((char*)param_1 + 0x8);
-    iVar2 = func_80091E04((char*)param_1 + 0xA, 0x80);
-    return 0;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GXvIY" target="_blank" rel="noopener">func_8008C4E8</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-150-byte sweep)</span><span class="awhen">16:16</span><details><summary>view C the agent wrote</summary><pre>void func_8008C4E8(void)
-{
-    int *var_10;
-    int *var_14;
-    int *var_18;
-    int *var_1C;
-
-    var_10 = (int *)D_800DF898;
-    var_14 = (int *)D_800DF898;
-    var_18 = (int *)D_800DF898;
-    var_1C = (int *)D_800DF898;
-    *var_10 = *(int *)((int)var_10 + 0x10);
-    *(int *)((int)var_10 + 4) = *(int *)((int)var_10 + 0x14);
-    *(int *)((int)var_10 + 8) = *(int *)((int)var_10 + 0x18);
-    *(int *)((int)var_10 + 0xC) = *(int *)((int)var_10 + 0x1C);
 }</pre></details></div>
   </div>
 
