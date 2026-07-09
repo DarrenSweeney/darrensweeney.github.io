@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 18:58 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 18:59 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783616290*1000;
+    (function(){ var gen=1783616390*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 3: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 8s ago</div><div class="arow"><span class="mono aname">func_8002FB50</span><span class="av work">mizuchi says match — verifying…</span><span class="awhen"> — <a href="https://decomp.me/scratch/09X6g" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 4: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 96s ago</div><div class="arow"><span class="mono aname">func_80015C54</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/xoU8G" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>5,292</b> agent attempts</span>
+      <span class="lg"><b>5,296</b> agent attempts</span>
       <span class="lg"><b>2.9%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -435,6 +435,7 @@
 <tr><td class="mono"><a href="https://decomp.me/scratch/i1ymf" target="_blank" rel="noopener">func_80035F3C</a></td><td>95.3%</td><td>56 B</td><td>20</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/HAQBu" target="_blank" rel="noopener">func_80035F74</a></td><td>95.3%</td><td>56 B</td><td>20</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/ZwFwQ" target="_blank" rel="noopener">func_8003FCC8</a></td><td>93.8%</td><td>48 B</td><td>22</td></tr>
+<tr><td class="mono"><a href="https://decomp.me/scratch/js0iy" target="_blank" rel="noopener">func_80070BA8</a></td><td>93.8%</td><td>40 B</td><td>23</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/27Gl4" target="_blank" rel="noopener">func_8007CE24</a></td><td>93.8%</td><td>56 B</td><td>22</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/euv3z" target="_blank" rel="noopener">func_800A3820</a></td><td>93.8%</td><td>28 B</td><td>27</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/xK6uH" target="_blank" rel="noopener">func_800294F8</a></td><td>92.5%</td><td>64 B</td><td>24</td></tr>
@@ -463,7 +464,6 @@
 <tr><td class="mono"><a href="https://decomp.me/scratch/AGkKg" target="_blank" rel="noopener">func_80066128</a></td><td>81.2%</td><td>32 B</td><td>24</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/X6K1V" target="_blank" rel="noopener">func_80066600</a></td><td>81.2%</td><td>32 B</td><td>24</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/Neycw" target="_blank" rel="noopener">func_80066620</a></td><td>81.2%</td><td>32 B</td><td>24</td></tr>
-<tr><td class="mono"><a href="https://decomp.me/scratch/js0iy" target="_blank" rel="noopener">func_80070BA8</a></td><td>81.2%</td><td>40 B</td><td>21</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/e0nry" target="_blank" rel="noopener">func_8007A1AC</a></td><td>81.2%</td><td>40 B</td><td>22</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/yzpZ1" target="_blank" rel="noopener">func_8008CD40</a></td><td>81.2%</td><td>32 B</td><td>24</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/QAPia" target="_blank" rel="noopener">func_8009B490</a></td><td>81.2%</td><td>28 B</td><td>23</td></tr>
@@ -481,7 +481,73 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/09X6g" target="_blank" rel="noopener">func_8002FB50</a><span class="asz">32 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">18:58</span><details><summary>view C the agent wrote</summary><pre>void func_8002FB50(s32 *arg0) {
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/aVsYP" target="_blank" rel="noopener">func_80071158</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:59</span><details><summary>view C the agent wrote</summary><pre>void func_80071158(void)
+{
+    int var_4;
+    char *var_0;
+
+    var_4 = 0xb;
+    var_0 = (char *)D_800BB9E0;
+    var_0 += 0x2ec;
+
+    do {
+        *var_0 = 0;
+        var_4--;
+        var_0 -= 0x44;
+    } while (var_4 &gt;= 0);
+
+    return;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/js0iy" target="_blank" rel="noopener">func_80070BA8</a><span class="asz">40 B</span><span class="av miss">6% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:59</span><details><summary>view C the agent wrote</summary><pre>extern char D_800BB900[];
+extern char D_800B213C[];
+
+void func_80070BA8(void)
+{
+    char *var_v0;
+    int var_v1;
+
+    var_v1 = 0x7;
+    var_v0 = D_800BB900;
+    do
+    {
+        *var_v0 = 0;
+        var_v1--;
+        var_v0 += 0x1C;
+    } while (var_v1 &gt;= 0);
+    *D_800B213C = 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/qb5aW" target="_blank" rel="noopener">func_8006FEB4</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:58</span><details><summary>view C the agent wrote</summary><pre>extern char D_800BAFC0[];
+
+void func_8006FEB4(void)
+{
+    char *var1;
+    int var2;
+
+    var2 = 0xf;
+    var1 = (char *)(&amp;D_800BAFC0 + 0x4EC);
+    do
+    {
+        *(var1 + 0x4A) = 0;
+        var2--;
+        var1 -= 0x54;
+    } while (var2 &gt;= 0);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/3hFYA" target="_blank" rel="noopener">func_8006E08C</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:58</span><details><summary>view C the agent wrote</summary><pre>void func_8006E08C(void)
+{
+    char *var_4;
+    int var_0;
+
+    var_0 = 7;
+    var_4 = (char *)D_800BAF60;
+    var_4 += 0x54;
+    do
+    {
+        *var_4 = 0;
+        var_0--;
+        var_4 -= 0xc;
+    } while (var_0 != 0);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/09X6g" target="_blank" rel="noopener">func_8002FB50</a><span class="asz">32 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">18:58</span><details><summary>view C the agent wrote</summary><pre>void func_8002FB50(s32 *arg0) {
     register s32 t0 asm(&quot;$8&quot;);
     register s32 t1 asm(&quot;$9&quot;);
     register s32 t2 asm(&quot;$10&quot;);
@@ -797,45 +863,6 @@ void func_80015BC0(int *arg0, char *arg1) {
     /* Return value is the address of param_2 */
     return;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/sfILh" target="_blank" rel="noopener">func_80014408</a><span class="asz">40 B</span><span class="av miss">55% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:47</span><details><summary>view C the agent wrote</summary><pre>void func_80014408(void* arg0, void* arg1, int arg2, void* arg3)
-{
-    /* This function performs a dot product using MIPS vector coprocessor instructions.
-     * It loads 3-component vectors from arg0 and arg1, stores arg2 into $8,
-     * computes the dot product with dpcl, and stores the result in arg3.
-     * No actual C code is generated for this operation; it&#x27;s purely assembly
-     * using coprocessor registers. */
-    /* The function signature matches the expected parameters based on register usage. */
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/XSWVQ" target="_blank" rel="noopener">func_80010CDC</a><span class="asz">40 B</span><span class="av miss">62% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:47</span><details><summary>view C the agent wrote</summary><pre>int func_80010CDC(int arg0)
-{
-    int *ptr;
-    int val;
-
-    if (arg0 != 0) {
-        val = 0x800A7D00;
-    } else {
-        ptr = (int *)0x800A84C0;
-        val = *(int *)0x800A7CD8;
-        *ptr = val;
-        return 0;
-    }
-    ptr = (int *)0x800A84C0;
-    *ptr = val;
-    return 0;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/y9ki1" target="_blank" rel="noopener">func_80010B1C</a><span class="asz">40 B</span><span class="av miss">42% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:46</span><details><summary>view C the agent wrote</summary><pre>int func_80010B1C(void)
-{
-    int var_10;
-    int var_14;
-
-    var_10 = func_80020B40();
-    var_14 = func_80022820();
-    return var_10 + var_14;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/c4Olo" target="_blank" rel="noopener">func_800A37BC</a><span class="asz">36 B</span><span class="av miss">56% off</span><span class="eng">qwen3-coder:30b (local Ollama, bulk under-20000-byte sweep)</span><span class="awhen">18:46</span><details><summary>view C the agent wrote</summary><pre>int func_800A37BC(int param_1)
-{
-    return func_8002E7B0(3);
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -851,7 +878,7 @@ void func_80015BC0(int *arg0, char *arg1) {
   </p>
 
   <footer>
-    Generated 2026-07-09 18:58 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-09 18:59 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
