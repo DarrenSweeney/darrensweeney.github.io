@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 06:01 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783569667*1000;
+    (function(){ var gen=1783569712*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 98: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 1s ago</div><div class="arow"><span class="mono aname">func_80029C84</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/uGSjk" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 99: bridging + verifying</div><div class="livesub" style="opacity:.7">last signal 7s ago</div><div class="arow"><span class="mono aname">func_8009A25C</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/TYQKm" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -141,6 +141,7 @@
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       Every rebuild check, most recent first.</p>
     <p style="margin:0 0 .8em"><b>Last known-good build:</b> 2026-07-09 06:01 CEST — <span class="mono" style="font-size:.82rem">b15a1e38c653524b800b…</span> (132 functions from C)</p>
+<div class="arow"><span class="awhen">2026-07-09 06:01</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 06:01</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 05:44</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 05:37</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
@@ -159,7 +160,6 @@
 <div class="arow"><span class="awhen">2026-07-09 03:22</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 03:14</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 03:11</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
-<div class="arow"><span class="awhen">2026-07-09 02:59</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 02:59</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">132 funcs</span></div>
   </div>
 
@@ -385,13 +385,13 @@
 
   <div class="panel">
     <h2>Last batch</h2>
-    <p style="color:var(--muted)">No mizuchi batch has run yet.</p>
+    <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">Last run 2026-07-09 06:01 CEST — <b>0</b> matched, <b>1</b> rejected, <b>$0.08</b> spent.</p><div class="arow"><a class="mono aname" href="https://decomp.me/scratch/TYQKm" target="_blank" rel="noopener">func_8009A25C</a><span class="av miss">gate caught mizuchi's false claim</span><span class="awhen">$0.080</span></div>
   </div>
 
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>4,031</b> agent attempts</span>
+      <span class="lg"><b>4,032</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -481,7 +481,15 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/TYQKm" target="_blank" rel="noopener">func_8009A25C</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">05:37</span><details><summary>view C the agent wrote</summary><pre>s32 func_8009A25C(char *arg0, s32 arg1) {
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/TYQKm" target="_blank" rel="noopener">func_8009A25C</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">06:01</span><details><summary>view C the agent wrote</summary><pre>s32 func_8009A25C(char *arg0) {
+    s32 result;
+    result = 0;
+    if (*(u8 *)(arg0 + 0x7A) == 4) {
+        result = (*(u32 *)(arg0 + 0x248) &gt;&gt; 0x12) &amp; 1;
+    }
+    return result;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/TYQKm" target="_blank" rel="noopener">func_8009A25C</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">05:37</span><details><summary>view C the agent wrote</summary><pre>s32 func_8009A25C(char *arg0, s32 arg1) {
     arg1 = 0;
     if (*(u8 *)(arg0 + 0x7A) == 4) {
         arg1 = (*(u32 *)(arg0 + 0x248) &gt;&gt; 0x12) &amp; 1;
@@ -747,12 +755,6 @@ int func_8004D124(void)
 short func_8005DD64(void)
 {
     return D_800B02A2;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/2nwjh" target="_blank" rel="noopener">func_8002F61C</a><span class="asz">16 B</span><span class="av ok">matched</span><span class="eng">recovered-from-history (buried match found by recheck sweep)</span><span class="awhen">01:56</span><details><summary>view C the agent wrote</summary><pre>extern int D_800A9CD0;
-
-int func_8002F61C(void)
-{
-    return D_800A9CD0;
 }</pre></details></div>
   </div>
 
