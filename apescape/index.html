@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 21:14 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-09 21:21 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783624489*1000;
+    (function(){ var gen=1783624865*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 14: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 1195s ago</div><div class="arow"><span class="mono aname">func_800299C0</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/t4gGe" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 14: bridging + verifying</div><div class="livesub">1/1 functions this batch</div><div class="livesub" style="opacity:.7">last signal 8s ago</div><div class="arow"><span class="mono aname">func_800299C0</span><span class="av miss">no match</span><span class="awhen"> — <a href="https://decomp.me/scratch/t4gGe" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -134,13 +134,14 @@
     </div>
   </div>
 
-  <div class="verify ok"><span class="vicon">✓</span><div><b>Rebuild verified — byte-identical to the original PAL disc.</b><div class="vsub">The whole executable is reassembled from <b>185</b> function(s) compiled from our C + the remaining <b>1729</b> kept as the original assembly. Together the full 610,236-byte program hashes to <span class="mono">SHA-1 b15a1e38c653524b800b…</span>, matching the original disc exactly. Re-checked 2026-07-09 21:14 CEST — after <b>every batch</b> that merges a match, and the run halts on any drift. A playable disc image is rebuilt from this and boots in an emulator.</div></div></div>
+  <div class="verify ok"><span class="vicon">✓</span><div><b>Rebuild verified — byte-identical to the original PAL disc.</b><div class="vsub">The whole executable is reassembled from <b>185</b> function(s) compiled from our C + the remaining <b>1729</b> kept as the original assembly. Together the full 610,236-byte program hashes to <span class="mono">SHA-1 b15a1e38c653524b800b…</span>, matching the original disc exactly. Re-checked 2026-07-09 21:21 CEST — after <b>every batch</b> that merges a match, and the run halts on any drift. A playable disc image is rebuilt from this and boots in an emulator.</div></div></div>
 
   <div class="panel">
     <h2>Rebuild history</h2>
     <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">
       Every rebuild check, most recent first.</p>
-    <p style="margin:0 0 .8em"><b>Last known-good build:</b> 2026-07-09 21:14 CEST — <span class="mono" style="font-size:.82rem">b15a1e38c653524b800b…</span> (185 functions from C)</p>
+    <p style="margin:0 0 .8em"><b>Last known-good build:</b> 2026-07-09 21:21 CEST — <span class="mono" style="font-size:.82rem">b15a1e38c653524b800b…</span> (185 functions from C)</p>
+<div class="arow"><span class="awhen">2026-07-09 21:21</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">185 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 21:14</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">185 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 20:54</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">185 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 20:53</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">185 funcs</span></div>
@@ -160,7 +161,6 @@
 <div class="arow"><span class="awhen">2026-07-09 18:55</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 18:44</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
 <div class="arow"><span class="awhen">2026-07-09 18:29</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
-<div class="arow"><span class="awhen">2026-07-09 18:14</span><span class="av ok">match</span><span class="mono aname" style="font-size:.78rem">b15a1e38c653524b…</span><span class="asz">184 funcs</span></div>
   </div>
 
   <div class="cards">
@@ -385,13 +385,13 @@
 
   <div class="panel">
     <h2>Last batch</h2>
-    <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">Last run 2026-07-09 20:54 CEST — <b>0</b> matched, <b>1</b> rejected, <b>$0.12</b> spent.</p><div class="arow"><a class="mono aname" href="https://decomp.me/scratch/09X6g" target="_blank" rel="noopener">func_8002FB50</a><span class="av miss">gate caught mizuchi's false claim</span><span class="awhen">$0.123</span></div>
+    <p style="color:var(--muted);font-size:.86rem;margin:0 0 .6em">Last run 2026-07-09 21:21 CEST — <b>0</b> matched, <b>1</b> rejected, <b>$0.28</b> spent.</p><div class="arow"><a class="mono aname" href="https://decomp.me/scratch/t4gGe" target="_blank" rel="noopener">func_800299C0</a><span class="av miss">build failed</span><span class="awhen">$0.283</span></div>
   </div>
 
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>5,734</b> agent attempts</span>
+      <span class="lg"><b>5,735</b> agent attempts</span>
       <span class="lg"><b>2.7%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>27 B</b> avg matched size</span>
@@ -481,7 +481,32 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/09X6g" target="_blank" rel="noopener">func_8002FB50</a><span class="asz">32 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">20:54</span><details><summary>view C the agent wrote</summary><pre>void func_8002FB50(s32 *arg0) {
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/t4gGe" target="_blank" rel="noopener">func_800299C0</a><span class="asz">152 B</span><span class="av miss">100% off</span><span class="eng">mizuchi</span><span class="awhen">21:20</span><details><summary>view C the agent wrote</summary><pre>extern s16 D_800A8924;
+extern s16 D_800A8926;
+
+s32 func_800299C0(s16 arg0, s16 arg1) {
+    s32 x;
+    s32 y;
+
+    if (arg0 &lt; 0) {
+        x = 0;
+    } else if (D_800A8924 - 1 &lt; (s32)arg0) {
+        x = (u16)D_800A8924 - 1;
+    } else {
+        x = arg0;
+    }
+
+    if (arg1 &lt; 0) {
+        y = 0;
+    } else if (D_800A8926 - 1 &lt; (s32)arg1) {
+        y = (u16)D_800A8926 - 1;
+    } else {
+        y = arg1;
+    }
+
+    return ((y &amp; 0x3FF) &lt;&lt; 10) | (x &amp; 0x3FF) | 0xE3000000;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/09X6g" target="_blank" rel="noopener">func_8002FB50</a><span class="asz">32 B</span><span class="av miss">100% off</span><span class="eng">gate rejected mizuchi&#x27;s claim</span><span class="awhen">20:54</span><details><summary>view C the agent wrote</summary><pre>void func_8002FB50(s32 *arg0) {
     register s32 v0 asm(&quot;t0&quot;) = arg0[5];
     register s32 v1 asm(&quot;t1&quot;) = arg0[6];
     register s32 v2 asm(&quot;t2&quot;) = arg0[7];
@@ -832,25 +857,6 @@ int func_8007CE24(char* param_1) {
     } while (var_a1 &lt; 32);
     return 0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/2mrLc" target="_blank" rel="noopener">func_8008C144</a><span class="asz">56 B</span><span class="av miss">23% off</span><span class="eng">qwen3-coder:30b (escalate_low_byte, 64B sweep)</span><span class="awhen">20:38</span><details><summary>view C the agent wrote</summary><pre>extern char D_800BF750[];
-
-int func_8008C144(char* param_1) {
-    int local_res;
-    char* local_ptr;
-    int local_count;
-
-    local_res = 0;
-    local_ptr = (char*)((unsigned int)D_800BF750 &amp; 0xFFFF0000 | ((unsigned int)D_800BF750 &amp; 0xFFFF));
-    local_count = 0;
-    do {
-        if (*(int*)local_ptr != (int)param_1) {
-            *(int*)local_ptr = 0;
-        }
-        local_count += 1;
-        local_ptr += 4;
-    } while (local_count &lt; 64);
-    return local_res;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -866,7 +872,7 @@ int func_8008C144(char* param_1) {
   </p>
 
   <footer>
-    Generated 2026-07-09 21:14 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-09 21:21 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
