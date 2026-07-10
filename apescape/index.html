@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 16:55 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 16:56 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783695355*1000;
+    (function(){ var gen=1783695399*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 6243s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 6288s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,376</b> agent attempts</span>
+      <span class="lg"><b>7,382</b> agent attempts</span>
       <span class="lg"><b>2.6%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,76 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/zQl8n" target="_blank" rel="noopener">func_80010CA4</a><span class="asz">28 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:55</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/QRiGv" target="_blank" rel="noopener">func_8006EDAC</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:56</span><details><summary>view C the agent wrote</summary><pre>c
+
+extern int D_800F50D0[];
+
+void func_8006EDAC(void)
+{
+    int *p;
+    int i;
+
+    p = &amp;D_800F50D0[0x1C];
+    for (i = 7; i &gt;= 0; i--) {
+        *p-- = 0;
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/g8TXl" target="_blank" rel="noopener">func_8001422C</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:56</span><details><summary>view C the agent wrote</summary><pre>c
+
+extern unsigned char D_800E5529;
+
+void func_8001422C(int arg0)
+{
+    if (arg0 == 0) {
+        D_800E5529 = 0;
+    } else if (arg0 == 1) {
+        D_800E5529 = 1;
+    } else {
+        D_800E5529 = 2;
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/xCApc" target="_blank" rel="noopener">func_800A3794</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:56</span><details><summary>view C the agent wrote</summary><pre>c
+
+extern int D_800F76C4;
+
+int func_800A3794(int arg0)
+{
+    int old;
+    old = D_800F76C4;
+    D_800F76C4 = arg0;
+    return old;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/js0iy" target="_blank" rel="noopener">func_80070BA8</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:55</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80070BA8(void)
+{
+    u8 *p;
+    s32 i;
+
+    i = 7;
+    p = (u8 *)&amp;D_800BB900;
+    do {
+        p[0x18] = 0;
+        p += sizeof(*D_800BB900);
+        i--;
+    } while (i &gt;= 0);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/G9D23" target="_blank" rel="noopener">func_8006B83C</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:55</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_8006B83C(void)
+{
+    D_800BAE38[0] = 0;
+    D_800BAE38[1] = 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/bFC11" target="_blank" rel="noopener">func_800A1458</a><span class="asz">32 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:55</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_800A1458(s32 arg0)
+{
+    if (arg0 &lt; 2) {
+        D_800B44E4 = arg0;
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/zQl8n" target="_blank" rel="noopener">func_80010CA4</a><span class="asz">28 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">16:55</span><details><summary>view C the agent wrote</summary><pre>c
 
 void *func_80010CA4(int index)
 {
@@ -724,12 +793,6 @@ s16 func_80010CC0(s32 idx) {
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/LMhmA" target="_blank" rel="noopener">func_80014FC0</a><span class="asz">672 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:11</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/89bpq" target="_blank" rel="noopener">func_8004B5A0</a><span class="asz">16 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:10</span></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/o7AUJ" target="_blank" rel="noopener">func_8005ECCC</a><span class="asz">652 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:10</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/89bpq" target="_blank" rel="noopener">func_8004B5A0</a><span class="asz">16 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:10</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/2Dxd2" target="_blank" rel="noopener">func_80030FC0</a><span class="asz">652 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:10</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/89bpq" target="_blank" rel="noopener">func_8004B5A0</a><span class="asz">16 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:10</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/XrcCq" target="_blank" rel="noopener">func_80030BF0</a><span class="asz">652 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:09</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/UyH1U" target="_blank" rel="noopener">func_8002F230</a><span class="asz">16 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:09</span></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Xam5F" target="_blank" rel="noopener">func_8002FCE0</a><span class="asz">652 B</span><span class="av miss">100% off</span><span class="eng">mizuchi (no candidate produced)</span><span class="awhen">15:09</span></div>
   </div>
 
   <div class="panel">
@@ -745,7 +808,7 @@ s16 func_80010CC0(s32 idx) {
   </p>
 
   <footer>
-    Generated 2026-07-10 16:55 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 16:56 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
