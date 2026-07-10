@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ape Escape - Loading Debug Info</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1a1a1a; color: #0f0; }
+        .log { margin: 5px 0; padding: 5px; background: #222; }
+        .error { color: #f00; }
+        .success { color: #0f0; }
+    </style>
+</head>
+<body>
+    <h1>Debug Console</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById('output');
+        function log(msg, isError = false) {
+            const div = document.createElement('div');
+            div.className = 'log ' + (isError ? 'error' : 'success');
+            div.textContent = '[' + new Date().toLocaleTimeString() + '] ' + msg;
+            output.appendChild(div);
+            if (isError) console.error(msg);
+            else console.log(msg);
+        }
+
+        log('Page loaded');
+        log('URL: ' + window.location.href);
+        log('Checking D3...');
+
+        if (typeof d3 !== 'undefined') {
+            log('SUCCESS: D3 v' + d3.version + ' loaded');
+        } else {
+            log('FAIL: D3 not loaded', true);
+        }
+
+        log('Attempting to fetch manifest.json...');
+        fetch('manifest.json')
+            .then(r => {
+                log('Response status: ' + r.status);
+                if (r.ok) {
+                    return r.json();
+                } else {
+                    throw new Error('HTTP ' + r.status);
+                }
+            })
+            .then(data => {
+                const count = Object.keys(data.funcs || {}).length;
+                log('SUCCESS: Loaded ' + count + ' functions');
+                log('Sample: ' + Object.keys(data.funcs).slice(0, 3).join(', '));
+            })
+            .catch(e => {
+                log('FAIL: ' + e.message, true);
+                log('This usually means manifest.json is missing or GitHub Pages not configured', true);
+            });
+
+        log('Trying to load main index.html...');
+        setTimeout(() => {
+            log('To view the main dashboard, go to: index.html');
+        }, 2000);
+    </script>
+</body>
+</html>
