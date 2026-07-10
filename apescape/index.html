@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:41 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:42 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783698069*1000;
+    (function(){ var gen=1783698128*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8957s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 9016s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,561</b> agent attempts</span>
+      <span class="lg"><b>7,562</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,69 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/X8Mti" target="_blank" rel="noopener">func_80033C20</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:40</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Bl7a3" target="_blank" rel="noopener">func_80028C84</a><span class="asz">92 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:41</span><details><summary>view C the agent wrote</summary><pre>c
+
+
+extern void *D_800A8918;
+
+void func_80028C84(void *arg0) {
+    u8 temp_s1;
+
+    temp_s1 = arg0-&gt;unk3;
+    D_800A8918-&gt;unk3C(0);
+    D_800A8918-&gt;unk14(arg0 + 4, temp_s1);
+}
+
+void *func_800300D0(s32 *arg0, s32 *arg1, s16 *arg2) {
+    asm volatile(&quot;lw $t0, 0(%0)&quot;   : : &quot;r&quot;(arg0));
+    asm volatile(&quot;lw $t1, 4(%0)&quot;   : : &quot;r&quot;(arg0));
+    asm volatile(&quot;lw $t2, 8(%0)&quot;   : : &quot;r&quot;(arg0));
+    asm volatile(&quot;lw $t3, 12(%0)&quot;  : : &quot;r&quot;(arg0));
+    asm volatile(&quot;lw $t4, 16(%0)&quot;  : : &quot;r&quot;(arg0));
+    asm volatile(&quot;ctc2 $t0, $0&quot;);
+    asm volatile(&quot;ctc2 $t1, $1&quot;);
+    asm volatile(&quot;ctc2 $t2, $2&quot;);
+    asm volatile(&quot;ctc2 $t3, $3&quot;);
+    asm volatile(&quot;ctc2 $t4, $4&quot;);
+    asm volatile(&quot;lwc2 $0, 0(%0)&quot;  : : &quot;r&quot;(arg1));
+    asm volatile(&quot;lwc2 $1, 4(%0)&quot;  : : &quot;r&quot;(arg1));
+    asm volatile(&quot;nop&quot;);
+    asm volatile(&quot;cop2 0x0486012&quot;);
+    asm volatile(&quot;mfc2 $t0, $9&quot;);
+    asm volatile(&quot;mfc2 $t1, $10&quot;);
+    asm volatile(&quot;mfc2 $t2, $11&quot;);
+    asm volatile(&quot;sh $t0, 0(%0)&quot;   : : &quot;r&quot;(arg2));
+    asm volatile(&quot;sh $t1, 2(%0)&quot;   : : &quot;r&quot;(arg2));
+    asm volatile(&quot;sh $t2, 4(%0)&quot;   : : &quot;r&quot;(arg2));
+    return arg2;
+}
+
+s32 func_80055390(void *arg0, s16 arg1) {
+    s32 temp_v0;
+    s32 temp_v0_2;
+    s32 temp_v0_3;
+
+    temp_v0_2 = arg0-&gt;unk9A - (arg0-&gt;unk24 + arg0-&gt;unk94);
+    temp_v0_3 = arg0-&gt;unk9E - (arg0-&gt;unk2C + arg0-&gt;unk98);
+    temp_v0 = arg0-&gt;unkA6 + arg1;
+    return (temp_v0 * temp_v0) &lt; ((temp_v0_2 * temp_v0_2) + (temp_v0_3 * temp_v0_3));
+}
+
+s32 func_8005848C(void *arg0, void *arg1, s32 arg2, s32 arg3) {
+    s32 temp_v0;
+    s32 temp_v0_2;
+    void *temp_a0;
+
+    temp_a0 = arg0-&gt;unk90 + ((arg3 &amp; 0xFF) * 8);
+    temp_v0 = temp_a0-&gt;unk0 - arg1-&gt;unk0;
+    temp_v0_2 = temp_a0-&gt;unk4 - arg1-&gt;unk8;
+    return ((temp_v0 * temp_v0) + (temp_v0_2 * temp_v0_2)) &lt; (arg2 * arg2);
+}
+
+extern u8 D_800F5B80;
+
+void fu</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/X8Mti" target="_blank" rel="noopener">func_80033C20</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:40</span><details><summary>view C the agent wrote</summary><pre>c
 
 void func_80033C20(void) {
     u8 v1;
@@ -953,36 +1015,6 @@ void func_80015D30(SomeStruct *arg0, OtherStruct *arg1) {
     u16 b = arg1-&gt;unk8;
     /* truncated */
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/14B4s" target="_blank" rel="noopener">func_80023CB0</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:33</span><details><summary>view C the agent wrote</summary><pre>c
-void func_80023CB0(void *arg0) {
-    struct SomeStruct *s = (struct SomeStruct *)((u8*)arg0 + 0x1074);
-    if ((s-&gt;flags &amp; 0x80) == 0) {
-        return;
-    }
-    /* ... truncated ... */
-}
-
-void func_80031794(SVECTOR *v0, SVECTOR *v1, SVECTOR *v2) {
-    gte_ldv3(v0, v1, v2);
-    /* ... truncated ... */
-}
-
-s32 func_8004BD74(s32 arg0) {
-    if ((s32)D_800E6990 &lt; arg0) {
-        /* ... truncated ... */
-    }
-    /* ... truncated ... */
-}
-
-void func_800583DC(s32 arg0, u16 arg1) {
-    u8 *ptr = (u8 *)D_800E7898 + ((arg1 &amp; 0xFFFF) &lt;&lt; 3);
-    /* ... truncated ... */
-}
-
-s32 func_80033BBC(void) {
-    u8 val = *((u8 *)D_800B4DC8 + 0x78);
-    /* ... truncated ... */
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -998,7 +1030,7 @@ s32 func_80033BBC(void) {
   </p>
 
   <footer>
-    Generated 2026-07-10 17:41 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 17:42 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
