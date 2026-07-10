@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-07-10T16:49:35.644912",
-  "elapsed_seconds": 126,
+  "timestamp": "2026-07-10T16:50:38.971943",
+  "elapsed_seconds": 189,
   "batches": {
-    "processed": 5,
+    "processed": 6,
     "total": 278,
     "progress_pct": 3
   },
@@ -10,7 +10,7 @@
     "matched": 0,
     "partial": 0,
     "failed": 0,
-    "total_attempted": 29,
+    "total_attempted": 30,
     "match_rate_pct": 0
   },
   "current_batch": {
