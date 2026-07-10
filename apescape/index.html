@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 18:01 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 18:02 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783699274*1000;
+    (function(){ var gen=1783699336*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 10162s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 10225s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,636</b> agent attempts</span>
+      <span class="lg"><b>7,639</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,36 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/i6YH1" target="_blank" rel="noopener">func_8002B54C</a><span class="asz">204 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">18:00</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Gyav2" target="_blank" rel="noopener">func_80052008</a><span class="asz">80 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">18:02</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80052008(void)
+{
+    short a1 = *(short *)((char *)&amp;D_800E7890 + 0xC);
+    int   v0 = *(int   *)((char *)&amp;D_800E7890 + 0x4);
+    (void)a1;
+    (void)v0;
+    /* remainder of body not visible in truncated listing */
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/q0uv8" target="_blank" rel="noopener">func_800315A0</a><span class="asz">80 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">18:02</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_800315A0(int *src, int *dst)
+{
+    dst[0] = src[0];
+    dst[1] = src[1];
+    dst[2] = src[2];
+    dst[3] = src[3];
+    /* remaining copies not visible in truncated listing */
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/profD" target="_blank" rel="noopener">func_800966CC</a><span class="asz">76 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">18:02</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_800966CC(int arg0)
+{
+    unsigned int idx = (unsigned int)(arg0 - 0x18);
+    if (idx &lt; 6) {
+        /* jump table dispatch at .L800966F4 - body not visible in truncated listing */
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/i6YH1" target="_blank" rel="noopener">func_8002B54C</a><span class="asz">204 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">18:00</span><details><summary>view C the agent wrote</summary><pre>c
 
 void func_8002B54C(void)
 {
@@ -778,37 +807,6 @@ void func_80033BBC(void)
     /* lbu $v1, 0x78(ptr); addiu $v0, $v1, 0x0F  â€” remainder truncated */
     ptr[0x78] = (u8)(ptr[0x78] + 0x0F);
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DQUhZ" target="_blank" rel="noopener">func_800583DC</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:53</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_800583DC(int arg0, unsigned short arg1, int arg3)
-{
-    unsigned char *tbl;
-
-    tbl = (unsigned char *)D_800E7898;
-    tbl += (arg1 &amp; 0xFFFF) &lt;&lt; 3;
-    /* remainder truncated */
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/oo4HD" target="_blank" rel="noopener">func_8004BD74</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:53</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_8004BD74(int arg0)
-{
-    if ((int)(unsigned short)D_800E6990 &lt; arg0) {
-        D_800E6990 = arg0;
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/9SjeY" target="_blank" rel="noopener">func_80031794</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:53</span><details><summary>view C the agent wrote</summary><pre>c
-
-long func_80031794(SVECTOR *v0, SVECTOR *v1, SVECTOR *v2)
-{
-    long flag;
-
-    gte_ldv0(v0);
-    gte_ldv1(v1);
-    gte_ldv2(v2);
-    gte_nclip();
-    gte_stopz(&amp;flag);
-    return flag;
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -824,7 +822,7 @@ long func_80031794(SVECTOR *v0, SVECTOR *v1, SVECTOR *v2)
   </p>
 
   <footer>
-    Generated 2026-07-10 18:01 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 18:02 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
