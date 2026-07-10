@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 05:20 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 05:22 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783653615*1000;
+    (function(){ var gen=1783653769*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 171: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 1287s ago</div><div class="arow"><span class="mono aname">func_8002DD38</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/EmTWk" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 171: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 1440s ago</div><div class="arow"><span class="mono aname">func_8002DD38</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/EmTWk" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,8 +391,8 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>6,587</b> agent attempts</span>
-      <span class="lg"><b>2.6%</b> match rate</span>
+      <span class="lg"><b>6,602</b> agent attempts</span>
+      <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
       <span class="lg"><b>190</b> in review (needs a human)</span>
@@ -405,6 +405,7 @@
       Rejected functions ranked by their best-ever attempt, closest to a real match first.</p>
     <table class="data"><tr><th>function</th><th>closest match</th><th>size</th><th>last tried</th></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/EmTWk" target="_blank" rel="noopener">func_8002DD38</a></td><td>97.5%</td><td>224 B</td><td>2026-07-10 04:00</td></tr>
+<tr><td class="mono"><a href="https://decomp.me/scratch/0tGSj" target="_blank" rel="noopener">func_800AF010</a></td><td>88.3%</td><td>60 B</td><td>2026-07-10 05:21</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/lY4hf" target="_blank" rel="noopener">func_80091DD8</a></td><td>85.4%</td><td>44 B</td><td>2026-07-10 04:54</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/ZhpQv" target="_blank" rel="noopener">func_80087D00</a></td><td>78.1%</td><td>60 B</td><td>2026-07-10 05:17</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/Y8WxT" target="_blank" rel="noopener">func_80097F40</a></td><td>75.0%</td><td>40 B</td><td>2026-07-10 04:44</td></tr>
@@ -418,7 +419,6 @@
 <tr><td class="mono"><a href="https://decomp.me/scratch/jY2V2" target="_blank" rel="noopener">func_8004B85C</a></td><td>57.8%</td><td>60 B</td><td>2026-07-07 16:31</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/SAiXT" target="_blank" rel="noopener">func_800833CC</a></td><td>57.5%</td><td>48 B</td><td>2026-07-09 13:13</td></tr>
 <tr><td class="mono"><a href="https://decomp.me/scratch/jMAxi" target="_blank" rel="noopener">func_8008E000</a></td><td>56.2%</td><td>28 B</td><td>2026-07-07 01:30</td></tr>
-<tr><td class="mono"><a href="https://decomp.me/scratch/WmkII" target="_blank" rel="noopener">func_80084894</a></td><td>56.2%</td><td>40 B</td><td>2026-07-09 16:00</td></tr>
 </table>
   </div>
 
@@ -481,7 +481,108 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/FrdHB" target="_blank" rel="noopener">func_800A9CFC</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:18</span><details><summary>view C the agent wrote</summary><pre>void func_800A9CFC(void) {
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/JdNBG" target="_blank" rel="noopener">func_800463C4</a><span class="asz">64 B</span><span class="av miss">56% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:22</span><details><summary>view C the agent wrote</summary><pre>int func_800463C4(int a0, int a1, int a2) {
+    int v1;
+    int v0;
+    v1 = a0 - a1;
+    if (v1 == 0) {
+        return a0;
+    }
+    v0 = (v1 &lt; a2) ? 1 : 0;
+    if (v0 == 0) {
+        return -a2;
+    }
+    return 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/pnWIC" target="_blank" rel="noopener">func_800363C4</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:22</span><details><summary>view C the agent wrote</summary><pre>void func_800363C4(void) {
+    int s0;
+    s0 = D_800B4DC8;
+    func_80033240(1);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/LobwI" target="_blank" rel="noopener">func_80036194</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:22</span><details><summary>view C the agent wrote</summary><pre>void func_80036194(void) {
+    int v0;
+    int v1;
+    v0 = D_800B4DC8;
+    v1 = *(unsigned char *)(v0 + 0x78);
+    if (v1 == 0x3F) {
+        return;
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/O8aCf" target="_blank" rel="noopener">func_800349D4</a><span class="asz">64 B</span><span class="av miss">70% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:22</span><details><summary>view C the agent wrote</summary><pre>int func_800349D4(int a0, int a1) {
+    int v0;
+    if (a1 == 0) {
+        if (a0 &gt; 0) {
+            v0 = 0x400;
+        } else {
+            v0 = 0xC00;
+        }
+        return v0;
+    }
+    return 0;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/fHvyW" target="_blank" rel="noopener">func_800339AC</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:22</span><details><summary>view C the agent wrote</summary><pre>void func_800339AC(void) {
+    int v0;
+    unsigned short v1;
+    v0 = D_800EC410 + 0x8000;
+    v1 = *(unsigned short *)(v0 + 0x12E);
+    if (v1 != 0x29) {
+        return;
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/5hMdn" target="_blank" rel="noopener">func_8002F8CC</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:21</span><details><summary>view C the agent wrote</summary><pre>void func_8002F8CC(void) {
+    int *v1 = (int *)D_800A9CD8;
+    int v0 = v1[1] &amp; 1;
+    if (v0 == 0) return;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/qWzab" target="_blank" rel="noopener">func_8002A3A8</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:21</span><details><summary>view C the agent wrote</summary><pre>void func_8002A3A8(int a1) {
+    int *v1 = (int *)D_800A8A28;
+    *v1 = 0x4000000;
+    if (a1 == 0) return;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/xK6uH" target="_blank" rel="noopener">func_800294F8</a><span class="asz">64 B</span><span class="av miss">70% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:21</span><details><summary>view C the agent wrote</summary><pre>void func_800294F8(void *a0, void *a1) {
+    *(char *)((int)a0 + 3) = 2;
+}</pre></details></div>
+<div class="arow"><span class="mono aname">func_80020B40</span><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:21</span><details><summary>view C the agent wrote</summary><pre>void func_80020B40(void) {
+    volatile int *v1 = (int *)D_800B4EF0;
+    while (*v1) {
+    }
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/0tGSj" target="_blank" rel="noopener">func_800AF010</a><span class="asz">60 B</span><span class="av miss">12% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:21</span><details><summary>view C the agent wrote</summary><pre>void func_800AF010(void) {
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/ewGtS" target="_blank" rel="noopener">func_800721D0</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:20</span><details><summary>view C the agent wrote</summary><pre>int func_800721D0(int a0) {
+    unsigned short low;
+    
+    low = a0 &amp; 0xFFFF;
+    if (low &gt;= 0x101) {
+        return 0;
+    }
+    return D_800BBE60[low];
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/3dFxa" target="_blank" rel="noopener">func_8005DDD0</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:20</span><details><summary>view C the agent wrote</summary><pre>int func_8005DDD0(void) {
+    short v;
+    
+    v = D_800B02A0;
+    if (v == 0) {
+        return 0;
+    }
+    return (int)D_800B02A2;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/MYXu2" target="_blank" rel="noopener">func_8005BB7C</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:20</span><details><summary>view C the agent wrote</summary><pre>int func_8005BB7C(int a0) {
+    if (a0 &lt; 0) {
+        return 0;
+    }
+    return *(int *)((char *)D_800EC410 + 0x8000 + a0 * 3);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/m5Zv4" target="_blank" rel="noopener">func_800A1B04</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:20</span><details><summary>view C the agent wrote</summary><pre>int func_800A1B04(void) {
+    return D_800F769C;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/kLwea" target="_blank" rel="noopener">func_80096694</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:20</span><details><summary>view C the agent wrote</summary><pre>int func_80096694(int a0) {
+    if ((unsigned)(a0 - 0x18) &lt; 6) {
+        return 0;
+    }
+    return D_800DFE00[a0];
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/FrdHB" target="_blank" rel="noopener">func_800A9CFC</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:18</span><details><summary>view C the agent wrote</summary><pre>void func_800A9CFC(void) {
 }</pre></details></div>
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/tlCsB" target="_blank" rel="noopener">func_8009954C</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:18</span><details><summary>view C the agent wrote</summary><pre>void func_8009954C(void) {
     int a0 = (int)&amp;D_800F5AE0;
@@ -530,94 +631,6 @@
         v1 += 10;
     }
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/XH31e" target="_blank" rel="noopener">func_8008826C</a><span class="asz">60 B</span><span class="av miss">72% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:17</span><details><summary>view C the agent wrote</summary><pre>void func_8008826C(void) {
-    short *v1;
-    int v0 = 0;
-    v1 = (short *)0x800BF430;
-    while (1) {
-        *(v1 + 0) = -1;
-        *(v1 + 1) = -1;
-        *(v1 + 9) = 0;
-        v1 += 10;
-        v0++;
-        if (v0 &gt;= 10) break;
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/ZhpQv" target="_blank" rel="noopener">func_80087D00</a><span class="asz">60 B</span><span class="av miss">22% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:17</span><details><summary>view C the agent wrote</summary><pre>int func_80087D00(int a1, int a2) {
-    int a0;
-    a0 = (a1 &lt;&lt; 16) &gt;&gt; 16;
-    if (a0 &lt; 0) {
-        return -1;
-    }
-    a1 = (a2 &lt;&lt; 16) &gt;&gt; 1;
-    return func_800A36DC(a0, a1);
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/S5XLH" target="_blank" rel="noopener">func_800811D8</a><span class="asz">60 B</span><span class="av miss">75% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:17</span><details><summary>view C the agent wrote</summary><pre>int func_800811D8(int a0) {
-    char *v1;
-    char v0;
-    v1 = (char *)0x800F51E0;
-    while (1) {
-        v0 = *(v1 + 0x88);
-        if (v0 == a0) {
-            return (int)v1;
-        }
-        v1 += 0x90;
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/ZOCys" target="_blank" rel="noopener">func_80065224</a><span class="asz">16 B</span><span class="av ok">matched</span><span class="eng">recovered-from-history (buried match found by recheck sweep)</span><span class="awhen">05:17</span><details><summary>view C the agent wrote</summary><pre>int func_80065224(void) {
-    int v0 = (*(unsigned short*)0x1F80005E) &amp; 0x10;
-    return v0;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/POCNd" target="_blank" rel="noopener">func_80065314</a><span class="asz">24 B</span><span class="av ok">matched</span><span class="eng">recovered-from-history (buried match found by recheck sweep)</span><span class="awhen">05:17</span><details><summary>view C the agent wrote</summary><pre>int func_80065314(void) {
-    return ((unsigned int)(*(unsigned short *)0x1F800064 - 1)) &lt; 0x7B;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/yPIud" target="_blank" rel="noopener">func_8007CDE8</a><span class="asz">60 B</span><span class="av miss">81% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:16</span><details><summary>view C the agent wrote</summary><pre>int func_8007CDE8(void) {
-    int i = 0;
-    int* p = (int*)0x800F52B0;
-    while (p[i] == 0) {
-        i++;
-    }
-    return i;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/l2Wxp" target="_blank" rel="noopener">func_8007203C</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:16</span><details><summary>view C the agent wrote</summary><pre>int func_8007203C(void) {
-    int16_t* p = (int16_t*)0x800BBE60;
-    while (1) {
-        if (*p &lt; 0) {
-            return (int)p;
-        }
-        p++;
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/xIPuq" target="_blank" rel="noopener">func_80069944</a><span class="asz">60 B</span><span class="av miss">80% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:16</span><details><summary>view C the agent wrote</summary><pre>void func_80069944(void) {
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/8sbqX" target="_blank" rel="noopener">func_800661F8</a><span class="asz">60 B</span><span class="av miss">77% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:16</span><details><summary>view C the agent wrote</summary><pre>int func_800661F8(void) {
-    return 0;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/r3CVf" target="_blank" rel="noopener">func_80065BCC</a><span class="asz">60 B</span><span class="av miss">80% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:16</span><details><summary>view C the agent wrote</summary><pre>void func_80065BCC(void) {
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/AZYHb" target="_blank" rel="noopener">func_80035800</a><span class="asz">60 B</span><span class="av miss">30% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:14</span><details><summary>view C the agent wrote</summary><pre>void func_80035800(void) {
-    int v0 = func_800356E0();
-    func_80033764(v0, 0);
-    func_80033240();
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/qTwe7" target="_blank" rel="noopener">func_80033728</a><span class="asz">60 B</span><span class="av miss">77% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:14</span><details><summary>view C the agent wrote</summary><pre>void func_80033728(void) {
-    int *ptr = (int *)0x800E6840;
-    ptr[0] = -1;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/aDALA" target="_blank" rel="noopener">func_800316CC</a><span class="asz">60 B</span><span class="av miss">58% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:14</span><details><summary>view C the agent wrote</summary><pre>void func_800316CC(int *a0, int *a1, int *a2) {
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7sGZV" target="_blank" rel="noopener">func_8002FB70</a><span class="asz">60 B</span><span class="av miss">38% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:14</span><details><summary>view C the agent wrote</summary><pre>int func_8002FB70(int a0) {
-    if (a0 &lt; 0) {
-        return -a0;
-    } else {
-        return func_8002FBAC(a0 &amp; 0xFFF);
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/3YFkT" target="_blank" rel="noopener">func_800282B0</a><span class="asz">60 B</span><span class="av miss">35% off</span><span class="eng">batch-executor-claude</span><span class="awhen">05:14</span><details><summary>view C the agent wrote</summary><pre>void func_800282B0(void) {
-    if (func_80025660() == 0) {
-        func_80025524();
-    }
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -633,7 +646,7 @@
   </p>
 
   <footer>
-    Generated 2026-07-10 05:20 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 05:22 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
