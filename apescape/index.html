@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:20 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783696818*1000;
+    (function(){ var gen=1783696859*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 7707s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 7747s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,496</b> agent attempts</span>
+      <span class="lg"><b>7,499</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,37 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/cZ5OM" target="_blank" rel="noopener">func_8002F240</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7DrhE" target="_blank" rel="noopener">func_80023AE0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80023AE0(void)
+{
+    __asm__ volatile (
+        &quot;li $t2, 0xA0\n&quot;
+        &quot;jr $t2\n&quot;
+        &quot;li $t1, 0xAC\n&quot;
+    );
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7bLMM" target="_blank" rel="noopener">func_80023A90</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80023A90(void)
+{
+    __asm__ volatile (
+        &quot;li $t2, 0xA0\n&quot;
+        &quot;jr $t2\n&quot;
+        &quot;li $t1, 0xAB\n&quot;
+    );
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/mFrDS" target="_blank" rel="noopener">func_80023AF0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80023AF0(void)
+{
+    __asm__ volatile (
+        &quot;li $t2, 0xB0\n&quot;
+        &quot;jr $t2\n&quot;
+        &quot;li $t1, 0x50\n&quot;
+    );
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/cZ5OM" target="_blank" rel="noopener">func_8002F240</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
 void func_8002F240(void) {
     __asm__ volatile (
         &quot;.set noreorder\n&quot;
@@ -836,68 +866,6 @@ int func_80065244(void) {
 
 int func_80065234(void) {
     return (*(volatile unsigned short *)0x1F80005E) &amp; 0x20;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/tJy8Z" target="_blank" rel="noopener">func_800285E4</a><span class="asz">16 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:16</span><details><summary>view C the agent wrote</summary><pre>c
-u8 func_800285E4(void) {
-    return D_800A8922;
-}
-
-u16 func_8002E8A4(void) {
-    return D_800A8BBA;
-}
-
-void func_8002F250(void) {
-    __asm__ volatile(&quot;syscall 0&quot; : : &quot;r&quot;(2));
-}
-
-void func_8002F230(void) {
-    __asm__ volatile(&quot;syscall 0&quot; : : &quot;r&quot;(1));
-}
-
-s32 func_80031834(void) {
-    gte_avsz4();
-    return gte_getOTZ();
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DgAug" target="_blank" rel="noopener">func_80031B4C</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:15</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_80031B4C(void) {
-    
-}
-
-
-s32 func_80056E9C(s32 a0, s32 a1, s32 a2) {
-    if (a0 &lt; 0) a0 = -a0;
-    if (a0 &lt; a2) {
-        
-    }
-    
-}
-
-
-s32 func_80064DAC(void) {
-    s32 a0 = 0;
-    u16 v0 = *(volatile u16 *)0x1F800066;
-    
-}
-
-
-s32 func_80064F58(void) {
-    s32 a0 = 0;
-    u16 v0 = *(volatile u16 *)0x1F80005C;
-    
-}
-
-
-s32 func_80065108(void) {
-    s32 a0 = 0;
-    u16 v0 = *(volatile u16 *)0x1F80005E;
-    
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DgAug" target="_blank" rel="noopener">func_80031B4C</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_80031B4C(void)
-{
-    /* interrupt/exception context save via $k0 */
 }</pre></details></div>
   </div>
 
