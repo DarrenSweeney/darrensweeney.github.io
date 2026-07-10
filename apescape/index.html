@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:32 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:33 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783697564*1000;
+    (function(){ var gen=1783697621*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8452s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8509s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,536</b> agent attempts</span>
+      <span class="lg"><b>7,539</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,103 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/etcLB" target="_blank" rel="noopener">func_8002F990</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:32</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/vP1XH" target="_blank" rel="noopener">func_80068BDC</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:33</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80068BDC(void) {
+    s16 v = D_800EC2FE - 0x46;
+    if (v &lt; 2) {
+        /* truncated */
+    }
+}
+
+
+void func_80065148(void) {
+    u16 v = *(vu16*)0x1F80005E;
+    if ((v &amp; 0x30) == 0) {
+        /* truncated */
+    }
+}
+
+
+void func_80084C90(SomeStruct *arg0) {
+    void *p = arg0-&gt;unk4;
+    /* truncated */
+}
+
+
+void func_80084C44(u8 *arg0) {
+    arg0[1] |= 0x10;
+    /* truncated - continues with D_800B2A10 */
+}
+
+
+void func_80015D30(SomeStruct *arg0, OtherStruct *arg1) {
+    arg0-&gt;unk0 = arg1;
+    u16 a = arg1-&gt;unk6 &lt;&lt; 1;
+    u16 b = arg1-&gt;unk8;
+    /* truncated */
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/14B4s" target="_blank" rel="noopener">func_80023CB0</a><span class="asz">68 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:33</span><details><summary>view C the agent wrote</summary><pre>c
+void func_80023CB0(void *arg0) {
+    struct SomeStruct *s = (struct SomeStruct *)((u8*)arg0 + 0x1074);
+    if ((s-&gt;flags &amp; 0x80) == 0) {
+        return;
+    }
+    /* ... truncated ... */
+}
+
+void func_80031794(SVECTOR *v0, SVECTOR *v1, SVECTOR *v2) {
+    gte_ldv3(v0, v1, v2);
+    /* ... truncated ... */
+}
+
+s32 func_8004BD74(s32 arg0) {
+    if ((s32)D_800E6990 &lt; arg0) {
+        /* ... truncated ... */
+    }
+    /* ... truncated ... */
+}
+
+void func_800583DC(s32 arg0, u16 arg1) {
+    u8 *ptr = (u8 *)D_800E7898 + ((arg1 &amp; 0xFFFF) &lt;&lt; 3);
+    /* ... truncated ... */
+}
+
+s32 func_80033BBC(void) {
+    u8 val = *((u8 *)D_800B4DC8 + 0x78);
+    /* ... truncated ... */
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/5hMdn" target="_blank" rel="noopener">func_8002F8CC</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:32</span><details><summary>view C the agent wrote</summary><pre>c
+s32 func_8002F8CC(void)
+{
+    return D_800A9CD8-&gt;unk_04;
+}
+
+void *func_800339AC(void)
+{
+    return (u8 *)&amp;D_800EC410 + 0x8000;
+}
+
+s32 func_800463C4(s32 a0, s32 a1, s32 a2)
+{
+    if (a0 - a1 == 0) {
+        return a0;
+    }
+    /* truncated */
+}
+
+s32 func_80064ECC(void)
+{
+    u16 val = *(volatile u16 *)0x1F80005E;
+    val &amp;= 0x30;
+    /* truncated */
+}
+
+void func_80097758(void)
+{
+    func_XXX((u8 *)&amp;D_800EC410 + 0x8000 /* , truncated */);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/etcLB" target="_blank" rel="noopener">func_8002F990</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:32</span><details><summary>view C the agent wrote</summary><pre>c
 
 void func_8002F990(void)
 {
@@ -959,76 +1055,6 @@ void func_8002F2A0(void) {
         &quot;.set reorder\n&quot;
     );
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/lZgbd" target="_blank" rel="noopener">func_80022840</a><span class="asz">16 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:26</span><details><summary>view C the agent wrote</summary><pre>c
-void func_80022840(void) {
-    D_800A6CF0 = -1;
-}
-
-u8 func_80023F00(void) {
-    return D_800A6DA4;
-}
-
-void func_80031960(SVECTOR *in, s32 *out) {
-    gte_ldv0(in);
-    gte_rt();
-    gte_stmac1(out);
-}
-
-void func_8002A430(u32 addr) {
-    addr |= 0x10000000;
-    /* truncated */
-}
-
-s32 func_800833CC(u8 *str, s32 len) {
-    s32 i;
-    if (len &lt;= 0) {
-        return 0;
-    }
-    i = 0;
-    do {
-        if (*str++ != 0) {
-            /* truncated */
-        }
-    } while (0);
-    return i;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/HeYb4" target="_blank" rel="noopener">func_8002FB10</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:25</span><details><summary>view C the agent wrote</summary><pre>c
-
-
-void func_8002FB10(long h)
-{
-    __asm__ volatile(&quot;ctc2 %0, $26&quot; :: &quot;r&quot;(h));
-}
-
-int func_800A3850(const char *s1, const char *s2, int n)
-{
-    return strncmp(s1, s2, n);
-}
-
-void func_800A3860(void *ptr, int len)
-{
-    bzero(ptr, len);
-}
-
-void *func_800A3840(void *dst, const void *src, int n)
-{
-    return memcpy(dst, src, n);
-}
-
-int func_800A3898(const char *fmt, ...)
-{
-    return printf(fmt);
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/2eRIX" target="_blank" rel="noopener">func_8002F2B0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:24</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_8002F2B0(void)
-{
-    __asm__ volatile (
-        &quot;li $t2, 0xA0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0x44\n&quot;
-    );
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -1044,7 +1070,7 @@ void func_8002F2B0(void)
   </p>
 
   <footer>
-    Generated 2026-07-10 17:32 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 17:33 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
