@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 19:06 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 19:07 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783703206*1000;
+    (function(){ var gen=1783703229*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 14094s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 14117s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,689</b> agent attempts</span>
+      <span class="lg"><b>7,690</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,13 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GXvIY" target="_blank" rel="noopener">func_8008C4E8</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">19:06</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/I1n1P" target="_blank" rel="noopener">func_8002298C</a><span class="asz">20 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">19:06</span><details><summary>view C the agent wrote</summary><pre>c
+void func_8002298C(void) { D_800B4FCC = 1; }
+void func_800229A0(void) { D_800B4FD0 = 1; }
+void func_800229C8(void) { D_800B4FD8 = 1; }
+void func_800229B4(void) { D_800B4FD4 = 1; }
+void func_800229DC(void) { D_800B4FDC = 1; }</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GXvIY" target="_blank" rel="noopener">func_8008C4E8</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">19:06</span><details><summary>view C the agent wrote</summary><pre>c
 void func_8008C4E8(void) {
     func_XXXX(D_800DF898.field_10, D_800DF898.field_14);
 }
@@ -1175,83 +1181,6 @@ void func_8007F954(s32 arg0) {
             /* nb: original interleaves shifts; see asm */
             acc_a += x &lt;&lt; sh;
             acc_g</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/klnPw" target="_blank" rel="noopener">func_80028540</a><span class="asz">164 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">18:31</span><details><summary>view C the agent wrote</summary><pre>c
-extern u8 D_800A8921;
-extern u8 D_800A8922;
-extern void (*D_800A891C)(void*, s32);
-extern struct { u8 pad[0x34]; void (*fn)(s32); } **D_800A8918;
-extern u8 D_800A43D8;
-extern u8 D_800EC410;
-extern s16 D_800A8924;
-extern s16 D_800A8926;
-extern u8 *D_800B4E24;
-
-s32 func_80028540(s32 arg0) {
-    u8 old = D_800A8921;
-    if (D_800A8922 &gt;= 2) {
-        D_800A891C(&amp;D_800A43D8, arg0);
-    }
-    if (arg0 != D_800A8921) {
-        (*D_800A8918)-&gt;fn(1);
-        func_8002E7B0(2, 0);
-        D_800A8921 = arg0;
-    }
-    return old;
-}
-
-void func_8003319C(void) {
-    s32 i;
-    for (i = 0; i &lt; 8; i++) {
-        (&amp;D_800EC410 + 0x8000)[i + 0x174] = 0;
-    }
-}
-
-s32 func_80033A0C(void) {
-    u8 *base = &amp;D_800EC410 + 0x8000;
-    s32 result = 0;
-    u16 v = *(u16*)(base + 0x12A);
-    if (v == 3 || v == 6 || v == 8 || *(u16*)(base + 0x12E) == 0x46) {
-        result = 1;
-    }
-    return result;
-}
-
-u32 func_800299C0(s32 x, s32 y) {
-    s32 cx, cy;
-    if ((s16)x &lt; 0) {
-        cx = 0;
-    } else if ((s16)(D_800A8924 - 1) &lt; (s16)x) {
-        cx = (u16)D_800A8924 - 1;
-    } else {
-        cx = x;
-    }
-    if ((s16)y &lt; 0) {
-        cy = 0;
-    } else if ((s16)(D_800A8926 - 1) &lt; (s16)y) {
-        cy = (u16)D_800A8926 - 1;
-    } else {
-        cy = y;
-    }
-    return 0xE3000000 | (cx &amp; 0x3FF) | ((cy &amp; 0x3FF) &lt;&lt; 10);
-}
-
-s32 func_80091438(u8 *arg0) {
-    u8 *elem;
-    s16 idx = *(s16*)(arg0 + 4);
-    u8 *base = *(u8**)(&amp;D_800EC410 + 0x8214);
-    elem = base + idx * 56;
-
-    if (*(s16*)(arg0 + 0xA) == 0) {
-        *(s16*)(arg0 + 0x02) = 0;
-        *(s16*)(arg0 + 0x06) = 3;
-        *(s16*)(arg0 + 0x0A) = 0;
-        *(s16*)(arg0 + 0x16) = 0;
-    } else {
-        s16 inner;
-        *(s16*)(arg0 + 0x02) = 1;
-        inner = *(s16*)(elem + 0xE);
-        if (inner &gt;= 0) {
-            *(s16*)(D_800B4E24</pre></details></div>
   </div>
 
   <div class="panel">
@@ -1267,7 +1196,7 @@ s32 func_80091438(u8 *arg0) {
   </p>
 
   <footer>
-    Generated 2026-07-10 19:06 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 19:07 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
