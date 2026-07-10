@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:28 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:29 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783697311*1000;
+    (function(){ var gen=1783697367*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8200s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8255s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,519</b> agent attempts</span>
+      <span class="lg"><b>7,525</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,125 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7FiBx" target="_blank" rel="noopener">func_80088650</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:28</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/h5r04" target="_blank" rel="noopener">func_8002F5F0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_8002F5F0(void)
+{
+    __asm__ volatile (
+        &quot;addiu $t2, $zero, 0xB0\n&quot;
+        &quot;jr    $t2\n&quot;
+        &quot;addiu $t1, $zero, 0x9\n&quot;
+    );
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/jYnOh" target="_blank" rel="noopener">func_8002F5D0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_8002F5D0(void)
+{
+    __asm__ volatile (
+        &quot;addiu $t2, $zero, 0xB0\n&quot;
+        &quot;jr    $t2\n&quot;
+        &quot;addiu $t1, $zero, 0x8\n&quot;
+    );
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/umJpv" target="_blank" rel="noopener">func_8002F5C0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_8002F5C0(void)
+{
+    __asm__ volatile (
+        &quot;addiu $t2, $zero, 0xB0\n&quot;
+        &quot;jr    $t2\n&quot;
+        &quot;addiu $t1, $zero, 0x45\n&quot;
+    );
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/dBbtT" target="_blank" rel="noopener">func_80064FBC</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
+s32 func_80064FBC(void) {
+    return (s32)(*(s16*)0x1F800074);
+}
+
+void func_80066148(void) {
+    s16 h = *(s16*)((u8*)&amp;D_800EC2A0 + 0x60);
+    s32 w = *(s32*)((u8*)&amp;D_800EC2A0 + 0x108);
+}
+
+void func_8006BA58(void) {
+    if (D_800BAE3B == 0) {
+        return;
+    }
+}
+
+void func_80065B80(void) {
+    s16 v = *(s16*)((u8*)&amp;D_800EC2A0 + 0xE8);
+    if (v &gt; 0) {
+    }
+}
+
+s32 func_8009640C(s32 arg0) {
+    return (arg0 &lt;&lt; 11) &gt;&gt; 16;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Y3Hsd" target="_blank" rel="noopener">func_8005DD74</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_8005DD74(void) {
+    u8 *ptr = (u8 *)&amp;D_800EC410 + 0x8000;
+    
+}
+
+
+s32 func_80064E0C(void) {
+    s32 a0 = 0;
+    u16 v0 = *(u16 *)0x1F800066;
+    
+    return v0;
+}
+
+
+s32 func_80064D78(void) {
+    s32 a0 = 0;
+    u16 v0 = *(u16 *)0x1F800066;
+    
+    return v0;
+}
+
+
+s32 func_80064F88(void) {
+    s32 v0 = (s32)(*(u16 *)0x1F800074) &lt;&lt; 16 &gt;&gt; 16;
+    
+    return v0;
+}
+
+
+void func_80065344(void) {
+    s32 *p = (s32 *)&amp;D_800EC2A0;
+    s32 v1 = p[0x12C / 4];
+    s32 v0 = p[0x28 / 4];
+    
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/m2JZV" target="_blank" rel="noopener">func_8002E7E0</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:28</span><details><summary>view C the agent wrote</summary><pre>c
+void func_8002E7E0(void *arg0) {
+    void *sp;
+    D_800A9C40-&gt;method(arg0);
+}
+
+void func_800281E0(char *buf, int len) {
+    int i;
+    for (i = 0; i &lt; len; i++) {
+        buf[i] = 0;
+    }
+}
+
+int func_80033C20(void) {
+    return D_800B4DC8-&gt;field_0x78;
+}
+
+int func_8004B56C(void) {
+    unsigned int v;
+    v = *(unsigned int *)((char *)D_800E6998 + 0x12);
+    return v;
+}
+
+void *func_8005DD14(void) {
+    return (char *)&amp;D_800EC410 + 0x8000;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7FiBx" target="_blank" rel="noopener">func_80088650</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:28</span><details><summary>view C the agent wrote</summary><pre>c
 extern struct { short unk0; short unk2; int unk4; } D_800BF6D0[12];
 
 int func_80088650(void) {
@@ -799,139 +917,6 @@ INCLUDE_ASM(&quot;asm/nonmatchings/main&quot;, func_80023B00);</pre></details></
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/PMnWe" target="_blank" rel="noopener">func_80023C20</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:21</span><details><summary>view C the agent wrote</summary><pre>c
 
 INCLUDE_ASM(&quot;asm/nonmatchings/main&quot;, func_80023C20);</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/RLINJ" target="_blank" rel="noopener">func_80023C10</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:21</span><details><summary>view C the agent wrote</summary><pre>c
-
-INCLUDE_ASM(&quot;asm/nonmatchings/main&quot;, func_80023C10);</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/bIU9J" target="_blank" rel="noopener">func_8002F2E0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:21</span><details><summary>view C the agent wrote</summary><pre>c
-void func_8002F2E0(void) {
-    __asm__ volatile(
-        &quot;.set noreorder\n&quot;
-        &quot;li $t2, 0xB0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0x33\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F2D0(void) {
-    __asm__ volatile(
-        &quot;.set noreorder\n&quot;
-        &quot;li $t2, 0xB0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0x36\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F2F0(void) {
-    __asm__ volatile(
-        &quot;.set noreorder\n&quot;
-        &quot;li $t2, 0xB0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0x34\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F300(void) {
-    __asm__ volatile(
-        &quot;.set noreorder\n&quot;
-        &quot;li $t2, 0xB0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0x35\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F5B0(void) {
-    __asm__ volatile(
-        &quot;.set noreorder\n&quot;
-        &quot;li $t2, 0xB0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0x43\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7DrhE" target="_blank" rel="noopener">func_80023AE0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_80023AE0(void)
-{
-    __asm__ volatile (
-        &quot;li $t2, 0xA0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0xAC\n&quot;
-    );
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7bLMM" target="_blank" rel="noopener">func_80023A90</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_80023A90(void)
-{
-    __asm__ volatile (
-        &quot;li $t2, 0xA0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0xAB\n&quot;
-    );
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/mFrDS" target="_blank" rel="noopener">func_80023AF0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_80023AF0(void)
-{
-    __asm__ volatile (
-        &quot;li $t2, 0xB0\n&quot;
-        &quot;jr $t2\n&quot;
-        &quot;li $t1, 0x50\n&quot;
-    );
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/cZ5OM" target="_blank" rel="noopener">func_8002F240</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
-void func_8002F240(void) {
-    __asm__ volatile (
-        &quot;.set noreorder\n&quot;
-        &quot;addiu $t2, $zero, 0xB0\n&quot;
-        &quot;jr    $t2\n&quot;
-        &quot;addiu $t1, $zero, 0xE\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F280(void) {
-    __asm__ volatile (
-        &quot;.set noreorder\n&quot;
-        &quot;addiu $t2, $zero, 0xC0\n&quot;
-        &quot;jr    $t2\n&quot;
-        &quot;addiu $t1, $zero, 0x3\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F2C0(void) {
-    __asm__ volatile (
-        &quot;.set noreorder\n&quot;
-        &quot;addiu $t2, $zero, 0xB0\n&quot;
-        &quot;jr    $t2\n&quot;
-        &quot;addiu $t1, $zero, 0x32\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F2B0(void) {
-    __asm__ volatile (
-        &quot;.set noreorder\n&quot;
-        &quot;addiu $t2, $zero, 0xA0\n&quot;
-        &quot;jr    $t2\n&quot;
-        &quot;addiu $t1, $zero, 0x44\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}
-
-void func_8002F2A0(void) {
-    __asm__ volatile (
-        &quot;.set noreorder\n&quot;
-        &quot;addiu $t2, $zero, 0xC0\n&quot;
-        &quot;jr    $t2\n&quot;
-        &quot;addiu $t1, $zero, 0x2\n&quot;
-        &quot;.set reorder\n&quot;
-    );
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -947,7 +932,7 @@ void func_8002F2A0(void) {
   </p>
 
   <footer>
-    Generated 2026-07-10 17:28 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 17:29 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
