@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 14:47 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 14:48 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783687634*1000;
+    (function(){ var gen=1783687724*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 317: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 1027s ago</div><div class="arow"><span class="mono aname">func_80084894</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/WmkII" target="_blank" rel="noopener">decomp.me</a></span></div></div>
+      <div class="livewrap"><span class="led online"></span><b>Decompiling now</b><div class="livesub">iteration 317: running mizuchi</div><div class="livesub" style="opacity:.7">last signal 1117s ago</div><div class="arow"><span class="mono aname">func_80084894</span><span class="av work">in progress…</span><span class="awhen"> — <a href="https://decomp.me/scratch/WmkII" target="_blank" rel="noopener">decomp.me</a></span></div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,149</b> agent attempts</span>
+      <span class="lg"><b>7,174</b> agent attempts</span>
       <span class="lg"><b>2.6%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,140 +481,113 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Eovt7" target="_blank" rel="noopener">func_8006677C</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>int func_8006677C(void) {
-    int v1;
-    v1 = *(int*)(D_800EC2A0 + 0x118);
-    v1 = -v1;
-    if (v1 &lt; 0) v1++;
-    return v1 &gt;&gt; 1;
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DUsCS" target="_blank" rel="noopener">func_800A2374</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_800A2374(int a0) {
+    *(unsigned short*)0x800F76B2 = a0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/fqUUp" target="_blank" rel="noopener">func_800661C8</a><span class="asz">40 B</span><span class="av miss">12% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_800661C8(void) {
-    func_800661A0();
-    func_80065C80();
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/HMAFM" target="_blank" rel="noopener">func_8007F460</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_8007F460(void) {
+    *(unsigned int*)0x800BF030 = 0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/runhx" target="_blank" rel="noopener">func_8005DDA8</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>short func_8005DDA8(int a0) {
-    int v0;
-    a0 = (a0 &lt;&lt; 16) &gt;&gt; 16;
-    v0 = ((a0 &lt;&lt; 4) - a0) &lt;&lt; 2;
-    return ((short*)D_800B02A2)[v0 / 2];
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/RJ9YO" target="_blank" rel="noopener">func_8007F5C0</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_8007F5C0(int a0) {
+    *(unsigned char*)0x800BF034 = a0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/B2fnv" target="_blank" rel="noopener">func_8005C9AC</a><span class="asz">40 B</span><span class="av miss">31% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_8005C9AC(void) {
-    func_8005E030(1, 0xFF00FF);
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/AyOIU" target="_blank" rel="noopener">func_8007B018</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_8007B018(void) {
+    *(unsigned int*)0x800F51E0 = 0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GkUSt" target="_blank" rel="noopener">func_800355FC</a><span class="asz">40 B</span><span class="av miss">12% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_800355FC(void) {
-    func_80035390();
-    func_80035494();
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/rSIwh" target="_blank" rel="noopener">func_80052D18</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_80052D18(int a0) {
+    *(unsigned char*)0x800E78A3 = a0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/WuN09" target="_blank" rel="noopener">func_8005DD64</a><span class="asz">16 B</span><span class="av ok">matched</span><span class="eng">batch-smart-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>int func_8005DD64(void) {
-    return *(short *)0x800B02A2;
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/mB8JC" target="_blank" rel="noopener">func_8005EF58</a><span class="asz">952 B</span><span class="av miss">100% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>int func_8005EF58(void) {
+    int *base = (int *)D_800EC410;
+    int *data = (int *)D_800E53E0;
+    int idx = data[0x5C];
+    byte *p = (byte *)data + (idx &lt;&lt; 2);
+    return p[2];
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Ey6rL" target="_blank" rel="noopener">func_8005DD58</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>void func_8005DD58(void) {
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/51kRA" target="_blank" rel="noopener">func_8005E4D8</a><span class="asz">332 B</span><span class="av miss">100% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>int func_8005E4D8(void) {
+    int *base = (int *)D_800EC410;
+    int val = *(short *)D_800EC388 - 1;
+    return val &lt;&lt; 7;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GDV3z" target="_blank" rel="noopener">func_8005E038</a><span class="asz">220 B</span><span class="av miss">100% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_8005E038(int a0) {
+    int *base = (int *)D_800EC410;
+    int *ptr1 = (int *)(base + 1);
+    int *ptr2 = (int *)(base + 3);
+    *(byte *)(ptr1 + 3) = 3;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/ImzuY" target="_blank" rel="noopener">func_8005E00C</a><span class="asz">28 B</span><span class="av miss">100% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>int func_8005E00C(void) {
+    return *(int *)(D_800EC410 + 0x8104);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/3dFxa" target="_blank" rel="noopener">func_8005DDD0</a><span class="asz">64 B</span><span class="av miss">100% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>int func_8005DDD0(void) {
+    if (*(short *)D_800B02A0 == 0) {
+        return 0;
+    }
+    unsigned short v = *(unsigned short *)D_800B02A2;
+    if ((short)v == 0) {
+        return 0;
+    }
+    return v - 1;
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/8ssfL" target="_blank" rel="noopener">func_80087D3C</a><span class="asz">40 B</span><span class="av miss">38% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_80087D3C(int a0) {
+    a0 ^= 1;
+    func_800A2374((short)a0);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/1HwW7" target="_blank" rel="noopener">func_80084B70</a><span class="asz">40 B</span><span class="av miss">12% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_80084B70(void) {
+    func_80084D64();
+    func_800857CC();
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/e0nry" target="_blank" rel="noopener">func_8007A1AC</a><span class="asz">40 B</span><span class="av miss">19% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_8007A1AC(void) {
+    func_8005DF78();
+    func_80079F2C();
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/WO26s" target="_blank" rel="noopener">func_800774F0</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_800774F0(void *a1) {
+    func_800A3800(D_800A5F60, *(int*)((char*)a1 + 4));
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/O4HFb" target="_blank" rel="noopener">func_8006C320</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:48</span><details><summary>view C the agent wrote</summary><pre>void func_8006C320(void) {
+    func_80069918(0x10C, D_800B4E48);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Ey6rL" target="_blank" rel="noopener">func_8005DD58</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_8005DD58(void) {
     *(unsigned short *)0x800B02A0 = 0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/MYXu2" target="_blank" rel="noopener">func_8005BB7C</a><span class="asz">60 B</span><span class="av miss">100% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>int func_8005BB7C(int a0) {
-    if (a0 &lt; 0) {
-        return 0;
-    }
-    int array = *(int *)((char *)0x800EC410 + 0x8000);
-    int index = ((a0 &lt;&lt; 1) + a0) &lt;&lt; 3;
-    return *(int *)((char *)array + 0x228 + index);
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7fr6t" target="_blank" rel="noopener">func_800587BC</a><span class="asz">80 B</span><span class="av miss">100% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>int func_800587BC(int a0) {
-    if (!a0) {
-        return 0;
-    }
-    int v0 = *(short *)((char *)0x800E7890 + 0x10);
-    if (v0 &lt;= 0) {
-        return 0;
-    }
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/vQzKJ" target="_blank" rel="noopener">func_80039304</a><span class="asz">12 B</span><span class="av ok">matched</span><span class="eng">batch-refine</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>int func_80039304(int a0) {
+    int v0 = (*(unsigned int *)(a0 + 0x50)) &gt;&gt; 28;
     return v0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/TajPR" target="_blank" rel="noopener">func_80058658</a><span class="asz">52 B</span><span class="av miss">35% off</span><span class="eng">batch-smart-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>void func_80058658(void *a0, int a1) {
-    int base = *(int *)((char *)a0 + 0x90);
-    int offset = (a1 &lt;&lt; 16) &gt;&gt; 13;
-    *(int *)((char *)a0 + 0x24) = *(short *)((char *)base + offset);
-    *(int *)((char *)a0 + 0x28) = *(short *)((char *)base + offset + 2);
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/5hFGV" target="_blank" rel="noopener">func_8004CEC8</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_8004CEC8(int a0) {
+    *(char *)0x800AF210 = a0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/rvN7F" target="_blank" rel="noopener">func_8007CA70</a><span class="asz">56 B</span><span class="av miss">100% off</span><span class="eng">batch-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>void func_8007CA70(void) {
-    unsigned char *v0 = (unsigned char *)&amp;D_800F51E0;
-    unsigned char v1 = v0[0x8C];
-    unsigned char a0 = v0[0x8D];
-    unsigned char a1 = v0[0x8E];
-    unsigned char a2 = v0[0x8F];
-    v0[0x88] = v1;
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/82aZi" target="_blank" rel="noopener">func_80052D0C</a><span class="asz">12 B</span><span class="av miss">56% off</span><span class="eng">batch-refine</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_80052D0C(int a0) {
+    *(char *)0x800E78A2 = a0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/I2chY" target="_blank" rel="noopener">func_8002B3A0</a><span class="asz">96 B</span><span class="av miss">68% off</span><span class="eng">batch-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>void func_8002B3A0(int a0, int a1) {
-    int t0 = a0;
-    short v0 = *(short *)((int)a1 + 0x4);
-    if (v0 == 0) {
-        return;
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/9XsO9" target="_blank" rel="noopener">func_80072214</a><span class="asz">108 B</span><span class="av miss">67% off</span><span class="eng">batch-refine</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>int func_80072214(int a0) {
+    return *(int *)(0x800BBE60 + (short)a0 * 20);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/XSWVQ" target="_blank" rel="noopener">func_80010CDC</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void *func_80010CDC(int a0) {
+    if (a0 != 0) {
+        return &amp;D_800A7D00;
     }
-    v0 = *(short *)((int)a1 + 0x6);
-    if (v0 != 0) {
-        return;
-    }
+    return &amp;D_800A7CD8;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/8x5jL" target="_blank" rel="noopener">func_8004B8A0</a><span class="asz">116 B</span><span class="av miss">63% off</span><span class="eng">batch-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>int func_8004B8A0(int a0, int a1) {
-    if (a1 == 0x1) {
-        return 0;
-    }
-    if (a1 &lt; 0x2) {
-        if (a1 == 0x0) {
-            return 0;
-        }
-        return 0;
-    }
-    return 0;
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/9h2Ud" target="_blank" rel="noopener">func_80066704</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_80066704(void) {
+    short *ptr = (short *)&amp;D_800EC2A0;
+    short a0 = ptr[0x32];
+    ptr[0x31] = 0;
+    ptr[0x30] = a0;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GuMp5" target="_blank" rel="noopener">func_80032EA4</a><span class="asz">160 B</span><span class="av miss">100% off</span><span class="eng">batch-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>int func_80032EA4(void) {
-    void *a0 = *(void **)&amp;D_800B4DC8;
-    unsigned char v1 = *(unsigned char *)((int)a0 + 0x78);
-    if (v1 == 0x3) {
-        return 0x8;
-    }
-    return 0;
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/mcCkL" target="_blank" rel="noopener">func_800666E0</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_800666E0(void) {
+    short *ptr = (short *)&amp;D_800EC2A0;
+    short v1 = ptr[0x32];
+    ptr[0x31] = 0;
+    ptr[0x30] = -v1;
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/p9xVK" target="_blank" rel="noopener">func_8009772C</a><span class="asz">44 B</span><span class="av miss">100% off</span><span class="eng">batch-refine</span><span class="awhen">14:46</span><details><summary>view C the agent wrote</summary><pre>int func_8009772C(int a0) {
-    return *(short *)((int)&amp;D_800B3918 + (a0 &lt;&lt; 1));
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/A5L2r" target="_blank" rel="noopener">func_80064E40</a><span class="asz">36 B</span><span class="av miss">83% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>int func_80064E40(void) {
-    unsigned short *p;
-    unsigned int val;
-    p = (unsigned short *)0x800EC2A0;
-    val = *(unsigned short *)((unsigned int)p + 0xDE);
-    val--;
-    *(unsigned short *)((unsigned int)p + 0xDE) = val;
-    return val &lt;&lt; 16;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/5ISWi" target="_blank" rel="noopener">func_8005AB8C</a><span class="asz">36 B</span><span class="av miss">67% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>int func_8005AB8C(void) {
-    unsigned int base;
-    unsigned short val;
-    base = 0x800EC410 + 0x8000;
-    val = *(unsigned short *)(base + 0x12E);
-    return val ^ 0x53;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Itoht" target="_blank" rel="noopener">func_80048450</a><span class="asz">36 B</span><span class="av miss">42% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>void func_80048450(void) {
-    unsigned char *p;
-    p = (unsigned char *)0x800E6990;
-    if (p[0x32] == 1) {
-        p[0x32] = 0;
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/zlR9u" target="_blank" rel="noopener">func_80031800</a><span class="asz">36 B</span><span class="av miss">56% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>void func_80031800(int *a0, int *a1, int *a2) {
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/6qlAV" target="_blank" rel="noopener">func_80031670</a><span class="asz">36 B</span><span class="av miss">58% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>void func_80031670(int *a0, int *a1) {
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DWzY1" target="_blank" rel="noopener">func_80031960</a><span class="asz">40 B</span><span class="av miss">62% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>void func_80031960(void *a0, void *a1) {
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/bTKKs" target="_blank" rel="noopener">func_800317D8</a><span class="asz">40 B</span><span class="av miss">58% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>void func_800317D8(void *a0, void *a1, int a2, void *a3) {
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/pPJit" target="_blank" rel="noopener">func_8002CD5C</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>void func_8002CD5C(void) {
-    int *v1 = D_800A8AEC;
-    while ((*(unsigned short *)((char *)v1 + 4) &amp; 0x2) == 0) {
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/UZFsD" target="_blank" rel="noopener">func_8002B250</a><span class="asz">40 B</span><span class="av miss">100% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:45</span><details><summary>view C the agent wrote</summary><pre>void func_8002B250(void) {
-    func_8002E7B0(2, func_8002A734);
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/fxc0Q" target="_blank" rel="noopener">func_8006617C</a><span class="asz">36 B</span><span class="av miss">60% off</span><span class="eng">batch-executor-iter-1</span><span class="awhen">14:47</span><details><summary>view C the agent wrote</summary><pre>void func_8006617C(void) {
+    volatile short *ptr = (volatile short *)0x1F800000;
+    short v1, a0;
+    v1 = ptr[0];
+    a0 = ptr[2];
+    ptr[5] = 0;
+    v1 = -v1;
+    a0 = -a0;
+    ptr[4] = v1;
 }</pre></details></div>
   </div>
 
@@ -631,7 +604,7 @@
   </p>
 
   <footer>
-    Generated 2026-07-10 14:47 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 14:48 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
