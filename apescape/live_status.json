@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-07-10T15:02:46.032145",
-  "elapsed_seconds": 2423,
+  "timestamp": "2026-07-10T15:02:59.237918",
+  "elapsed_seconds": 2436,
   "batches": {
-    "processed": 212,
+    "processed": 220,
     "total": 345,
-    "progress_pct": 61
+    "progress_pct": 63
   },
   "matches": {
     "matched": 0,
     "partial": 172,
-    "failed": 888,
-    "total_attempted": 1060,
+    "failed": 928,
+    "total_attempted": 1100,
     "match_rate_pct": 0
   },
   "current_batch": {
-    "num": 213,
+    "num": 221,
     "pattern": "other",
     "functions": [
-      "func_8009309C",
-      "func_80095028",
-      "func_80010B50",
-      "func_80025AA8",
-      "func_8002AE38"
+      "func_80047578",
+      "func_80053D08",
+      "func_80055AC0",
+      "func_8005E624",
+      "func_8005F8AC"
     ],
     "count": 5,
-    "started_at": "2026-07-10T15:02:46.032139"
+    "started_at": "2026-07-10T15:02:59.237912"
   },
   "recent_matches": [],
   "status": "running"
