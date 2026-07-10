@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-07-10T04:15:30.733074",
+  "elapsed_seconds": 22,
+  "batches": {
+    "processed": 1,
+    "total": 346,
+    "progress_pct": 0
+  },
+  "matches": {
+    "matched": 0,
+    "partial": 5,
+    "failed": 0,
+    "total_attempted": 5,
+    "match_rate_pct": 0
+  },
+  "current_batch": {
+    "num": 2,
+    "pattern": "getter",
+    "functions": [
+      "func_8004CEC8",
+      "func_80052D0C",
+      "func_80052D18",
+      "func_8005DD58",
+      "func_8007B018"
+    ],
+    "count": 5,
+    "started_at": "2026-07-10T04:15:30.733070"
+  },
+  "recent_matches": [],
+  "status": "running"
+}
