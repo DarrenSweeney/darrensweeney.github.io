@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 18:26 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783700760*1000;
+    (function(){ var gen=1783700794*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 11649s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 11683s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,661</b> agent attempts</span>
+      <span class="lg"><b>7,662</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,41 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GiqWo" target="_blank" rel="noopener">func_80047484</a><span class="asz">244 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">18:10</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/wG6cq" target="_blank" rel="noopener">func_8004FCAC</a><span class="asz">444 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">18:26</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_8004FCAC(u_char *pkt) {
+    s16 x0 = *(s16*)(pkt + 6);
+    s16 y0 = *(s16*)(pkt + 10);
+    u_char code = *(u_char*)(pkt + 16);
+    pkt[0] = 0x47;
+    
+}
+
+
+void func_80016BB4(void *arg0) {
+    
+    
+}
+
+
+void func_8005AF6C(void) {
+    void *tbl = &amp;D_800F4410;
+    void *jtbl = &amp;jtbl_800A5558;
+    
+}
+
+
+void func_8009DB94(void) {
+    func_XXXXXXXX(0, 0x18, &amp;D_800F7680);
+    
+}
+
+
+void func_800A029C(void) {
+    func_XXXXXXXX(0, 0, &amp;D_800F5B80, &amp;D_800F7680 /* ... */);
+    
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/GiqWo" target="_blank" rel="noopener">func_80047484</a><span class="asz">244 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">18:10</span><details><summary>view C the agent wrote</summary><pre>c
 
 void func_80047484(SomeStruct *a0, s32 a1) {
     s16 v1 = a0-&gt;unk_A;
@@ -763,16 +797,6 @@ void func_80052008(void)
     (void)a1;
     (void)v0;
     /* remainder of body not visible in truncated listing */
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/q0uv8" target="_blank" rel="noopener">func_800315A0</a><span class="asz">80 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">18:02</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_800315A0(int *src, int *dst)
-{
-    dst[0] = src[0];
-    dst[1] = src[1];
-    dst[2] = src[2];
-    dst[3] = src[3];
-    /* remaining copies not visible in truncated listing */
 }</pre></details></div>
   </div>
 
