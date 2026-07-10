@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:13 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783696416*1000;
+    (function(){ var gen=1783696428*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 7304s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 7316s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,470</b> agent attempts</span>
+      <span class="lg"><b>7,473</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,26 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/FZSh1" target="_blank" rel="noopener">func_800312F0</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DgAug" target="_blank" rel="noopener">func_80031B4C</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80031B4C(void)
+{
+    /* interrupt/exception context save via $k0 */
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Y0LUj" target="_blank" rel="noopener">func_80031620</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80031620(MATRIX *m)
+{
+    gte_SetRotMatrix(m);
+    gte_SetTransMatrix(m);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/riFl5" target="_blank" rel="noopener">func_80031320</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80031320(SVECTOR *v)
+{
+    gte_ldv0(v);
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/FZSh1" target="_blank" rel="noopener">func_800312F0</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
 /* func_800312F0 - guessed from prologue only; full disasm not provided */
 void func_800312F0(SVECTOR *v)
 {
@@ -731,63 +750,6 @@ s32 func_80048450(void)
         /* ... */
     }
     return 0;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/6qlAV" target="_blank" rel="noopener">func_80031670</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:06</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_80031670(SVECTOR *v, VECTOR *out)
-{
-    gte_ldv0(v);
-    gte_rtv0();
-    gte_stlvnl(out);
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/jgege" target="_blank" rel="noopener">func_8002EF30</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:06</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_8002EF30(s32 *ptr, s32 count)
-{
-    s32 i;
-
-    if (count != 0) {
-        i = count - 1;
-        do {
-            *ptr++ = 0;
-            i--;
-        } while (i != -1);
-    }
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/pj4sJ" target="_blank" rel="noopener">func_8002F1D8</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:06</span><details><summary>view C the agent wrote</summary><pre>c
-void func_8002F1D8(u32 *dst, s32 count) {
-    if (count != 0) {
-        do {
-            *dst++ = 0;
-        } while (--count != 0);
-    }
-}
-
-void func_8002EF30(u32 *dst, s32 count) {
-    if (count != 0) {
-        do {
-            *dst++ = 0;
-        } while (--count != 0);
-    }
-}
-
-void func_80031708(VECTOR *v0, CVECTOR *rgb, long p, long *flag) {
-    gte_ldv0(v0);
-    gte_ldrgb(rgb);
-    gte_ldp(p);
-    gte_dpcs();
-    gte_strgb(rgb);
-    gte_stflg(flag);
-}
-
-void func_80031670(SVECTOR *in, VECTOR *out) {
-    gte_ldv0(in);
-    gte_lt();
-    gte_stlvl(out);
-}
-
-void func_80048450(void) {
-    D_800E6990.field_0x32 = 1;
 }</pre></details></div>
   </div>
 
