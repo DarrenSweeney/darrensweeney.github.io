@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:29 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:30 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783697375*1000;
+    (function(){ var gen=1783697425*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8263s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8313s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,525</b> agent attempts</span>
+      <span class="lg"><b>7,526</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,53 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/h5r04" target="_blank" rel="noopener">func_8002F5F0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/li1JL" target="_blank" rel="noopener">func_80096660</a><span class="asz">52 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80096660(s32 a0) {
+    if ((u32)(a0 - 0x18) &lt; 6) {
+        goto L80096688;
+    }
+    
+L80096688:
+    ;
+}
+
+
+void func_8002BF64(void) {
+    s32 i = 0;
+    s32 n = 0x10;
+    u8 *p = (u8 *)&amp;D_800B88F0;
+    do {
+        
+    } while (/* i &lt; n */);
+}
+
+
+void func_800142FC(u32 a0) {
+    u32 v1 = a0 &amp; 0xFFFF;
+    if (v1 &gt;= 3) {
+        goto L80014328;
+    }
+    v1 &lt;&lt;= 4;
+    
+L80014328:
+    ;
+}
+
+
+void func_8002D0A0(u8 *a0) {
+    u32 v0 = a0[0xE3] + 1;
+    u32 a1 = a0[0xE9];
+    u32 a4 = *(u16 *)(a0 + 0xEC);
+    
+}
+
+
+void func_800470EC(void) {
+    void *p = (u8 *)&amp;D_800EC410 + 0x8000;
+    
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/h5r04" target="_blank" rel="noopener">func_8002F5F0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:29</span><details><summary>view C the agent wrote</summary><pre>c
 
 void func_8002F5F0(void)
 {
@@ -914,9 +960,6 @@ __asm__(
 <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/x48kl" target="_blank" rel="noopener">func_80023B00</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:21</span><details><summary>view C the agent wrote</summary><pre>c
 
 INCLUDE_ASM(&quot;asm/nonmatchings/main&quot;, func_80023B00);</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/PMnWe" target="_blank" rel="noopener">func_80023C20</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:21</span><details><summary>view C the agent wrote</summary><pre>c
-
-INCLUDE_ASM(&quot;asm/nonmatchings/main&quot;, func_80023C20);</pre></details></div>
   </div>
 
   <div class="panel">
@@ -932,7 +975,7 @@ INCLUDE_ASM(&quot;asm/nonmatchings/main&quot;, func_80023C20);</pre></details></
   </p>
 
   <footer>
-    Generated 2026-07-10 17:29 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 17:30 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
