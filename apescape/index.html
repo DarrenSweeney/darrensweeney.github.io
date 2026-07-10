@@ -115,7 +115,7 @@
   <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:15 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783696542*1000;
+    (function(){ var gen=1783696554*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 7430s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 7443s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,473</b> agent attempts</span>
+      <span class="lg"><b>7,474</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,42 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DgAug" target="_blank" rel="noopener">func_80031B4C</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DgAug" target="_blank" rel="noopener">func_80031B4C</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:15</span><details><summary>view C the agent wrote</summary><pre>c
+
+void func_80031B4C(void) {
+    
+}
+
+
+s32 func_80056E9C(s32 a0, s32 a1, s32 a2) {
+    if (a0 &lt; 0) a0 = -a0;
+    if (a0 &lt; a2) {
+        
+    }
+    
+}
+
+
+s32 func_80064DAC(void) {
+    s32 a0 = 0;
+    u16 v0 = *(volatile u16 *)0x1F800066;
+    
+}
+
+
+s32 func_80064F58(void) {
+    s32 a0 = 0;
+    u16 v0 = *(volatile u16 *)0x1F80005C;
+    
+}
+
+
+s32 func_80065108(void) {
+    s32 a0 = 0;
+    u16 v0 = *(volatile u16 *)0x1F80005E;
+    
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/DgAug" target="_blank" rel="noopener">func_80031B4C</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:13</span><details><summary>view C the agent wrote</summary><pre>c
 
 void func_80031B4C(void)
 {
@@ -738,18 +773,6 @@ void *func_8005AB8C(void) {
 
 void func_80064E40(void) {
     (*(u16 *)((u8 *)&amp;D_800EC2A0 + 0xDE))--;
-}</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/Itoht" target="_blank" rel="noopener">func_80048450</a><span class="asz">36 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:06</span><details><summary>view C the agent wrote</summary><pre>c
-
-s32 func_80048450(void)
-{
-    u8 v1;
-
-    v1 = D_800E6990.field_0x32;
-    if (v1 == 1) {
-        /* ... */
-    }
-    return 0;
 }</pre></details></div>
   </div>
 
