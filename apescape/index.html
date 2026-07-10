@@ -112,10 +112,10 @@
   <h1>🐒 Ape Escape (PS1) — Matching Decompilation</h1>
   <p class="sub">Ape Escape (PS1, PAL/SCES-01564) matching decomp. Rebuilding the original C so the compiled game is
      <b>byte-identical</b> to the disc.</p>
-  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:27 CEST</b> · <span id="ago"></span>
+  <div class="stamp"><span class="dot"></span>Updated <b>2026-07-10 17:28 CEST</b> · <span id="ago"></span>
      <span style="opacity:.7">· page auto-refreshes every 90s</span></div>
   <script>
-    (function(){ var gen=1783697248*1000;
+    (function(){ var gen=1783697303*1000;
       function upd(){ var s=Math.max(0,Math.round((Date.now()-gen)/1000)), t;
         if(s<90) t=s+"s ago"; else if(s<5400) t=Math.round(s/60)+"m ago"; else t=Math.round(s/3600)+"h ago";
         var e=document.getElementById("ago"); if(e) e.textContent=t; }
@@ -126,7 +126,7 @@
   <div class="cards">
     <div class="card" style="padding:14px 16px">
       <div class="k">Claude (mizuchi) — new functions</div>
-      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8137s ago</div></div>
+      <div class="livewrap"><span class="led offline"></span><b>Offline</b><div class="livesub">loop exited</div><div class="livesub" style="opacity:.7">last signal 8192s ago</div></div>
     </div>
     <div class="card" style="padding:14px 16px">
       <div class="k">Local CPU (decomp-permuter) — polishing near-misses, $0</div>
@@ -391,7 +391,7 @@
   <div class="panel">
     <h2>Decomp detail</h2>
     <div class="legend">
-      <span class="lg"><b>7,518</b> agent attempts</span>
+      <span class="lg"><b>7,519</b> agent attempts</span>
       <span class="lg"><b>2.5%</b> match rate</span>
       <span class="lg"><b>168 B</b> largest function matched</span>
       <span class="lg"><b>28 B</b> avg matched size</span>
@@ -481,7 +481,66 @@
       count. Note: decomp.me's build pipeline differs slightly from ours, so its score can show a
       small diff even for functions our gate verified byte-identical in the real binary — the
       whole-ROM SHA-1 check above is the authoritative verdict.</p>
-    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/UBh6E" target="_blank" rel="noopener">func_8002F2D0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:27</span><details><summary>view C the agent wrote</summary><pre>c
+    <div class="arow"><a class="mono aname" href="https://decomp.me/scratch/7FiBx" target="_blank" rel="noopener">func_80088650</a><span class="asz">48 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-1-direct</span><span class="awhen">17:28</span><details><summary>view C the agent wrote</summary><pre>c
+extern struct { short unk0; short unk2; int unk4; } D_800BF6D0[12];
+
+int func_80088650(void) {
+    int i;
+    for (i = 0; i &lt; 12; i++) {
+        D_800BF6D0[i].unk0 = -1;
+        D_800BF6D0[i].unk2 = 0;
+    }
+    return 0;
+}
+
+extern unsigned int D_800DFE98[];
+
+unsigned char func_8009648C(unsigned int a0) {
+    return (D_800DFE98[(a0 &amp; 0x3FFFC) &gt;&gt; 2] &gt;&gt; ((a0 &amp; 3) &lt;&lt; 3)) &amp; 0xFF;
+}
+
+typedef struct {
+    unsigned short unk0;
+    unsigned short unk2;
+    unsigned short unk4;
+    unsigned short unk6;
+    unsigned short unk8;
+    unsigned short unkA;
+    unsigned short unkC;
+    unsigned short unkE;
+} UnkPad16;
+extern UnkPad16 *D_800B4D04;
+
+int func_80014398(int arg) {
+    int idx = arg &amp; 0xFFFF;
+    if (idx &gt;= 3) {
+        return 0;
+    }
+    D_800B4D04[idx].unk0 = 0;
+    return 1;
+}
+
+extern int D_800A6DBC[];
+extern int D_800A3CC0;
+
+int *func_80023FDC(unsigned int a0) {
+    a0 = a0 &amp; 0xFF;
+    if (a0 &gt;= 0x1C) {
+        return &amp;D_800A3CC0;
+    }
+    return (int *)D_800A6DBC[a0];
+}
+
+extern int D_800A6E3C[];
+
+int *func_80024010(unsigned int a0) {
+    a0 = a0 &amp; 0xFF;
+    if (a0 &gt;= 7) {
+        return &amp;D_800A3CC0;
+    }
+    return (int *)D_800A6E3C[a0];
+}</pre></details></div>
+<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/UBh6E" target="_blank" rel="noopener">func_8002F2D0</a><span class="asz">12 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:27</span><details><summary>view C the agent wrote</summary><pre>c
 
 void func_8002F2D0(void) {
     __asm__ __volatile__ (
@@ -873,11 +932,6 @@ void func_8002F2A0(void) {
         &quot;.set reorder\n&quot;
     );
 }</pre></details></div>
-<div class="arow"><a class="mono aname" href="https://decomp.me/scratch/PRbC8" target="_blank" rel="noopener">func_800A9B94</a><span class="asz">4 B</span><span class="av miss">100% off</span><span class="eng">aggressive-PASS-2-detailed-small</span><span class="awhen">17:20</span><details><summary>view C the agent wrote</summary><pre>c
-
-void func_800A9B94(void)
-{
-}</pre></details></div>
   </div>
 
   <div class="panel">
@@ -893,7 +947,7 @@ void func_800A9B94(void)
   </p>
 
   <footer>
-    Generated 2026-07-10 17:27 CEST · driven by AI agents against a hard byte-exact gate ·
+    Generated 2026-07-10 17:28 CEST · driven by AI agents against a hard byte-exact gate ·
     no game code or assets are published here.
   </footer>
 </div></body></html>
